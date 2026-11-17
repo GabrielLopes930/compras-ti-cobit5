@@ -1,9 +1,13 @@
+# Python
 __pycache__/
 *.py[cod]
-*$py.class
+
+# Local environment
 .env
 .venv/
 env/
 venv/
+
+# SQLite temporary files
 *.db-wal
 *.db-shm
