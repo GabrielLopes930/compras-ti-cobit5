@@ -1,0 +1,287 @@
+{
+  "gerado_em": "2026-11-17T07:02:40",
+  "fonte": "SQLite Local",
+  "escopo_anos": [
+    2024,
+    2025,
+    2026
+  ],
+  "tetos_dispensa": {
+    "2024": 59906.02,
+    "2025": 62725.59,
+    "2026": 65492.11
+  },
+  "catalogo_ti": [
+    {
+      "tipo_item": "M",
+      "codigo_grupo": 70,
+      "nome_grupo": "INFORMÁTICA - EQUIPAMENTOS,  PEÇAS, ACESSÓRIOS E SUPRIMENTOSDE TIC",
+      "codigo_classe": 7010,
+      "nome_classe": "COMPUTADORES"
+    },
+    {
+      "tipo_item": "M",
+      "codigo_grupo": 70,
+      "nome_grupo": "INFORMÁTICA - EQUIPAMENTOS,  PEÇAS, ACESSÓRIOS E SUPRIMENTOSDE TIC",
+      "codigo_classe": 7020,
+      "nome_classe": "IMPRESSORAS"
+    },
+    {
+      "tipo_item": "M",
+      "codigo_grupo": 70,
+      "nome_grupo": "INFORMÁTICA - EQUIPAMENTOS,  PEÇAS, ACESSÓRIOS E SUPRIMENTOSDE TIC",
+      "codigo_classe": 7030,
+      "nome_classe": "EQUIPAMENTOS DE ARMAZENAMENTO DE DADOS"
+    },
+    {
+      "tipo_item": "M",
+      "codigo_grupo": 70,
+      "nome_grupo": "INFORMÁTICA - EQUIPAMENTOS,  PEÇAS, ACESSÓRIOS E SUPRIMENTOSDE TIC",
+      "codigo_classe": 7040,
+      "nome_classe": "EQUIPAMENTOS DE ENTRADA DE DADOS"
+    },
+    {
+      "tipo_item": "M",
+      "codigo_grupo": 70,
+      "nome_grupo": "INFORMÁTICA - EQUIPAMENTOS,  PEÇAS, ACESSÓRIOS E SUPRIMENTOSDE TIC",
+      "codigo_classe": 7050,
+      "nome_classe": "EQUIPAMENTOS DE REDE DE TIC - LOCAL E REMOTA"
+    },
+    {
+      "tipo_item": "M",
+      "codigo_grupo": 70,
+      "nome_grupo": "INFORMÁTICA - EQUIPAMENTOS,  PEÇAS, ACESSÓRIOS E SUPRIMENTOSDE TIC",
+      "codigo_classe": 7060,
+      "nome_classe": "PEÇAS E ACESSÓRIOS PARA COMPUTADORES"
+    },
+    {
+      "tipo_item": "M",
+      "codigo_grupo": 70,
+      "nome_grupo": "INFORMÁTICA - EQUIPAMENTOS,  PEÇAS, ACESSÓRIOS E SUPRIMENTOSDE TIC",
+      "codigo_classe": 7070,
+      "nome_classe": "PEÇAS E ACESSÓRIOS PARA IMPRESSORAS"
+    },
+    {
+      "tipo_item": "M",
+      "codigo_grupo": 70,
+      "nome_grupo": "INFORMÁTICA - EQUIPAMENTOS,  PEÇAS, ACESSÓRIOS E SUPRIMENTOSDE TIC",
+      "codigo_classe": 7080,
+      "nome_classe": "PEÇAS, ACESSÓRIOS E FERRAMENTAS PARA REDES DE TIC"
+    },
+    {
+      "tipo_item": "M",
+      "codigo_grupo": 70,
+      "nome_grupo": "INFORMÁTICA - EQUIPAMENTOS,  PEÇAS, ACESSÓRIOS E SUPRIMENTOSDE TIC",
+      "codigo_classe": 7090,
+      "nome_classe": "SUPRIMENTOS DE INFORMÁTICA - TIC"
+    },
+    {
+      "tipo_item": "M",
+      "codigo_grupo": 70,
+      "nome_grupo": "INFORMÁTICA - EQUIPAMENTOS,  PEÇAS, ACESSÓRIOS E SUPRIMENTOSDE TIC",
+      "codigo_classe": 7095,
+      "nome_classe": "UNIDADES PARA MANUSEIO DE CARTÕES"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 111,
+      "nome_grupo": "SERVIÇOS  DE DESENVOLVIMENTO E MANUTENÇÃO DE SOFTWARE",
+      "codigo_classe": 111,
+      "nome_classe": "SERVIÇOS  DE DESENVOLVIMENTO,  MANUTENÇÃO  E  SUSTENTAÇÃO DESOFTWARE"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 112,
+      "nome_grupo": "SERVIÇOS DE MANUTENÇÃO E SUSTENTAÇÃO DE SOFTWARE",
+      "codigo_classe": 112,
+      "nome_classe": "SERVIÇOS  DE DESENVOLVIMENTO,  MANUTENÇÃO  E  SUSTENTAÇÃO DESOFTWARE"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 113,
+      "nome_grupo": "SERVIÇOS DE DOCUMENTAÇAO DE SOFTWARE",
+      "codigo_classe": 113,
+      "nome_classe": "SERVIÇOS  DE DESENVOLVIMENTO,  MANUTENÇÃO  E  SUSTENTAÇÃO DESOFTWARE"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 114,
+      "nome_grupo": "SERVIÇOS SE ENGENHARIA DE REQUISITOS DE SOFTWARE",
+      "codigo_classe": 114,
+      "nome_classe": "SERVIÇOS  DE DESENVOLVIMENTO,  MANUTENÇÃO  E  SUSTENTAÇÃO DESOFTWARE"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 115,
+      "nome_grupo": "SERVIÇOS DE MENSURAÇÃO DE SOFTWARE",
+      "codigo_classe": 115,
+      "nome_classe": "SERVIÇOS  DE DESENVOLVIMENTO,  MANUTENÇÃO  E  SUSTENTAÇÃO DESOFTWARE"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 116,
+      "nome_grupo": "SERVIÇOS DE QUALIDADE DE SOFTWARE",
+      "codigo_classe": 116,
+      "nome_classe": "SERVIÇOS  DE DESENVOLVIMENTO,  MANUTENÇÃO  E  SUSTENTAÇÃO DESOFTWARE"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 117,
+      "nome_grupo": "SERVIÇO DE IMPLEMENTAÇÃO ÁGIL DE SOFTWARE",
+      "codigo_classe": 117,
+      "nome_classe": "SERVIÇOS  DE DESENVOLVIMENTO,  MANUTENÇÃO  E  SUSTENTAÇÃO DESOFTWARE"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 131,
+      "nome_grupo": "SERVIÇOS DE COMPUTAÇÃO EM NUVEM",
+      "codigo_classe": 131,
+      "nome_classe": "SERVIÇOS DE COMPUTAÇÃO EM NUVEM"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 141,
+      "nome_grupo": "SERVIÇOS DE TELEFONIA  FIXA COMUTADA  (STFC),  TELECOMUNICA-ÇÕES MÓVEIS (SMP) E TELECOMUNICAÇÕES SATELITAIS",
+      "codigo_classe": 141,
+      "nome_classe": "SERVIÇOS DE TELECOMUNICAÇÃO E TELEFONIA"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 142,
+      "nome_grupo": "SERVIÇOS DE COMUNICAÇÃO DE DADOS",
+      "codigo_classe": 142,
+      "nome_classe": "SERVIÇOS DE TELECOMUNICAÇÃO E TELEFONIA"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 151,
+      "nome_grupo": "OUTSOURCING DE IMPRESSÃO  -  MODALIDADE FRANQUIA  MAIS EXCE-DENTE DE PÁGINAS",
+      "codigo_classe": 151,
+      "nome_classe": "SERVICOS DE OUTSOURCING DE IMPRESSÃO"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 152,
+      "nome_grupo": "OUTSOURCING DE IMPRESSÃO - MODALIDADE LOCAÇÃO DE EQUIPAMENTOMAIS PÁGINAS IMPRESSAS",
+      "codigo_classe": 152,
+      "nome_classe": "SERVICOS DE OUTSOURCING DE IMPRESSÃO"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 153,
+      "nome_grupo": "OUTSOURCING DE IMPRESSÃO  -  MODALIDADE DE PAGAMENTO  APENASPOR PÁGINA IMPRESSA (SEM FRANQUIA) - \"CLICK\"",
+      "codigo_classe": 153,
+      "nome_classe": "SERVICOS DE OUTSOURCING DE IMPRESSÃO"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 161,
+      "nome_grupo": "SERVIÇOS ESPECIALIZADOS DE INSTALAÇÃO, TRANSIÇÃO, CONFIGURA-ÇÃO / CUSTOMIZAÇÃO DE SOFTWARE",
+      "codigo_classe": 161,
+      "nome_classe": "SERVIÇOS PARA A INFRAESTRUTURA  DE  TECNOLOGIA DA INFORMAÇÃOE COMUNICAÇÃO (TIC)"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 162,
+      "nome_grupo": "SERVIÇOS  DE  GERENCIAMENTO  EM TECNOLOGIA DA INFORMAÇÃO  E COMUNICAÇÃO (TIC)",
+      "codigo_classe": 162,
+      "nome_classe": "SERVIÇOS PARA A INFRAESTRUTURA  DE  TECNOLOGIA DA INFORMAÇÃOE COMUNICAÇÃO (TIC)"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 163,
+      "nome_grupo": "SERVIÇOS DE HOSPEDAGEM EM TECNOLOGIA DA INFORMAÇÃO E  COMUNICACÃO (TIC)",
+      "codigo_classe": 163,
+      "nome_classe": "SERVIÇOS PARA A INFRAESTRUTURA  DE  TECNOLOGIA DA INFORMAÇÃOE COMUNICAÇÃO (TIC)"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 164,
+      "nome_grupo": "SERVIÇOS DE INTEGRAÇÃO DE SISTEMAS EM TECNOLOGIA DA INFORMA-ÇÃO E COMUNICAÇÃO (TIC)",
+      "codigo_classe": 164,
+      "nome_classe": "SERVIÇOS PARA A INFRAESTRUTURA  DE  TECNOLOGIA DA INFORMAÇÃOE COMUNICAÇÃO (TIC)"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 165,
+      "nome_grupo": "SERVICOS PARA  A  INFRAESTRUTURA DE TECNOLOGIA DA INFORMAÇÃOE COMUNICAÇÃO (TIC),  NAO CLASSIFICADOS EM OUTROS TÓPICOS",
+      "codigo_classe": 165,
+      "nome_classe": "SERVIÇOS PARA A INFRAESTRUTURA  DE  TECNOLOGIA DA INFORMAÇÃOE COMUNICAÇÃO (TIC)"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 166,
+      "nome_grupo": "SERVIÇOS DE MANUTENÇÃO E INSTALAÇÃO DE EQUIPAMENTOS DE TIC",
+      "codigo_classe": 166,
+      "nome_classe": "SERVIÇOS PARA A INFRAESTRUTURA  DE  TECNOLOGIA DA INFORMAÇÃOE COMUNICAÇÃO (TIC)"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 167,
+      "nome_grupo": "SERVIÇOS DE EMISSÃO DE CERTIFICADOS DIGITAIS",
+      "codigo_classe": 167,
+      "nome_classe": "SERVIÇOS PARA A INFRAESTRUTURA  DE  TECNOLOGIA DA INFORMAÇÃOE COMUNICAÇÃO (TIC)"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 168,
+      "nome_grupo": "SERVIÇOS AUXILIARES DE TECNOLOGIA DA INFORMAÇÃO  E  COMUNICAÇÃO (TIC)",
+      "codigo_classe": 168,
+      "nome_classe": "SERVIÇOS PARA A INFRAESTRUTURA  DE  TECNOLOGIA DA INFORMAÇÃOE COMUNICAÇÃO (TIC)"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 171,
+      "nome_grupo": "SERVIÇOS DE ANÁLISE DA DADOS E INDICADORES DE TIC",
+      "codigo_classe": 171,
+      "nome_classe": "SERVIÇOS DE  PESQUISA,  ANÁLISE  DE  DADOS  E  INDICADORES, CONSULTORIA E PROJETOS DE TIC"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 172,
+      "nome_grupo": "SERVIÇOS DE PESQUISA,ANÁLISE E DESENVOLVIMENTO EM TECNOLOGIADA INFORMAÇÃO E COMUNICAÇÃO (TIC)",
+      "codigo_classe": 172,
+      "nome_classe": "SERVIÇOS DE  PESQUISA,  ANÁLISE  DE  DADOS  E  INDICADORES, CONSULTORIA E PROJETOS DE TIC"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 173,
+      "nome_grupo": "SERVIÇOS  DE  CONSULTORIA  EM  TECNOLOGIA  DA  INFORMAÇÃO  ECOMUNICAÇÃO (TIC)",
+      "codigo_classe": 173,
+      "nome_classe": "SERVIÇOS DE  PESQUISA,  ANÁLISE  DE  DADOS  E  INDICADORES, CONSULTORIA E PROJETOS DE TIC"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 174,
+      "nome_grupo": "SERVIÇOS DE PROJETOS EM TECNOLOGIA DA INFORMAÇÃO E COMUNICA-ÇÃO (TIC)",
+      "codigo_classe": 174,
+      "nome_classe": "SERVIÇOS DE  PESQUISA,  ANÁLISE  DE  DADOS  E  INDICADORES, CONSULTORIA E PROJETOS DE TIC"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 181,
+      "nome_grupo": "SERVICOS DE ARRENDAMENTO MERCANTIL, FINANCEIRO E OPERACIONAL",
+      "codigo_classe": 181,
+      "nome_classe": "SERVICOS DE ARRENDAMENTO, LICENCIAMENTO DE DIREITOS E TRANS-FERENCIA DE TECNOLOGIA"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 182,
+      "nome_grupo": "SERVIÇOS DE  LICENCIAMENTO E  CONTRATOS DE TRANSFERÊNCIA DE TECNOLOGIA",
+      "codigo_classe": 182,
+      "nome_classe": "SERVICOS DE ARRENDAMENTO, LICENCIAMENTO DE DIREITOS E TRANS-FERENCIA DE TECNOLOGIA"
+    },
+    {
+      "tipo_item": "S",
+      "codigo_grupo": 183,
+      "nome_grupo": "SEÇÃO DE DIREITOS DE PROPRIEDADE INTELECTUAL",
+      "codigo_classe": 183,
+      "nome_classe": "SERVICOS DE ARRENDAMENTO, LICENCIAMENTO DE DIREITOS E TRANS-FERENCIA DE TECNOLOGIA"
+    }
+  ],
+  "cubo_contratacoes": [],
+  "top_fornecedores": [],
+  "histograma_dispensa": [],
+  "pca_uft_ifto": [],
+  "indicadores_api": []
+}
