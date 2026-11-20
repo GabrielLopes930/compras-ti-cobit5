@@ -48,6 +48,7 @@ def exportar_dashboard_json(prefer_neon: bool = True) -> str:
                 COALESCE(c.tipo_contratacao, 'Com Competição') AS tipo_contratacao,
                 COALESCE(c.orgao_razao_social, 'Órgão Não Informado') AS orgao,
                 COALESCE(i.material_ou_servico_nome, 'Geral') AS tipo_item,
+                CASE WHEN i.id_compra_item IS NULL THEN 'Fora de TI (TO geral)' ELSE 'TI' END AS recorte,
                 COUNT(DISTINCT c.id_compra) AS qtd_contratacoes,
                 COUNT(i.id_compra_item) AS qtd_itens,
                 ROUND(CAST(SUM(COALESCE(i.valor_total, c.valor_total_estimado, 0)) AS NUMERIC), 2) AS valor_estimado,
@@ -60,7 +61,7 @@ def exportar_dashboard_json(prefer_neon: bool = True) -> str:
             FROM fato_contratacoes c
             LEFT JOIN fato_itens_ti i ON c.id_compra = i.id_compra
             WHERE c.contratacao_excluida = 0
-            GROUP BY 1, 2, 3, 4, 5, 6, 7
+            GROUP BY 1, 2, 3, 4, 5, 6, 7, 8
         """ if is_pg else """
             SELECT
                 c.ano_compra AS ano,
@@ -70,6 +71,7 @@ def exportar_dashboard_json(prefer_neon: bool = True) -> str:
                 COALESCE(c.tipo_contratacao, 'Com Competição') AS tipo_contratacao,
                 COALESCE(c.orgao_razao_social, 'Órgão Não Informado') AS orgao,
                 COALESCE(i.material_ou_servico_nome, 'Geral') AS tipo_item,
+                CASE WHEN i.id_compra_item IS NULL THEN 'Fora de TI (TO geral)' ELSE 'TI' END AS recorte,
                 COUNT(DISTINCT c.id_compra) AS qtd_contratacoes,
                 COUNT(i.id_compra_item) AS qtd_itens,
                 ROUND(SUM(COALESCE(i.valor_total, c.valor_total_estimado, 0)), 2) AS valor_estimado,
@@ -82,7 +84,7 @@ def exportar_dashboard_json(prefer_neon: bool = True) -> str:
             FROM fato_contratacoes c
             LEFT JOIN fato_itens_ti i ON c.id_compra = i.id_compra
             WHERE c.contratacao_excluida = 0
-            GROUP BY 1, 2, 3, 4, 5, 6, 7
+            GROUP BY 1, 2, 3, 4, 5, 6, 7, 8
         """
         serie_cubo = query_fn(conn, sql_cubo)
 

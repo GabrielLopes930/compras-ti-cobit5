@@ -1,6 +1,6 @@
 import sqlite3
 from typing import Any, Dict, List, Optional, Tuple
-from config import DATABASE_URL, DB_PATH
+from config import DATABASE_URL, DB_PATH, NEON_LIMITE_MB
 
 try:
     import psycopg2
@@ -240,10 +240,33 @@ def get_neon_connection() -> Optional[Any]:
         return None
 
 
+# Quando o banco do Neon atinge NEON_LIMITE_MB, as gravações seguintes vão só para o SQLite.
+NEON_LIMITE_ATINGIDO = False
+
+
+def tamanho_neon_mb(conn: Any) -> float:
+    """Tamanho atual do banco no Neon, em MB."""
+    with conn.cursor() as cur:
+        cur.execute("SELECT pg_database_size(current_database())")
+        return cur.fetchone()[0] / (1024 * 1024)
+
+
 def get_active_connections() -> List[Tuple[str, Any]]:
     """Retorna todas as conexões ativas disponíveis (Neon e SQLite)."""
+    global NEON_LIMITE_ATINGIDO
     conexoes = []
-    neon_conn = get_neon_connection()
+    neon_conn = None if NEON_LIMITE_ATINGIDO else get_neon_connection()
+    if neon_conn:
+        try:
+            tam = tamanho_neon_mb(neon_conn)
+        except Exception:
+            tam = 0
+        if tam >= NEON_LIMITE_MB:
+            NEON_LIMITE_ATINGIDO = True
+            neon_conn.close()
+            neon_conn = None
+            print(f"    [!] Neon atingiu {tam:.0f} MB (limite configurado: {NEON_LIMITE_MB} MB). "
+                  "As próximas gravações irão apenas para o SQLite local.", flush=True)
     if neon_conn:
         conexoes.append(("Neon PostgreSQL", neon_conn))
     
@@ -425,8 +448,13 @@ def get_db_status() -> Dict[str, Any]:
                         counts_pg[tbl] = cur.fetchone()[0]
                     else:
                         counts_pg[tbl] = "NÃO CRIADA"
+            try:
+                tamanho_mb = round(tamanho_neon_mb(conn_pg), 1)
+            except Exception:
+                tamanho_mb = None
             conn_pg.close()
-            status["Neon PostgreSQL"] = {"conectado": True, "tabelas": counts_pg}
+            status["Neon PostgreSQL"] = {"conectado": True, "tabelas": counts_pg,
+                                         "tamanho_mb": tamanho_mb, "limite_mb": NEON_LIMITE_MB}
         except Exception as e:
             status["Neon PostgreSQL"] = {"conectado": False, "erro": str(e)}
     else:

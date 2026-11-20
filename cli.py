@@ -3,6 +3,7 @@ import sys
 from typing import List
 
 import db
+from config import ANOS_PADRAO
 import etl
 import export
 
@@ -28,6 +29,8 @@ def cmd_status(args):
     print("\n[+] NEON POSTGRESQL:")
     if neon.get("conectado"):
         print("    Status: CONECTADO")
+        if neon.get("tamanho_mb") is not None:
+            print(f"    Tamanho: {neon['tamanho_mb']} MB de {neon['limite_mb']} MB permitidos pela coleta")
         tabelas = neon.get("tabelas", {})
         for t, qtd in tabelas.items():
             print(f"    - {t.ljust(22)}: {qtd} registros")
@@ -60,7 +63,7 @@ def cmd_collect(args):
     print("=" * 70)
     print("  COBIT 5 - TAREFA T2: COLETA DE DADOS COM CHECKPOINT")
     print("=" * 70)
-    anos = [int(a) for a in args.anos] if args.anos else [2024, 2025, 2026]
+    anos = [int(a) for a in args.anos] if args.anos else ANOS_PADRAO
     apenas_to = bool(args.apenas_to)
     etl.executar_t2_coleta(anos=anos, apenas_to=apenas_to)
 
@@ -75,7 +78,7 @@ def cmd_sync(args):
     # 2. Sincroniza catálogo T1
     classes_mat, grupos_serv = etl.executar_t1_catalogo()
     # 3. Sincroniza dados T2
-    anos = [int(a) for a in args.anos] if args.anos else [2024, 2025, 2026]
+    anos = [int(a) for a in args.anos] if args.anos else ANOS_PADRAO
     etl.executar_t2_coleta(anos=anos, classes_mat=classes_mat, grupos_serv=grupos_serv, apenas_to=bool(args.apenas_to))
     # 4. Exporta JSON atualizado
     export.exportar_dashboard_json()
@@ -111,13 +114,13 @@ def main():
 
     # collect
     p_collect = subparsers.add_parser("collect", aliases=["coletar"], help="Executa a coleta de dados da API")
-    p_collect.add_argument("--anos", nargs="+", default=["2024", "2025", "2026"], help="Anos para coleta (ex: --anos 2024 2025)")
+    p_collect.add_argument("--anos", nargs="+", default=None, help="Anos para coleta (padrão: 2025; ex: --anos 2024 2025)")
     p_collect.add_argument("--apenas-to", action="store_true", help="Coleta apenas contratações do Tocantins")
     p_collect.set_defaults(func=cmd_collect)
 
     # sync / inserir-dados
     p_sync = subparsers.add_parser("sync", aliases=["inserir-dados", "carregar"], help="Executa inserção e upsert conciliado no Neon e SQLite")
-    p_sync.add_argument("--anos", nargs="+", default=["2024", "2025", "2026"], help="Anos para coleta")
+    p_sync.add_argument("--anos", nargs="+", default=None, help="Anos para coleta (padrão: 2025)")
     p_sync.add_argument("--apenas-to", action="store_true", help="Coleta apenas compras do Tocantins")
     p_sync.set_defaults(func=cmd_sync)
 

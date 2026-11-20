@@ -25,6 +25,20 @@ USER_AGENT = "COBIT5-Research-ULBRA-Palmas/1.0"
 
 ANOS_ESCOPO = [2024, 2025, 2026]
 
+# Recorte padrão da coleta: 2025, o mesmo do resumo expandido.
+# Outros anos podem ser incluídos com --anos, desde que caibam no limite do Neon.
+ANOS_PADRAO = [2025]
+
+# ============================================================================
+# LIMITE DO NEON (PLANO GRATUITO = 1 GB)
+# ============================================================================
+# Antes de cada gravação no Neon, o tamanho do banco é conferido. Ao passar deste
+# limite, a gravação no Neon é interrompida (o SQLite local continua recebendo).
+NEON_LIMITE_MB = int(os.getenv("NEON_LIMITE_MB", "900"))
+
+# Descrições longas são cortadas para economizar espaço no Neon.
+DESCRICAO_MAX_CHARS = int(os.getenv("DESCRICAO_MAX_CHARS", "400"))
+
 # Tetos legais de Dispensa de Licitação (Art. 75, II da Lei 14.133/2021)
 TETO_DISPENSA_ART75_II = {
     2024: 59906.02,  # Decreto 11.871/2023

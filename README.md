@@ -1,5 +1,6 @@
 # Pipeline de Dados e Governança de Compras de TIC (COBIT 5)
-> Pesquisa e Análise de Contratações Públicas de TIC (2024–2026) com foco no Tocantins (UFT, IFTO) e Brasil.
+> Pesquisa e Análise de Contratações Públicas de TIC com foco no Tocantins (UFT, IFTO) e Brasil.
+> Recorte padrão: **2025** (o mesmo do resumo expandido). Outros anos (2024–2026) podem ser incluídos com `--anos`.
 
 ## 🚀 Arquitetura Híbrida e Idempotente
 
@@ -26,6 +27,20 @@ Crie o arquivo `.env` na raiz copiando de `.env.example`:
 DATABASE_URL=postgresql://neondb_owner:npg_xxxx@ep-exemplo.us-east-2.aws.neon.tech/neondb?sslmode=require
 ```
 *(Se você não configurar o `.env`, o sistema opera automaticamente no SQLite local sem erros).*
+
+### 3. Limite do Neon gratuito (1 GB)
+O plano gratuito do Neon permite 1 GB. Para não estourar:
+* **Trava automática:** antes de cada gravação o tamanho do banco é conferido. Ao passar de `NEON_LIMITE_MB` (padrão **900 MB**), as gravações seguintes vão só para o SQLite local, e a coleta continua.
+* **Descrições cortadas:** textos longos (descrição detalhada do item e do PCA) são limitados a `DESCRICAO_MAX_CHARS` (padrão **400** caracteres).
+* **Recorte enxuto:** o padrão é coletar só **2025**. Para incluir mais anos, confira o tamanho antes com `python cli.py status`.
+
+Os dois limites podem ser ajustados no `.env`:
+```ini
+NEON_LIMITE_MB=900
+DESCRICAO_MAX_CHARS=400
+```
+
+> A coleta precisa rodar no computador de vocês (com internet direta), porque acessa a API do Compras.gov.br e o Neon.
 
 ---
 
@@ -61,8 +76,17 @@ python cli.py sync
 # ou: python cli.py inserir-dados
 ```
 *Opções adicionais:*
-* `--apenas-to`: Coleta apenas as contratações do Tocantins.
-* `--anos 2024 2025`: Filtra apenas determinados anos de interesse.
+* `--apenas-to`: Coleta apenas as contratações e o PCA do Tocantins.
+* `--anos 2024 2025`: Coleta outros anos (padrão: 2025).
+
+**O que é coletado, na ordem:**
+1. Contratações do Tocantins (todas as modalidades, mês a mês).
+2. PCA (Plano de Contratações Anual) da UFT e do IFTO.
+3. Itens de TI do Brasil (classes do grupo 70 do CATMAT e grupos de TIC do CATSER).
+4. Compra-pai e resultados (fornecedores) dos itens de TI. Só os resultados de itens de TI são gravados.
+5. Indicadores de desempenho da própria API.
+
+**Retomada segura:** se a API falhar ou a internet cair, a janela que falhou **não** é marcada como concluída. Basta rodar o mesmo comando de novo que a coleta continua de onde parou.
 
 ### 5. Exportar Cubo Analítico para o Dashboard na Vercel
 Lê os dados agregados do banco e gera o arquivo leve `public_data/dashboard_data.json` pronto para alimentar o frontend Next.js:
@@ -78,4 +102,5 @@ python cli.py export-json
 * `db.py`: Conexões, DDL, inspeção de esquemas e rotinas de Upsert no Postgres e SQLite.
 * `etl.py`: Coleta resiliente da API Dados Abertos Compras.gov.br e checkpoints.
 * `export.py`: Queries de agregação (Cubo COBIT 5, Top Fornecedores, Histograma Dispensa Art. 75, II).
-* `config.py`: Parâmetros gerais, tetos legais da Lei 14.133 e regex temática de TI.
+* `config.py`: Parâmetros gerais, tetos legais da Lei 14.133, regex temática de TI e limites do Neon.
+* `etl_cobit_compras.py`: versão antiga, monolítica, mantida apenas como histórico. **Use o `cli.py`.**

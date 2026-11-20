@@ -1,4 +1,5 @@
 import calendar
+import hashlib
 import time
 from datetime import datetime
 from typing import Any, Dict, List, Optional, Tuple
@@ -7,6 +8,7 @@ import requests
 from config import (
     ANOS_ESCOPO,
     BASE_URL,
+    DESCRICAO_MAX_CHARS,
     MODALIDADES_PNCP,
     ORGAOS_PCA_TO,
     REGEX_PALAVRAS_TI,
@@ -25,27 +27,36 @@ session.headers.update({
 # ============================================================================
 # CLIENTE HTTP COM RETRY E BACKOFF EXPONENCIAL
 # ============================================================================
-def requisitar_json(path: str, params: dict, tentativas: int = 3) -> dict:
+def requisitar_json(path: str, params: dict, tentativas: int = 5) -> Optional[dict]:
+    """
+    Retorna o JSON da resposta; {} quando a API responde que não há dados (204/404);
+    None quando a requisição falhou. Quem chama não deve marcar checkpoint com None,
+    para que a janela seja coletada de novo na próxima execução.
+    """
     url = f"{BASE_URL}{path}"
     for t in range(1, tentativas + 1):
         try:
-            resp = session.get(url, params=params, timeout=35)
+            resp = session.get(url, params=params, timeout=60)
             if resp.status_code == 200:
-                return resp.json()
+                return resp.json() if resp.content else {}
+            elif resp.status_code in (204, 404):
+                return {}
             elif resp.status_code in (429, 500, 502, 503, 504):
-                espera = t * 2.5
+                espera = min(t * 5, 60)
                 print(f"    [!] HTTP {resp.status_code} em {path}. Aguardando {espera:.1f}s...", flush=True)
                 time.sleep(espera)
             else:
-                return {}
+                print(f"    [X] HTTP {resp.status_code} em {path} {params}: {resp.text[:150]}", flush=True)
+                return None
         except Exception as e:
             if t == tentativas:
                 print(f"    [X] Falha de rede após {tentativas} tentativas em {path}: {e}", flush=True)
-            time.sleep(t * 2)
-    return {}
+            time.sleep(t * 3)
+    return None
 
 
-def coletar_todas_paginas(path: str, params_base: dict, max_paginas: int = 200) -> list:
+def coletar_todas_paginas(path: str, params_base: dict, max_paginas: int = 200) -> Optional[list]:
+    """Retorna todos os registros, ou None se alguma página falhar (janela incompleta)."""
     registros = []
     pagina = 1
     while pagina <= max_paginas:
@@ -55,6 +66,8 @@ def coletar_todas_paginas(path: str, params_base: dict, max_paginas: int = 200) 
             params["tamanhoPagina"] = 500
 
         dados = requisitar_json(path, params)
+        if dados is None:
+            return None
         if not dados or "resultado" not in dados:
             break
 
@@ -250,7 +263,7 @@ def formatar_linhas_itens(lote: list) -> List[Tuple]:
             cod_pdm,
             nome_pdm,
             desc_res,
-            desc_det,
+            desc_det[:DESCRICAO_MAX_CHARS],
             validado_kw,
             it.get("unidadeMedida"),
             1 if it.get("orcamentoSigiloso") else 0,
@@ -300,7 +313,7 @@ def executar_t1_catalogo() -> Tuple[List[int], List[int]]:
         "/modulo-material/2_consultarClasseMaterial",
         {"codigoGrupo": 70, "statusClasse": True, "pagina": 1}
     )
-    for c in (dados_mat.get("resultado") or []):
+    for c in ((dados_mat or {}).get("resultado") or []):
         rows_catalogo.append((
             "M",
             c.get("codigoGrupo", 70),
@@ -314,7 +327,7 @@ def executar_t1_catalogo() -> Tuple[List[int], List[int]]:
         "/modulo-servico/2_consultarDivisaoServico",
         {"codigoSecao": 1, "statusDivisao": True, "pagina": 1}
     )
-    divisoes = [d.get("codigoDivisao") for d in (dados_div.get("resultado") or [])]
+    divisoes = [d.get("codigoDivisao") for d in ((dados_div or {}).get("resultado") or [])]
     if 11 not in divisoes:
         divisoes.append(11)
 
@@ -323,7 +336,7 @@ def executar_t1_catalogo() -> Tuple[List[int], List[int]]:
             "/modulo-servico/3_consultarGrupoServico",
             {"codigoDivisao": div, "statusGrupo": True, "pagina": 1}
         )
-        for g in (dados_grp.get("resultado") or []):
+        for g in ((dados_grp or {}).get("resultado") or []):
             cod_g = g.get("codigoGrupo")
             rows_catalogo.append((
                 "S",
@@ -345,6 +358,80 @@ def executar_t1_catalogo() -> Tuple[List[int], List[int]]:
         print(f"    [{sgbd}] Inseridos: {metricas['inserted']} | Atualizados: {metricas['updated']}")
 
     return classes_mat, grupos_serv
+
+
+# ============================================================================
+# AUXILIARES DA T2
+# ============================================================================
+def eh_me_epp(porte_nome: Optional[str]) -> bool:
+    """
+    ME/EPP pelo porte informado. Compara o nome inteiro (ME, EPP, Microempresa,
+    Empresa de Pequeno Porte), para não confundir "DEMAIS" com "ME".
+    """
+    p = (porte_nome or "").strip().upper()
+    if p in ("ME", "EPP", "ME/EPP", "MEI"):
+        return True
+    return p.startswith("MICRO") or "PEQUENO PORTE" in p
+
+
+def coletar_pca_to(anos: List[int], classes_mat: List[int], grupos_serv: List[int]):
+    """Coleta o Plano de Contratações Anual (PGC) da UFT e do IFTO para o planejado x executado."""
+    print("\n>>> [T2.1b] Coletando PCA (PGC) da UFT e do IFTO...", flush=True)
+    cols_pca = [
+        "id_pca_key", "ano_pca", "orgao", "sigla_instituicao", "codigo_uasg", "nome_uasg",
+        "numero_artefato", "ordem_dfd", "descricao_objeto_dfd", "nivel_prioridade_dfd",
+        "data_prevista_formalizacao", "tipo_item", "item_sustentavel",
+        "codigo_grupo_material", "nome_grupo_material", "codigo_classe_material", "nome_classe_material",
+        "codigo_grupo_servico", "nome_grupo_servico", "codigo_item_catalogo", "descricao_item_catalogo",
+        "quantidade_item", "valor_unitario_item", "valor_total_item", "flag_item_ti",
+        "data_hora_publicacao_pncp"
+    ]
+    classes_mat = set(classes_mat or [])
+    grupos_serv = set(grupos_serv or [])
+    for ano in anos:
+        for orgao, sigla in ORGAOS_PCA_TO.items():
+            chave_cp = f"pca_{orgao}_{ano}"
+            if tarefa_concluida(chave_cp):
+                continue
+            lote = coletar_todas_paginas(
+                "/modulo-pgc/1_consultarPgcDetalhe",
+                {"orgao": orgao, "anoPcaProjetoCompra": ano, "tamanhoPagina": 500}
+            )
+            if lote is None:
+                print(f"    [X] PCA {sigla} {ano}: falha na coleta, será repetida", flush=True)
+                continue
+            linhas = []
+            vistos = set()
+            for p in lote:
+                base = "|".join(str(p.get(k) or "") for k in (
+                    "codigoUasg", "numeroArtefato", "ordemDfd", "numeroItemPncp", "codigoItemCatalogo"))
+                chave = f"{orgao}|{ano}|{hashlib.md5(base.encode()).hexdigest()[:16]}"
+                if chave in vistos:  # mesmo item repetido na resposta
+                    continue
+                vistos.add(chave)
+                cls_m = p.get("codigoClasseMaterial")
+                grp_s = p.get("codigoGrupoServico")
+                flag_ti = 1 if (p.get("codigoGrupoMaterial") == 70 or cls_m in classes_mat
+                                or grp_s in grupos_serv) else 0
+                linhas.append((
+                    chave, ano, orgao, sigla, p.get("codigoUasg"), p.get("nomeUasg"),
+                    p.get("numeroArtefato"), p.get("ordemDfd"),
+                    (p.get("descricaoObjetoDfd") or "")[:DESCRICAO_MAX_CHARS],
+                    p.get("nivelPrioridadeDfd"), p.get("dataPrevistaFormalizacaoDemanda"),
+                    p.get("tipoItem"), 1 if p.get("itemSustentavel") else 0,
+                    p.get("codigoGrupoMaterial"), p.get("nomeGrupoMaterial"),
+                    cls_m, p.get("nomeClasseMaterial"),
+                    grp_s, p.get("nomeGrupoServico"),
+                    str(p.get("codigoItemCatalogo") or ""),
+                    (p.get("descricaoItemCatalogo") or "")[:DESCRICAO_MAX_CHARS],
+                    p.get("quantidadeItem"), p.get("valorUnitarioItem"), p.get("valorTotalItem"),
+                    flag_ti, p.get("dataHoraPublicacaoPncp")
+                ))
+            if linhas:
+                persistir_em_todos_sgbds("fato_pca_to", ["id_pca_key"], cols_pca, linhas)
+            print(f"    [+] PCA {sigla} {ano}: {len(linhas)} itens planejados "
+                  f"({sum(l[24] for l in linhas)} de TI)", flush=True)
+            marcar_checkpoint(chave_cp, len(linhas))
 
 
 # ============================================================================
@@ -413,11 +500,17 @@ def executar_t2_coleta(
                     "tamanhoPagina": 500
                 }
             )
+            if lote is None:
+                print(f"    [X] TO {ano}-{mes:02d} (Mod {cod_mod}): falha na coleta, será repetida na próxima execução", flush=True)
+                continue
             linhas = formatar_linhas_contratacoes(lote, "TO_GERAL")
             if linhas:
                 persistir_em_todos_sgbds("fato_contratacoes", ["id_compra"], cols_contr, linhas)
                 print(f"    [+] TO {ano}-{mes:02d} (Mod {cod_mod}): {len(linhas)} compras", flush=True)
             marcar_checkpoint(chave_cp, len(linhas))
+
+    # 1.1 Plano de Contratações Anual (PCA) da UFT e do IFTO
+    coletar_pca_to(anos, classes_mat, grupos_serv)
 
     if apenas_to:
         print("    [*] Coleta restrita a TO finalizada.", flush=True)
@@ -453,6 +546,9 @@ def executar_t2_coleta(
                     "tamanhoPagina": 500
                 }
             )
+            if lote is None:
+                print(f"    [X] Material TI {ano}-{mes:02d} (Classe {cod_classe}): falha, será repetida", flush=True)
+                continue
             linhas = formatar_linhas_itens(lote)
             if linhas:
                 persistir_em_todos_sgbds("fato_itens_ti", ["id_compra_item"], cols_itens, linhas)
@@ -474,6 +570,9 @@ def executar_t2_coleta(
                     "tamanhoPagina": 500
                 }
             )
+            if lote is None:
+                print(f"    [X] Serviço TI {ano}-{mes:02d} (Grupo {cod_grupo}): falha, será repetida", flush=True)
+                continue
             linhas = formatar_linhas_itens(lote)
             if linhas:
                 persistir_em_todos_sgbds("fato_itens_ti", ["id_compra_item"], cols_itens, linhas)
@@ -483,13 +582,15 @@ def executar_t2_coleta(
     # 3. Compras-pai e Resultados Homologados de TI
     print("\n>>> [T2.3] Sincronizando Compras-Pai e Resultados Homologados...", flush=True)
     conn = db.get_sqlite_connection()
-    cur_missing = conn.execute("""
+    # Todas as compras que têm itens de TI: a compra-pai só é buscada se faltar,
+    # mas os resultados são buscados para todas (inclusive compras do TO já gravadas).
+    ids_faltantes = [r[0] for r in conn.execute("""
         SELECT DISTINCT i.id_compra
         FROM fato_itens_ti i
-        LEFT JOIN fato_contratacoes c ON i.id_compra = c.id_compra
-        WHERE c.id_compra IS NULL AND i.id_compra <> ''
-    """)
-    ids_faltantes = [r[0] for r in cur_missing.fetchall()]
+        WHERE i.id_compra <> ''
+    """).fetchall()]
+    ids_com_contratacao = {r[0] for r in conn.execute("SELECT id_compra FROM fato_contratacoes").fetchall()}
+    itens_ti = {r[0] for r in conn.execute("SELECT id_compra_item FROM fato_itens_ti").fetchall()}
     conn.close()
 
     cols_res = [
@@ -505,16 +606,17 @@ def executar_t2_coleta(
 
     for idx, id_comp in enumerate(ids_faltantes, 1):
         chave_cp = f"compra_id_{id_comp}"
-        if not tarefa_concluida(chave_cp):
+        if id_comp not in ids_com_contratacao and not tarefa_concluida(chave_cp):
             dados_c = requisitar_json(
                 "/modulo-contratacoes/1.1_consultarContratacoes_PNCP_14133_Id",
                 {"tipo": "idCompra", "codigo": id_comp}
             )
-            lote_c = dados_c.get("resultado") or []
-            linhas_c = formatar_linhas_contratacoes(lote_c, "BR_TI")
-            if linhas_c:
-                persistir_em_todos_sgbds("fato_contratacoes", ["id_compra"], cols_contr, linhas_c)
-            marcar_checkpoint(chave_cp, len(linhas_c))
+            if dados_c is not None:
+                lote_c = dados_c.get("resultado") or []
+                linhas_c = formatar_linhas_contratacoes(lote_c, "BR_TI")
+                if linhas_c:
+                    persistir_em_todos_sgbds("fato_contratacoes", ["id_compra"], cols_contr, linhas_c)
+                marcar_checkpoint(chave_cp, len(linhas_c))
 
         chave_res = f"res_id_{id_comp}"
         if not tarefa_concluida(chave_res):
@@ -522,14 +624,15 @@ def executar_t2_coleta(
                 "/modulo-contratacoes/3.1_consultarResultadoItensContratacoes_PNCP_14133_Id",
                 {"tipo": "idCompra", "codigo": id_comp}
             )
+            if dados_r is None:
+                continue  # falhou: tenta de novo na próxima execução
             linhas_r = []
             for r in (dados_r.get("resultado") or []):
                 id_it = str(r.get("idCompraItem") or "").strip()
                 seq = r.get("sequencialResultado") or 1
-                if not id_it:
-                    continue
-                porte = (r.get("porteFornecedorNome") or "").upper()
-                flag_me = 1 if ("ME" in porte or "EPP" in porte or r.get("aplicacaoBeneficioMeepp")) else 0
+                if not id_it or id_it not in itens_ti:
+                    continue  # guarda só resultados de itens de TI
+                flag_me = 1 if eh_me_epp(r.get("porteFornecedorNome")) else 0
                 sit_res = r.get("situacaoCompraItemResultadoNome") or ""
                 motivo_canc = r.get("motivoCancelamento")
                 flag_canc_sem_motivo = 1 if ("cancelado" in sit_res.lower() and not motivo_canc) else 0
@@ -563,13 +666,13 @@ def executar_t2_coleta(
         "ano_mes", "ano", "mes", "total_servicos", "total_requisicoes",
         "percentual_sucesso", "media_tempo_resposta_ms", "total_download_gb"
     ]
-    for ano in [2025, 2026]:
+    for ano in anos:
         dados_kpi = requisitar_json(
             "/modulo-indicadores/2_consultarIndicadoresPorPeriodo",
             {"ano": ano, "pagina": 1, "tamanhoPagina": 100}
         )
         linhas_kpi = []
-        for k in (dados_kpi.get("resultado") or []):
+        for k in ((dados_kpi or {}).get("resultado") or []):
             ano_mes = k.get("anoMes") or f"{k.get('ano')}-{int(k.get('mes', 1)):02d}"
             linhas_kpi.append((
                 ano_mes, k.get("ano"), k.get("mes"),
