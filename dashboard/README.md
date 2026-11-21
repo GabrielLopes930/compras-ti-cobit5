@@ -82,3 +82,16 @@ NODE_ENV=production npm start
 - **Atalhos de teclado:**
   - `Alt + →` / `Alt + ←` — Avançar ou retornar entre as visões.
   - `Alt + D` — Abrir ou fechar o modal de **Síntese e Diagnóstico** da visão atual.
+
+---
+
+## Deploy na Vercel
+
+O projeto já está pronto para a Vercel (`vercel.json` + `scripts/build-vercel.mjs`). O build gera o front-end estático e empacota a API Express (`/api/*`) como uma função serverless.
+
+1. Em **vercel.com → Add New → Project**, importe o repositório `compras-ti-cobit5`.
+2. Em **Root Directory**, escolha `dashboard`.
+3. Em **Environment Variables**, adicione `DATABASE_URL` com a connection string do Neon.
+4. Clique em **Deploy**.
+
+Sem `DATABASE_URL`, o dashboard continua funcionando com o snapshot verificado (`src/server/verifiedSnapshot.json`), mas os filtros não consultam o banco ao vivo.
