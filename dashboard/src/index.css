@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-sans: "Public Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-canvas: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-hairline: #E2E8F0;
+  --color-teal-gov: #0F6B72;
+  --color-teal-gov-dark: #0A5258;
+  --color-teal-gov-soft: #EBF5F6;
+  --color-orange-alert: #C85A17;
+  --color-orange-alert-soft: #FDF1E9;
+  --color-slate-ink: #0F172A;
+  --color-slate-body: #334155;
+  --color-slate-muted: #64748B;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--color-canvas);
+    color: var(--color-slate-ink);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom clean thin scrollbars for 16:9 projection */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}

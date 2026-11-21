@@ -1,0 +1,6 @@
+{
+  "name": "Governança de TI · Compras.gov.br (COBIT 5)",
+  "description": "Dashboard executivo de análise dos dados abertos de contratações de TI do Governo Federal (2025) sob a ótica dos 7 habilitadores do COBIT 5 e plano de melhoria com OKRs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

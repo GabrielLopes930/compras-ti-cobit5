@@ -1,0 +1,3391 @@
+{
+  "generatedAt": "2026-11-21T01:08:31.318Z",
+  "filters": {
+    "months": [
+      {
+        "value": "2025-01",
+        "label": "Jan/2025",
+        "count": 1591
+      },
+      {
+        "value": "2025-02",
+        "label": "Fev/2025",
+        "count": 2100
+      },
+      {
+        "value": "2025-03",
+        "label": "Mar/2025",
+        "count": 1947
+      },
+      {
+        "value": "2025-04",
+        "label": "Abr/2025",
+        "count": 2252
+      },
+      {
+        "value": "2025-05",
+        "label": "Mai/2025",
+        "count": 2424
+      },
+      {
+        "value": "2025-06",
+        "label": "Jun/2025",
+        "count": 2689
+      },
+      {
+        "value": "2025-07",
+        "label": "Jul/2025",
+        "count": 3265
+      },
+      {
+        "value": "2025-08",
+        "label": "Ago/2025",
+        "count": 3048
+      },
+      {
+        "value": "2025-09",
+        "label": "Set/2025",
+        "count": 3124
+      },
+      {
+        "value": "2025-10",
+        "label": "Out/2025",
+        "count": 3026
+      },
+      {
+        "value": "2025-11",
+        "label": "Nov/2025",
+        "count": 3097
+      },
+      {
+        "value": "2025-12",
+        "label": "Dez/2025",
+        "count": 2256
+      }
+    ],
+    "modalities": [
+      {
+        "value": "Pregão - Eletrônico",
+        "label": "Pregão - Eletrônico",
+        "count": 18210
+      },
+      {
+        "value": "Dispensa",
+        "label": "Dispensa",
+        "count": 10748
+      },
+      {
+        "value": "Inexigibilidade",
+        "label": "Inexigibilidade",
+        "count": 1859
+      },
+      {
+        "value": "Concorrência - Eletrônica",
+        "label": "Concorrência - Eletrônica",
+        "count": 2
+      }
+    ],
+    "organs": [
+      {
+        "value": "COMANDO DO EXERCITO",
+        "label": "COMANDO DO EXERCITO",
+        "count": 5961
+      },
+      {
+        "value": "COMANDO DA MARINHA",
+        "label": "COMANDO DA MARINHA",
+        "count": 3310
+      },
+      {
+        "value": "COMANDO DA AERONAUTICA",
+        "label": "COMANDO DA AERONAUTICA",
+        "count": 1210
+      },
+      {
+        "value": "TRIBUNAL SUPERIOR ELEITORAL",
+        "label": "TRIBUNAL SUPERIOR ELEITORAL",
+        "count": 803
+      },
+      {
+        "value": "MINISTERIO DA JUSTICA E SEGURANCA PUBLICA",
+        "label": "MINISTERIO DA JUSTICA E SEGURANCA PUBLICA",
+        "count": 631
+      },
+      {
+        "value": "TRIBUNAL SUPERIOR DO TRABALHO",
+        "label": "TRIBUNAL SUPERIOR DO TRABALHO",
+        "count": 545
+      },
+      {
+        "value": "BASE ADMINISTRATIVA DO QUARTEL-GENERAL DO EXERCITO",
+        "label": "BASE ADMINISTRATIVA DO QUARTEL-GENERAL DO EXERCITO",
+        "count": 452
+      },
+      {
+        "value": "JUSTICA FEDERAL DE PRIMEIRA INSTANCIA",
+        "label": "JUSTICA FEDERAL DE PRIMEIRA INSTANCIA",
+        "count": 432
+      },
+      {
+        "value": "MINISTERIO DA SAUDE",
+        "label": "MINISTERIO DA SAUDE",
+        "count": 309
+      },
+      {
+        "value": "FUNDACAO OSWALDO CRUZ",
+        "label": "FUNDACAO OSWALDO CRUZ",
+        "count": 302
+      },
+      {
+        "value": "SERVICO FEDERAL DE PROCESSAMENTO DE DADOS (SERPRO)",
+        "label": "SERVICO FEDERAL DE PROCESSAMENTO DE DADOS (SERPRO)",
+        "count": 290
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DO RIO DE JANEIRO",
+        "label": "UNIVERSIDADE FEDERAL DO RIO DE JANEIRO",
+        "count": 286
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DE MINAS GERAIS",
+        "label": "UNIVERSIDADE FEDERAL DE MINAS GERAIS",
+        "count": 285
+      },
+      {
+        "value": "MINISTERIO DA CIENCIA, TECNOLOGIA E INOVACOES",
+        "label": "MINISTERIO DA CIENCIA, TECNOLOGIA E INOVACOES",
+        "count": 278
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DE SANTA MARIA",
+        "label": "UNIVERSIDADE FEDERAL DE SANTA MARIA",
+        "count": 267
+      },
+      {
+        "value": "MINISTERIO PUBLICO DA UNIAO",
+        "label": "MINISTERIO PUBLICO DA UNIAO",
+        "count": 259
+      },
+      {
+        "value": "UNIVERSIDADE TECNOLOGICA FEDERAL DO PARANA",
+        "label": "UNIVERSIDADE TECNOLOGICA FEDERAL DO PARANA",
+        "count": 232
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DE SAO PAULO",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DE SAO PAULO",
+        "count": 231
+      },
+      {
+        "value": "FUNDACAO NACIONAL DO INDIO",
+        "label": "FUNDACAO NACIONAL DO INDIO",
+        "count": 218
+      },
+      {
+        "value": "MINISTERIO DA GESTAO E DA INOVACAO EM SERVICOS PUBLICOS",
+        "label": "MINISTERIO DA GESTAO E DA INOVACAO EM SERVICOS PUBLICOS",
+        "count": 215
+      },
+      {
+        "value": "EMPRESA BRASILEIRA DE PESQUISA AGROPECUARIA",
+        "label": "EMPRESA BRASILEIRA DE PESQUISA AGROPECUARIA",
+        "count": 190
+      },
+      {
+        "value": "FUNDACAO INSTIT BRAS DE GEOGRAFIA E ESTATISTICA IBGE",
+        "label": "FUNDACAO INSTIT BRAS DE GEOGRAFIA E ESTATISTICA IBGE",
+        "count": 186
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DO PARA",
+        "label": "UNIVERSIDADE FEDERAL DO PARA",
+        "count": 185
+      },
+      {
+        "value": "INSTITUTO NACIONAL DO SEGURO SOCIAL",
+        "label": "INSTITUTO NACIONAL DO SEGURO SOCIAL",
+        "count": 176
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA FARROUPILHA",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA FARROUPILHA",
+        "count": 153
+      },
+      {
+        "value": "CENTRO FED DE ED TECNOLOGICA CELSO SUCKOW DA FONSECA RJ",
+        "label": "CENTRO FED DE ED TECNOLOGICA CELSO SUCKOW DA FONSECA RJ",
+        "count": 152
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DE GOIAS",
+        "label": "UNIVERSIDADE FEDERAL DE GOIAS",
+        "count": 151
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO CIENCIA E TECNOLOGIA CATARINENSE",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO CIENCIA E TECNOLOGIA CATARINENSE",
+        "count": 145
+      },
+      {
+        "value": "CONSELHO REGIONAL DE MEDICINA DO RIO GRANDE DO SUL",
+        "label": "CONSELHO REGIONAL DE MEDICINA DO RIO GRANDE DO SUL",
+        "count": 143
+      },
+      {
+        "value": "FUNDACAO UNIVERSIDADE FEDERAL DO ACRE",
+        "label": "FUNDACAO UNIVERSIDADE FEDERAL DO ACRE",
+        "count": 143
+      },
+      {
+        "value": "COMISSAO NACIONAL DE ENERGIA NUCLEAR",
+        "label": "COMISSAO NACIONAL DE ENERGIA NUCLEAR",
+        "count": 139
+      },
+      {
+        "value": "COLEGIO PEDRO II",
+        "label": "COLEGIO PEDRO II",
+        "count": 138
+      },
+      {
+        "value": "MINISTERIO DA DEFESA",
+        "label": "MINISTERIO DA DEFESA",
+        "count": 136
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO PARANA",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO PARANA",
+        "count": 135
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL FLUMINENSE",
+        "label": "UNIVERSIDADE FEDERAL FLUMINENSE",
+        "count": 126
+      },
+      {
+        "value": "DNIT-DEPARTAMENTO NACIONAL DE INFRAEST DE TRANSPORTES",
+        "label": "DNIT-DEPARTAMENTO NACIONAL DE INFRAEST DE TRANSPORTES",
+        "count": 117
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO SUL DE MINAS GERAIS",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO SUL DE MINAS GERAIS",
+        "count": 117
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DE JUIZ DE FORA UFJF",
+        "label": "UNIVERSIDADE FEDERAL DE JUIZ DE FORA UFJF",
+        "count": 115
+      },
+      {
+        "value": "MINISTERIO DA FAZENDA",
+        "label": "MINISTERIO DA FAZENDA",
+        "count": 114
+      },
+      {
+        "value": "PRESIDENCIA DA REPUBLICA",
+        "label": "PRESIDENCIA DA REPUBLICA",
+        "count": 110
+      },
+      {
+        "value": "MINISTERIO DA EDUCACAO",
+        "label": "MINISTERIO DA EDUCACAO",
+        "count": 110
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DE ALFENAS - UNIFAL-MG",
+        "label": "UNIVERSIDADE FEDERAL DE ALFENAS - UNIFAL-MG",
+        "count": 110
+      },
+      {
+        "value": "COMPANHIA DE DESENV. DO VALE DO SAO FRANCISCO",
+        "label": "COMPANHIA DE DESENV. DO VALE DO SAO FRANCISCO",
+        "count": 109
+      },
+      {
+        "value": "CONSELHO FEDERAL DE ENFERMAGEM COFEN",
+        "label": "CONSELHO FEDERAL DE ENFERMAGEM COFEN",
+        "count": 107
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ADMINISTRACAO DO DF",
+        "label": "CONSELHO REGIONAL DE ADMINISTRACAO DO DF",
+        "count": 106
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA SUL-RIO-GRANDENSE - RS",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA SUL-RIO-GRANDENSE - RS",
+        "count": 103
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO,CIENCIA E TECNOLOGIA DE RONDONIA",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO,CIENCIA E TECNOLOGIA DE RONDONIA",
+        "count": 102
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DO PARANA",
+        "label": "UNIVERSIDADE FEDERAL DO PARANA",
+        "count": 100
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DA BAHIA",
+        "label": "UNIVERSIDADE FEDERAL DA BAHIA",
+        "count": 98
+      },
+      {
+        "value": "MINISTERIO DAS RELACOES EXTERIORES",
+        "label": "MINISTERIO DAS RELACOES EXTERIORES",
+        "count": 95
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DE ITAJUBA",
+        "label": "UNIVERSIDADE FEDERAL DE ITAJUBA",
+        "count": 93
+      },
+      {
+        "value": "FUNDACAO UNIVERSIDADE FEDERAL DE MATO GROSSO DO SUL",
+        "label": "FUNDACAO UNIVERSIDADE FEDERAL DE MATO GROSSO DO SUL",
+        "count": 91
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DE VICOSA",
+        "label": "UNIVERSIDADE FEDERAL DE VICOSA",
+        "count": 91
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO CIENCIA E TECNOLOGIA DO ESPIRITO SANTO",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO CIENCIA E TECNOLOGIA DO ESPIRITO SANTO",
+        "count": 91
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA GOIANO",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA GOIANO",
+        "count": 91
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DE MINAS GERAIS",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DE MINAS GERAIS",
+        "count": 90
+      },
+      {
+        "value": "CAMARA DOS DEPUTADOS",
+        "label": "CAMARA DOS DEPUTADOS",
+        "count": 89
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DE BRASILIA",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DE BRASILIA",
+        "count": 88
+      },
+      {
+        "value": "EMPRESA BRASILEIRA DE SERVIÇOS HOSPITALARES",
+        "label": "EMPRESA BRASILEIRA DE SERVIÇOS HOSPITALARES",
+        "count": 87
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA BAIANO",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA BAIANO",
+        "count": 77
+      },
+      {
+        "value": "INST. NAC. COLON. REFORMA AGRARIA - INCRA",
+        "label": "INST. NAC. COLON. REFORMA AGRARIA - INCRA",
+        "count": 76
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DA PARAIBA",
+        "label": "UNIVERSIDADE FEDERAL DA PARAIBA",
+        "count": 75
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO SUDESTE DE MINAS GERAIS",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO SUDESTE DE MINAS GERAIS",
+        "count": 75
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DE MATO GROSSO",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DE MATO GROSSO",
+        "count": 73
+      },
+      {
+        "value": "SENADO FEDERAL",
+        "label": "SENADO FEDERAL",
+        "count": 73
+      },
+      {
+        "value": "CONSELHO REGIONAL DE EDUCACAO FISICA - CREF3/SC",
+        "label": "CONSELHO REGIONAL DE EDUCACAO FISICA - CREF3/SC",
+        "count": 71
+      },
+      {
+        "value": "COMPANHIA DE PESQUISA DE RECURSOS MINERAIS",
+        "label": "COMPANHIA DE PESQUISA DE RECURSOS MINERAIS",
+        "count": 70
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DE SANTA CATARINA",
+        "label": "UNIVERSIDADE FEDERAL DE SANTA CATARINA",
+        "count": 69
+      },
+      {
+        "value": "FUNDACAO UNIVERSIDADE DO AMAZONAS",
+        "label": "FUNDACAO UNIVERSIDADE DO AMAZONAS",
+        "count": 68
+      },
+      {
+        "value": "INSTITUTO BRASILEIRO DO MEIO AMBIENTE E DOS RECURSOS NATURAIS RENOVAVEIS-IBAMA",
+        "label": "INSTITUTO BRASILEIRO DO MEIO AMBIENTE E DOS RECURSOS NATURAIS RENOVAVEIS-IBAMA",
+        "count": 68
+      },
+      {
+        "value": "SUPERIOR TRIBUNAL DE JUSTICA",
+        "label": "SUPERIOR TRIBUNAL DE JUSTICA",
+        "count": 68
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DE CAMPINA GRANDE",
+        "label": "UNIVERSIDADE FEDERAL DE CAMPINA GRANDE",
+        "count": 68
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DE SANTA CATARINA",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DE SANTA CATARINA",
+        "count": 67
+      },
+      {
+        "value": "CONSELHO REGIONAL DE PSICOLOGIA DA 6 REGIAO - CRP-06",
+        "label": "CONSELHO REGIONAL DE PSICOLOGIA DA 6 REGIAO - CRP-06",
+        "count": 67
+      },
+      {
+        "value": "ADVOCACIA GERAL DA UNIAO",
+        "label": "ADVOCACIA GERAL DA UNIAO",
+        "count": 66
+      },
+      {
+        "value": "SUPREMO TRIBUNAL FEDERAL",
+        "label": "SUPREMO TRIBUNAL FEDERAL",
+        "count": 64
+      },
+      {
+        "value": "MINISTERIO DA AGRICULTURA, PECUARIA E ABASTECIMENTO",
+        "label": "MINISTERIO DA AGRICULTURA, PECUARIA E ABASTECIMENTO",
+        "count": 64
+      },
+      {
+        "value": "MINISTERIO DO TRABALHO",
+        "label": "MINISTERIO DO TRABALHO",
+        "count": 64
+      },
+      {
+        "value": "COMPANHIA NACIONAL DE ABASTECIMENTO",
+        "label": "COMPANHIA NACIONAL DE ABASTECIMENTO",
+        "count": 63
+      },
+      {
+        "value": "AGENCIA NACIONAL DO PETROLEO, GAS NATURAL E BIOCOMBUSTIVEIS",
+        "label": "AGENCIA NACIONAL DO PETROLEO, GAS NATURAL E BIOCOMBUSTIVEIS",
+        "count": 63
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO MARANHAO",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO MARANHAO",
+        "count": 62
+      },
+      {
+        "value": "CONSELHO REGIONAL DOS TECNICOS INDUSTRIAIS DA 4 REGIAO - CRT-04",
+        "label": "CONSELHO REGIONAL DOS TECNICOS INDUSTRIAIS DA 4 REGIAO - CRT-04",
+        "count": 62
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DE ALAGOAS",
+        "label": "UNIVERSIDADE FEDERAL DE ALAGOAS",
+        "count": 61
+      },
+      {
+        "value": "AGENCIA NACIONAL DE TELECOMUNICACOES",
+        "label": "AGENCIA NACIONAL DE TELECOMUNICACOES",
+        "count": 61
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DA BAHIA",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DA BAHIA",
+        "count": 61
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DE PERNAMBUCO",
+        "label": "UNIVERSIDADE FEDERAL DE PERNAMBUCO",
+        "count": 61
+      },
+      {
+        "value": "COMPANHIA BRASILEIRA DE TRENS URBANOS",
+        "label": "COMPANHIA BRASILEIRA DE TRENS URBANOS",
+        "count": 60
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DO TRIANGULO MINEIRO",
+        "label": "UNIVERSIDADE FEDERAL DO TRIANGULO MINEIRO",
+        "count": 60
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DA BAHIA",
+        "label": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DA BAHIA",
+        "count": 59
+      },
+      {
+        "value": "TRIBUNAL REGIONAL FEDERAL DA 6A REGIAO",
+        "label": "TRIBUNAL REGIONAL FEDERAL DA 6A REGIAO",
+        "count": 59
+      },
+      {
+        "value": "AGENCIA NACIONAL DO CINEMA",
+        "label": "AGENCIA NACIONAL DO CINEMA",
+        "count": 58
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DO RIO GRANDE DO SUL",
+        "label": "UNIVERSIDADE FEDERAL DO RIO GRANDE DO SUL",
+        "count": 58
+      },
+      {
+        "value": "MINISTERIO DO DESENVOLVIMENTO REGIONAL",
+        "label": "MINISTERIO DO DESENVOLVIMENTO REGIONAL",
+        "count": 57
+      },
+      {
+        "value": "INSTITUTO NACIONAL DE METROLOGIA, QUALIDADE E TECNOLOGIA - INMETRO.",
+        "label": "INSTITUTO NACIONAL DE METROLOGIA, QUALIDADE E TECNOLOGIA - INMETRO.",
+        "count": 57
+      },
+      {
+        "value": "CONSELHO REGIONAL DE MEDICINA DO ESTADO DE SAO PAULO",
+        "label": "CONSELHO REGIONAL DE MEDICINA DO ESTADO DE SAO PAULO",
+        "count": 55
+      },
+      {
+        "value": "FUNDACAO BIBLIOTECA NACIONAL",
+        "label": "FUNDACAO BIBLIOTECA NACIONAL",
+        "count": 55
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DE SERGIPE",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DE SERGIPE",
+        "count": 54
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DE LAVRAS",
+        "label": "UNIVERSIDADE FEDERAL DE LAVRAS",
+        "count": 54
+      },
+      {
+        "value": "CONSELHO FEDERAL DE ENGENHARIA E AGRONOMIA",
+        "label": "CONSELHO FEDERAL DE ENGENHARIA E AGRONOMIA",
+        "count": 53
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DOS VALES DO JEQUITINHONHA E MUCURI",
+        "label": "UNIVERSIDADE FEDERAL DOS VALES DO JEQUITINHONHA E MUCURI",
+        "count": 53
+      },
+      {
+        "value": "FUNDO NACIONAL DE DESENVOLVIMENTO DA EDUCACAO",
+        "label": "FUNDO NACIONAL DE DESENVOLVIMENTO DA EDUCACAO",
+        "count": 53
+      },
+      {
+        "value": "FUNDACAO UNIVERSIDADE FEDERAL DO MARANHAO",
+        "label": "FUNDACAO UNIVERSIDADE FEDERAL DO MARANHAO",
+        "count": 53
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DO ESPIRITO SANTO",
+        "label": "UNIVERSIDADE FEDERAL DO ESPIRITO SANTO",
+        "count": 50
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO AMAPA",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO AMAPA",
+        "count": 48
+      },
+      {
+        "value": "CONSELHO FEDERAL DE PSICOLOGIA",
+        "label": "CONSELHO FEDERAL DE PSICOLOGIA",
+        "count": 47
+      },
+      {
+        "value": "FUNDACAO UNIVERSIDADE FEDERAL DO ABC - UFABC",
+        "label": "FUNDACAO UNIVERSIDADE FEDERAL DO ABC - UFABC",
+        "count": 47
+      },
+      {
+        "value": "SUPERIOR TRIBUNAL MILITAR",
+        "label": "SUPERIOR TRIBUNAL MILITAR",
+        "count": 46
+      },
+      {
+        "value": "AGENCIA NACIONAL DE AVIACAO CIVIL - ANAC",
+        "label": "AGENCIA NACIONAL DE AVIACAO CIVIL - ANAC",
+        "count": 46
+      },
+      {
+        "value": "TRIBUNAL REGIONAL FEDERAL DA 2 REGIAO",
+        "label": "TRIBUNAL REGIONAL FEDERAL DA 2 REGIAO",
+        "count": 46
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO PIAUI",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO PIAUI",
+        "count": 45
+      },
+      {
+        "value": "FUNDACAO UNIVERSIDADE FEDERAL DO VALE DO SAO FRANCISCO",
+        "label": "FUNDACAO UNIVERSIDADE FEDERAL DO VALE DO SAO FRANCISCO",
+        "count": 44
+      },
+      {
+        "value": "DEFENSORIA PUBLICA DA UNIAO",
+        "label": "DEFENSORIA PUBLICA DA UNIAO",
+        "count": 44
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DO RIO GRANDE DO NORTE",
+        "label": "UNIVERSIDADE FEDERAL DO RIO GRANDE DO NORTE",
+        "count": 43
+      },
+      {
+        "value": "CONSELHO NACIONAL DE JUSTICA",
+        "label": "CONSELHO NACIONAL DE JUSTICA",
+        "count": 42
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA FLUMINENSE.",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA FLUMINENSE.",
+        "count": 42
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO SERTAO PERNAMBUCANO",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO SERTAO PERNAMBUCANO",
+        "count": 42
+      },
+      {
+        "value": "TRIBUNAL REGIONAL FEDERAL 3 REGIAO",
+        "label": "TRIBUNAL REGIONAL FEDERAL 3 REGIAO",
+        "count": 41
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DA INTEGRACAO LATINO-AMERICANA",
+        "label": "UNIVERSIDADE FEDERAL DA INTEGRACAO LATINO-AMERICANA",
+        "count": 41
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO RIO GRANDE DO NORTE",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO RIO GRANDE DO NORTE",
+        "count": 41
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ODONTOLOGIA DE MINAS GERAIS",
+        "label": "CONSELHO REGIONAL DE ODONTOLOGIA DE MINAS GERAIS",
+        "count": 41
+      },
+      {
+        "value": "AGENCIA NACIONAL DE ENERGIA ELETRICA - ANEEL",
+        "label": "AGENCIA NACIONAL DE ENERGIA ELETRICA - ANEEL",
+        "count": 41
+      },
+      {
+        "value": "CONSELHO REGIONAL DE BIOMEDICINA - 5A. REGIAO",
+        "label": "CONSELHO REGIONAL DE BIOMEDICINA - 5A. REGIAO",
+        "count": 41
+      },
+      {
+        "value": "CONSELHO REGIONAL DE MEDICINA DO PARANA",
+        "label": "CONSELHO REGIONAL DE MEDICINA DO PARANA",
+        "count": 41
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DE SAO JOAO DEL-REI",
+        "label": "UNIVERSIDADE FEDERAL DE SAO JOAO DEL-REI",
+        "count": 41
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO RIO GRANDE DO SUL",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO RIO GRANDE DO SUL",
+        "count": 40
+      },
+      {
+        "value": "CONSELHO FEDERAL DE MEDICINA",
+        "label": "CONSELHO FEDERAL DE MEDICINA",
+        "count": 40
+      },
+      {
+        "value": "CONSELHO REGIONAL DE CONTABILIDADE DE MINAS GERAIS",
+        "label": "CONSELHO REGIONAL DE CONTABILIDADE DE MINAS GERAIS",
+        "count": 40
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO CEARA",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO CEARA",
+        "count": 40
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DO PA",
+        "label": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DO PA",
+        "count": 39
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENFERMAGEM DE PERNAMBUCO COREN PE",
+        "label": "CONSELHO REGIONAL DE ENFERMAGEM DE PERNAMBUCO COREN PE",
+        "count": 39
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DE SAO PAULO",
+        "label": "UNIVERSIDADE FEDERAL DE SAO PAULO",
+        "count": 39
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DE GOIAS",
+        "label": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DE GOIAS",
+        "count": 39
+      },
+      {
+        "value": "SUPERINTENDENCIA DA ZONA FRANCA DE MANAUS",
+        "label": "SUPERINTENDENCIA DA ZONA FRANCA DE MANAUS",
+        "count": 38
+      },
+      {
+        "value": "CONSELHO REGIONAL DE CORRETORES DE IMOVEIS DA 2 REGIAO",
+        "label": "CONSELHO REGIONAL DE CORRETORES DE IMOVEIS DA 2 REGIAO",
+        "count": 38
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DE MATO GROSSO DO SUL",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DE MATO GROSSO DO SUL",
+        "count": 37
+      },
+      {
+        "value": "INSTITUTO DO PATRIMONIO HISTORICO E ARTISTICO NACIONAL",
+        "label": "INSTITUTO DO PATRIMONIO HISTORICO E ARTISTICO NACIONAL",
+        "count": 37
+      },
+      {
+        "value": "CONSELHO REGIONAL DOS CORRETORES DE IMOVEIS DE SC",
+        "label": "CONSELHO REGIONAL DOS CORRETORES DE IMOVEIS DE SC",
+        "count": 37
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DE PELOTAS",
+        "label": "UNIVERSIDADE FEDERAL DE PELOTAS",
+        "count": 37
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL RURAL DE PERNAMBUCO",
+        "label": "UNIVERSIDADE FEDERAL RURAL DE PERNAMBUCO",
+        "count": 36
+      },
+      {
+        "value": "AGENCIA NACIONAL DE SAUDE SUPLEMENTAR",
+        "label": "AGENCIA NACIONAL DE SAUDE SUPLEMENTAR",
+        "count": 36
+      },
+      {
+        "value": "FUNDACAO UNIVERSIDADE FEDERAL DE SAO CARLOS",
+        "label": "FUNDACAO UNIVERSIDADE FEDERAL DE SAO CARLOS",
+        "count": 36
+      },
+      {
+        "value": "CONSELHO REGIONAL DE FARMACIA DE SANTA CATARINA",
+        "label": "CONSELHO REGIONAL DE FARMACIA DE SANTA CATARINA",
+        "count": 36
+      },
+      {
+        "value": "TRIBUNAL DE JUSTICA DO DISTRITO FEDERAL E DOS TERRITORIOS",
+        "label": "TRIBUNAL DE JUSTICA DO DISTRITO FEDERAL E DOS TERRITORIOS",
+        "count": 35
+      },
+      {
+        "value": "INSTITUTO NACIONAL DE ESTUDOS E PESQUISAS EDUCACIONAIS ANISIO TEIXEIRA",
+        "label": "INSTITUTO NACIONAL DE ESTUDOS E PESQUISAS EDUCACIONAIS ANISIO TEIXEIRA",
+        "count": 35
+      },
+      {
+        "value": "MINISTERIO DAS COMUNICACOES",
+        "label": "MINISTERIO DAS COMUNICACOES",
+        "count": 35
+      },
+      {
+        "value": "CONSELHO REGIONAL DE FARMACIA DO ESTADO DE PERNAMBUCO",
+        "label": "CONSELHO REGIONAL DE FARMACIA DO ESTADO DE PERNAMBUCO",
+        "count": 35
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENFERMAGEM DO RIO GRANDE DO SUL",
+        "label": "CONSELHO REGIONAL DE ENFERMAGEM DO RIO GRANDE DO SUL",
+        "count": 35
+      },
+      {
+        "value": "CONSELHO REGIONAL DE FARMACIA DO ESTADO DE RONDONIA",
+        "label": "CONSELHO REGIONAL DE FARMACIA DO ESTADO DE RONDONIA",
+        "count": 33
+      },
+      {
+        "value": "CONSELHO REGIONAL DOS CORRETORES DE IMOVEIS 4 REGIAO",
+        "label": "CONSELHO REGIONAL DOS CORRETORES DE IMOVEIS 4 REGIAO",
+        "count": 33
+      },
+      {
+        "value": "AGENCIA NACIONAL DE VIGILANCIA SANITARIA",
+        "label": "AGENCIA NACIONAL DE VIGILANCIA SANITARIA",
+        "count": 33
+      },
+      {
+        "value": "CONSELHO ADMINISTRATIVO DE DEFESA ECONOMICA-CADE",
+        "label": "CONSELHO ADMINISTRATIVO DE DEFESA ECONOMICA-CADE",
+        "count": 33
+      },
+      {
+        "value": "AGENCIA NACIONAL DE TRANSPORTES TERRESTRES - ANTT",
+        "label": "AGENCIA NACIONAL DE TRANSPORTES TERRESTRES - ANTT",
+        "count": 33
+      },
+      {
+        "value": "INSTITUTO CHICO MENDES DE CONSERVACAO DA BIODIVERSIDADE",
+        "label": "INSTITUTO CHICO MENDES DE CONSERVACAO DA BIODIVERSIDADE",
+        "count": 32
+      },
+      {
+        "value": "CONSELHO REGIONAL DE PSICOLOGIA SETIMA REGIAO",
+        "label": "CONSELHO REGIONAL DE PSICOLOGIA SETIMA REGIAO",
+        "count": 32
+      },
+      {
+        "value": "CASA DA MOEDA DO BRASIL",
+        "label": "CASA DA MOEDA DO BRASIL",
+        "count": 31
+      },
+      {
+        "value": "AGENCIA NACIONAL DE AGUAS E SANEAMENTO BASICO (ANA)",
+        "label": "AGENCIA NACIONAL DE AGUAS E SANEAMENTO BASICO (ANA)",
+        "count": 31
+      },
+      {
+        "value": "CONSELHO REGIONAL DE CONTABILIDADE DO PARANA",
+        "label": "CONSELHO REGIONAL DE CONTABILIDADE DO PARANA",
+        "count": 31
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENFERMAGEM DE MINAS GERAIS",
+        "label": "CONSELHO REGIONAL DE ENFERMAGEM DE MINAS GERAIS",
+        "count": 31
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DO RIO DE JANEIRO",
+        "label": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DO RIO DE JANEIRO",
+        "count": 30
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENFERMAGEM DE SAO PAULO",
+        "label": "CONSELHO REGIONAL DE ENFERMAGEM DE SAO PAULO",
+        "count": 30
+      },
+      {
+        "value": "FUNDACAO UNIVERSIDADE FEDERAL DE CIENCIAS DA SAUDE DE PORTO ALEGRE",
+        "label": "FUNDACAO UNIVERSIDADE FEDERAL DE CIENCIAS DA SAUDE DE PORTO ALEGRE",
+        "count": 30
+      },
+      {
+        "value": "MINISTERIO DA CIDADANIA",
+        "label": "MINISTERIO DA CIDADANIA",
+        "count": 30
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DO SUL E SUDESTE DO PARA - UNIFESSPA",
+        "label": "UNIVERSIDADE FEDERAL DO SUL E SUDESTE DO PARA - UNIFESSPA",
+        "count": 30
+      },
+      {
+        "value": "FUNDACAO UNIVERSIDADE FEDERAL DO PAMPA - UNIPAMPA",
+        "label": "FUNDACAO UNIVERSIDADE FEDERAL DO PAMPA - UNIPAMPA",
+        "count": 29
+      },
+      {
+        "value": "FUNDACAO UNIVERSIDADE FEDERAL DE MATO GROSSO",
+        "label": "FUNDACAO UNIVERSIDADE FEDERAL DE MATO GROSSO",
+        "count": 29
+      },
+      {
+        "value": "CONSELHO REGIONAL DE QUIMICA DA 9A REGIAO",
+        "label": "CONSELHO REGIONAL DE QUIMICA DA 9A REGIAO",
+        "count": 29
+      },
+      {
+        "value": "CENTRO NACIONAL DE TEC ELETRONICA AVANçADA SA",
+        "label": "CENTRO NACIONAL DE TEC ELETRONICA AVANçADA SA",
+        "count": 29
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DO DELTA DO PARNAIBA - UFDPAR",
+        "label": "UNIVERSIDADE FEDERAL DO DELTA DO PARNAIBA - UFDPAR",
+        "count": 29
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DO ESTADO DE RONDONIA",
+        "label": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DO ESTADO DE RONDONIA",
+        "count": 29
+      },
+      {
+        "value": "INSTITUTO NACIONAL DE TECNOLOGIA DA INFORMACAO",
+        "label": "INSTITUTO NACIONAL DE TECNOLOGIA DA INFORMACAO",
+        "count": 28
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO RIO DE JANEIRO",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO RIO DE JANEIRO",
+        "count": 28
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DO ESTADO DO AMAZONAS",
+        "label": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DO ESTADO DO AMAZONAS",
+        "count": 28
+      },
+      {
+        "value": "CONSELHO REGIONAL DOS TECNICOS INDUSTRIAIS DO RIO GRANDE DO SUL",
+        "label": "CONSELHO REGIONAL DOS TECNICOS INDUSTRIAIS DO RIO GRANDE DO SUL",
+        "count": 28
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DO SUL DA BAHIA",
+        "label": "UNIVERSIDADE FEDERAL DO SUL DA BAHIA",
+        "count": 27
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO TRIANGULO MINEIRO",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO TRIANGULO MINEIRO",
+        "count": 27
+      },
+      {
+        "value": "MINISTERIO DA CULTURA",
+        "label": "MINISTERIO DA CULTURA",
+        "count": 27
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DE GOIAS",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DE GOIAS",
+        "count": 27
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DE UBERLANDIA",
+        "label": "UNIVERSIDADE FEDERAL DE UBERLANDIA",
+        "count": 27
+      },
+      {
+        "value": "BANCO CENTRAL DO BRASIL",
+        "label": "BANCO CENTRAL DO BRASIL",
+        "count": 27
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENFERMAGEM DA BAHIA",
+        "label": "CONSELHO REGIONAL DE ENFERMAGEM DA BAHIA",
+        "count": 27
+      },
+      {
+        "value": "CONSELHO REGIONAL DOS TECNICOS INDUSTRIAIS DO ESTADO DO RIO DE JANEIRO - CRT-RJ",
+        "label": "CONSELHO REGIONAL DOS TECNICOS INDUSTRIAIS DO ESTADO DO RIO DE JANEIRO - CRT-RJ",
+        "count": 26
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DO CEARA",
+        "label": "UNIVERSIDADE FEDERAL DO CEARA",
+        "count": 26
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO NORTE DE MINAS GERAIS",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO NORTE DE MINAS GERAIS",
+        "count": 26
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO,CIENCIA E TECNOLOGIA DO PARA",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO,CIENCIA E TECNOLOGIA DO PARA",
+        "count": 26
+      },
+      {
+        "value": "CONSELHO REGIONAL DE SERVICO SOCIAL 6 REGIAO",
+        "label": "CONSELHO REGIONAL DE SERVICO SOCIAL 6 REGIAO",
+        "count": 26
+      },
+      {
+        "value": "CONSELHO FEDERAL DE CORRETORES DE IMOVEIS",
+        "label": "CONSELHO FEDERAL DE CORRETORES DE IMOVEIS",
+        "count": 26
+      },
+      {
+        "value": "CONS REG DE FISIOTERAPIA E TERAPIA OCUPAC DA 2 REGIAO",
+        "label": "CONS REG DE FISIOTERAPIA E TERAPIA OCUPAC DA 2 REGIAO",
+        "count": 25
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DA PARAIBA - CREA-PB",
+        "label": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DA PARAIBA - CREA-PB",
+        "count": 25
+      },
+      {
+        "value": "FUND COORD DE APERFEICOAMENTO DE PESSOAL DE NIVEL SUP",
+        "label": "FUND COORD DE APERFEICOAMENTO DE PESSOAL DE NIVEL SUP",
+        "count": 25
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENFERMAGEM DO AMAZONAS",
+        "label": "CONSELHO REGIONAL DE ENFERMAGEM DO AMAZONAS",
+        "count": 25
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DO ESTADO DO TOCANTINS",
+        "label": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DO ESTADO DO TOCANTINS",
+        "count": 25
+      },
+      {
+        "value": "CONSELHO REGIONAL DOS TECNICOS INDUSTRIAIS DA BAHIA - CRT-BA",
+        "label": "CONSELHO REGIONAL DOS TECNICOS INDUSTRIAIS DA BAHIA - CRT-BA",
+        "count": 25
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DO ESTADO DO RIO DE JANEIRO",
+        "label": "UNIVERSIDADE FEDERAL DO ESTADO DO RIO DE JANEIRO",
+        "count": 25
+      },
+      {
+        "value": "CONSELHO FEDERAL DE BIOLOGIA",
+        "label": "CONSELHO FEDERAL DE BIOLOGIA",
+        "count": 24
+      },
+      {
+        "value": "CONS REG DOS REPRES COMERCIAIS DO ESTADO DE SAO PAULO",
+        "label": "CONS REG DOS REPRES COMERCIAIS DO ESTADO DE SAO PAULO",
+        "count": 24
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DO PARANA",
+        "label": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DO PARANA",
+        "count": 24
+      },
+      {
+        "value": "CONSELHO REGIONAL DE MEDICINA DO MARANHAO",
+        "label": "CONSELHO REGIONAL DE MEDICINA DO MARANHAO",
+        "count": 24
+      },
+      {
+        "value": "CONSELHO REGIONAL DOS REPRESENTANTES COMERCIAIS NO ESTADO DO ESPIRITO SANTO",
+        "label": "CONSELHO REGIONAL DOS REPRESENTANTES COMERCIAIS NO ESTADO DO ESPIRITO SANTO",
+        "count": 24
+      },
+      {
+        "value": "FUNDACAO UNIVERSIDADE FEDERAL DA GRANDE DOURADOS",
+        "label": "FUNDACAO UNIVERSIDADE FEDERAL DA GRANDE DOURADOS",
+        "count": 24
+      },
+      {
+        "value": "CONTROLADORIA-GERAL DA UNIAO",
+        "label": "CONTROLADORIA-GERAL DA UNIAO",
+        "count": 24
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DA PARAIBA",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DA PARAIBA",
+        "count": 24
+      },
+      {
+        "value": "FUNDACAO JOAQUIM NABUCO FUNDAJ",
+        "label": "FUNDACAO JOAQUIM NABUCO FUNDAJ",
+        "count": 24
+      },
+      {
+        "value": "COMISSAO DE VALORES MOBILIARIOS",
+        "label": "COMISSAO DE VALORES MOBILIARIOS",
+        "count": 24
+      },
+      {
+        "value": "CONSELHO FEDERAL DE FISIOTERAPIA E TERAPIA OCUPACIONAL",
+        "label": "CONSELHO FEDERAL DE FISIOTERAPIA E TERAPIA OCUPACIONAL",
+        "count": 23
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL RURAL DO SEMI-ARIDO - UFERSA",
+        "label": "UNIVERSIDADE FEDERAL RURAL DO SEMI-ARIDO - UFERSA",
+        "count": 23
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DE ALAGOAS - IF/AL",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DE ALAGOAS - IF/AL",
+        "count": 23
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DE MINAS GERAIS",
+        "label": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DE MINAS GERAIS",
+        "count": 23
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DO ES",
+        "label": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DO ES",
+        "count": 23
+      },
+      {
+        "value": "CONSELHO REGIONAL DE MEDICINA DO ESTADO DE PERNAMBUCO",
+        "label": "CONSELHO REGIONAL DE MEDICINA DO ESTADO DE PERNAMBUCO",
+        "count": 23
+      },
+      {
+        "value": "CONSELHO REGIONAL DOS REP COMERC NO EST DO R DE JANEIRO",
+        "label": "CONSELHO REGIONAL DOS REP COMERC NO EST DO R DE JANEIRO",
+        "count": 23
+      },
+      {
+        "value": "AUDITORIAS DA JUSTICA MILITAR",
+        "label": "AUDITORIAS DA JUSTICA MILITAR",
+        "count": 23
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DO RIO GRANDE DO NORTE - CREA/RN",
+        "label": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DO RIO GRANDE DO NORTE - CREA/RN",
+        "count": 23
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DO RECONCAVO DA BAHIA - UFRB",
+        "label": "UNIVERSIDADE FEDERAL DO RECONCAVO DA BAHIA - UFRB",
+        "count": 22
+      },
+      {
+        "value": "UNIVERSIDADE DA INTEGRACAO INTERNACIONAL DA LUSOFONIA AFRO-BRASILEIRA",
+        "label": "UNIVERSIDADE DA INTEGRACAO INTERNACIONAL DA LUSOFONIA AFRO-BRASILEIRA",
+        "count": 22
+      },
+      {
+        "value": "CONSELHO REGIONAL DE FARMACIA",
+        "label": "CONSELHO REGIONAL DE FARMACIA",
+        "count": 22
+      },
+      {
+        "value": "CONSELHO REGIONAL DE QUIMICA TERCEIRA REGIAO",
+        "label": "CONSELHO REGIONAL DE QUIMICA TERCEIRA REGIAO",
+        "count": 22
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DO OESTE DA BAHIA",
+        "label": "UNIVERSIDADE FEDERAL DO OESTE DA BAHIA",
+        "count": 22
+      },
+      {
+        "value": "CONSELHO REGIONAL DE FISIOTERAPIA E TERAPIA OCUPACIONAL DA 4 REGIAO",
+        "label": "CONSELHO REGIONAL DE FISIOTERAPIA E TERAPIA OCUPACIONAL DA 4 REGIAO",
+        "count": 22
+      },
+      {
+        "value": "CONSELHO REGIONAL DE PSICOLOGIA QUARTA REGIAO",
+        "label": "CONSELHO REGIONAL DE PSICOLOGIA QUARTA REGIAO",
+        "count": 22
+      },
+      {
+        "value": "TRIBUNAL DE CONTAS DA UNIAO",
+        "label": "TRIBUNAL DE CONTAS DA UNIAO",
+        "count": 22
+      },
+      {
+        "value": "CONSELHO REGIONAL DE MEDICINA VETERINARIA DO ESTADO PR",
+        "label": "CONSELHO REGIONAL DE MEDICINA VETERINARIA DO ESTADO PR",
+        "count": 22
+      },
+      {
+        "value": "CONSELHO REGIONAL DE PSICOLOGIA 23 REGIAO",
+        "label": "CONSELHO REGIONAL DE PSICOLOGIA 23 REGIAO",
+        "count": 22
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DO CEARA",
+        "label": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DO CEARA",
+        "count": 21
+      },
+      {
+        "value": "CONSELHO REGIONAL DE MEDICINA DO ESTADO DE MINAS GERAIS",
+        "label": "CONSELHO REGIONAL DE MEDICINA DO ESTADO DE MINAS GERAIS",
+        "count": 21
+      },
+      {
+        "value": "FURNAS-CENTRAIS ELETRICAS S.A.",
+        "label": "FURNAS-CENTRAIS ELETRICAS S.A.",
+        "count": 21
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA",
+        "label": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA",
+        "count": 21
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DE RORAIMA",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DE RORAIMA",
+        "count": 21
+      },
+      {
+        "value": "CONSELHO DE ARQUITETURA E URBANISMO DO CEARA - CAU - CE",
+        "label": "CONSELHO DE ARQUITETURA E URBANISMO DO CEARA - CAU - CE",
+        "count": 20
+      },
+      {
+        "value": "CONSELHO REGIONAL DE CONTABILIDADE DE SANTA CATARINA",
+        "label": "CONSELHO REGIONAL DE CONTABILIDADE DE SANTA CATARINA",
+        "count": 20
+      },
+      {
+        "value": "CONSELHO REGIONAL DE CONTABILIDADE DO ESTADO SAO PAULO",
+        "label": "CONSELHO REGIONAL DE CONTABILIDADE DO ESTADO SAO PAULO",
+        "count": 20
+      },
+      {
+        "value": "SUPERINTENDENCIA DE SEGUROS PRIVADOS",
+        "label": "SUPERINTENDENCIA DE SEGUROS PRIVADOS",
+        "count": 20
+      },
+      {
+        "value": "CONSELHO REGIONAL DE CORRETORES DE IMOVEIS 9 REGIAO BA",
+        "label": "CONSELHO REGIONAL DE CORRETORES DE IMOVEIS 9 REGIAO BA",
+        "count": 20
+      },
+      {
+        "value": "CONSELHO REGIONAL DE FARMACIA DO ESTADO DE MINAS GERAIS",
+        "label": "CONSELHO REGIONAL DE FARMACIA DO ESTADO DE MINAS GERAIS",
+        "count": 20
+      },
+      {
+        "value": "CONSELHO DE ARQUITETURA E URBANISMO DE SANTA CATARINA",
+        "label": "CONSELHO DE ARQUITETURA E URBANISMO DE SANTA CATARINA",
+        "count": 20
+      },
+      {
+        "value": "CONSELHO REG DE FISIOTERAPIA E TERAPIA OCUPACIONAL 5 RE",
+        "label": "CONSELHO REG DE FISIOTERAPIA E TERAPIA OCUPACIONAL 5 RE",
+        "count": 20
+      },
+      {
+        "value": "CONSELHO REGIONAL DE MEDICINA DO ESTADO DO RN",
+        "label": "CONSELHO REGIONAL DE MEDICINA DO ESTADO DO RN",
+        "count": 20
+      },
+      {
+        "value": "CONSELHO DE ARQUITETURA E URBANISMO DO BRASIL",
+        "label": "CONSELHO DE ARQUITETURA E URBANISMO DO BRASIL",
+        "count": 20
+      },
+      {
+        "value": "FUNDACAO NACIONAL DE SAUDE",
+        "label": "FUNDACAO NACIONAL DE SAUDE",
+        "count": 20
+      },
+      {
+        "value": "CONSELHO FEDERAL DE ODONTOLOGIA",
+        "label": "CONSELHO FEDERAL DE ODONTOLOGIA",
+        "count": 19
+      },
+      {
+        "value": "CONSELHO REGIONAL DE EDUCACAO FISICA DA 4 REGIAO",
+        "label": "CONSELHO REGIONAL DE EDUCACAO FISICA DA 4 REGIAO",
+        "count": 19
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENFERMAGEM DE GOIAS",
+        "label": "CONSELHO REGIONAL DE ENFERMAGEM DE GOIAS",
+        "count": 19
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENFERMAGEM DO PIAUI",
+        "label": "CONSELHO REGIONAL DE ENFERMAGEM DO PIAUI",
+        "count": 19
+      },
+      {
+        "value": "MINISTERIO DO MEIO AMBIENTE",
+        "label": "MINISTERIO DO MEIO AMBIENTE",
+        "count": 19
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO AMAZONAS",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO AMAZONAS",
+        "count": 19
+      },
+      {
+        "value": "FUNDACAO UNIVERSIDADE DE BRASILIA",
+        "label": "FUNDACAO UNIVERSIDADE DE BRASILIA",
+        "count": 19
+      },
+      {
+        "value": "FUNDACAO CASA DE RUI BARBOSA",
+        "label": "FUNDACAO CASA DE RUI BARBOSA",
+        "count": 19
+      },
+      {
+        "value": "CONSELHO REGIONAL DOS CORRETORES DE IMOVEIS 1 REGIAO",
+        "label": "CONSELHO REGIONAL DOS CORRETORES DE IMOVEIS 1 REGIAO",
+        "count": 19
+      },
+      {
+        "value": "CONSELHO REGIONAL DE NUTRICIONISTAS DA OITAVA REGIAO",
+        "label": "CONSELHO REGIONAL DE NUTRICIONISTAS DA OITAVA REGIAO",
+        "count": 18
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENFERMAGEM DO TOCANTINS",
+        "label": "CONSELHO REGIONAL DE ENFERMAGEM DO TOCANTINS",
+        "count": 18
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENFERMAGEM DO ESPIRITO SANTO",
+        "label": "CONSELHO REGIONAL DE ENFERMAGEM DO ESPIRITO SANTO",
+        "count": 18
+      },
+      {
+        "value": "CONSELHO REGIONAL DE EDUCACAO FISICA DA 12 REGIAO/PERNAMBUCO - CREF12/PE",
+        "label": "CONSELHO REGIONAL DE EDUCACAO FISICA DA 12 REGIAO/PERNAMBUCO - CREF12/PE",
+        "count": 18
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENFERMAGEM COREN",
+        "label": "CONSELHO REGIONAL DE ENFERMAGEM COREN",
+        "count": 18
+      },
+      {
+        "value": "FUNDO CONSTITUCIONAL DO DISTRITO FEDERAL - FCDF",
+        "label": "FUNDO CONSTITUCIONAL DO DISTRITO FEDERAL - FCDF",
+        "count": 18
+      },
+      {
+        "value": "AGENCIA NACIONAL DE TRANSPORTES AQUAVIARIOS",
+        "label": "AGENCIA NACIONAL DE TRANSPORTES AQUAVIARIOS",
+        "count": 18
+      },
+      {
+        "value": "CONSELHO FEDERAL DE ADMINISTRACAO",
+        "label": "CONSELHO FEDERAL DE ADMINISTRACAO",
+        "count": 18
+      },
+      {
+        "value": "CONSELHO REG DOS REPRES COMERCIAIS DO ESTADO DE MT",
+        "label": "CONSELHO REG DOS REPRES COMERCIAIS DO ESTADO DE MT",
+        "count": 18
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ADMINISTRACAO DE SANTA CATARINA - CRA/SC",
+        "label": "CONSELHO REGIONAL DE ADMINISTRACAO DE SANTA CATARINA - CRA/SC",
+        "count": 18
+      },
+      {
+        "value": "CONSELHO REGIONAL DE QUIMICA CRQ 6",
+        "label": "CONSELHO REGIONAL DE QUIMICA CRQ 6",
+        "count": 18
+      },
+      {
+        "value": "CONSELHO NACIONAL DO MINISTÉRIO PÚBLICO",
+        "label": "CONSELHO NACIONAL DO MINISTÉRIO PÚBLICO",
+        "count": 18
+      },
+      {
+        "value": "CONSELHO REGIONAL DE FARMACIA DO EST DO RIO DE JANEIRO",
+        "label": "CONSELHO REGIONAL DE FARMACIA DO EST DO RIO DE JANEIRO",
+        "count": 17
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DA FRONTEIRA SUL - UFFS",
+        "label": "UNIVERSIDADE FEDERAL DA FRONTEIRA SUL - UFFS",
+        "count": 17
+      },
+      {
+        "value": "CONSELHO REGIONAL DE BIOLOGIA 3 REGIAO",
+        "label": "CONSELHO REGIONAL DE BIOLOGIA 3 REGIAO",
+        "count": 17
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ODONTOLOGIA DA PARAIBA",
+        "label": "CONSELHO REGIONAL DE ODONTOLOGIA DA PARAIBA",
+        "count": 17
+      },
+      {
+        "value": "CONSELHO REG DE MEDICINA VETERINARIA DO ESTADO DA BAHIA",
+        "label": "CONSELHO REG DE MEDICINA VETERINARIA DO ESTADO DA BAHIA",
+        "count": 17
+      },
+      {
+        "value": "CONSELHO REGIONAL DE EDUCACAO FISICA DA 2 REGIAO - CREF2/RS",
+        "label": "CONSELHO REGIONAL DE EDUCACAO FISICA DA 2 REGIAO - CREF2/RS",
+        "count": 17
+      },
+      {
+        "value": "CONSELHO REGIONAL DE CONTABILIDADE DO MARANHAO",
+        "label": "CONSELHO REGIONAL DE CONTABILIDADE DO MARANHAO",
+        "count": 17
+      },
+      {
+        "value": "CONSELHO REGIONAL DE QUIMICA SETIMA REGIAO",
+        "label": "CONSELHO REGIONAL DE QUIMICA SETIMA REGIAO",
+        "count": 17
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DO NORTE DO TOCANTINS - UFNT",
+        "label": "UNIVERSIDADE FEDERAL DO NORTE DO TOCANTINS - UFNT",
+        "count": 17
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DO CARIRI-UFCA",
+        "label": "UNIVERSIDADE FEDERAL DO CARIRI-UFCA",
+        "count": 17
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DO OESTE DO PARA",
+        "label": "UNIVERSIDADE FEDERAL DO OESTE DO PARA",
+        "count": 16
+      },
+      {
+        "value": "CONSELHO FEDERAL DE QUIMICA",
+        "label": "CONSELHO FEDERAL DE QUIMICA",
+        "count": 16
+      },
+      {
+        "value": "CONSELHO REGIONAL DE MEDICINA VETERINARIA DO ESTADO DO RIO DE JANEIRO (CRMV - RJ )",
+        "label": "CONSELHO REGIONAL DE MEDICINA VETERINARIA DO ESTADO DO RIO DE JANEIRO (CRMV - RJ )",
+        "count": 16
+      },
+      {
+        "value": "CONSELHO REGIONAL DE SERVICO SOCIAL - 7 REGIAO",
+        "label": "CONSELHO REGIONAL DE SERVICO SOCIAL - 7 REGIAO",
+        "count": 16
+      },
+      {
+        "value": "CONSELHO FEDERAL DE FONOAUDIOLOGIA",
+        "label": "CONSELHO FEDERAL DE FONOAUDIOLOGIA",
+        "count": 16
+      },
+      {
+        "value": "CONSELHO REGIONAL DE MEDICINA DO ESTADO DE GOIAS",
+        "label": "CONSELHO REGIONAL DE MEDICINA DO ESTADO DE GOIAS",
+        "count": 16
+      },
+      {
+        "value": "BANCO DO NORDESTE DO BRASIL",
+        "label": "BANCO DO NORDESTE DO BRASIL",
+        "count": 16
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ODONTOLOGIA DO RIO DE JANEIRO",
+        "label": "CONSELHO REGIONAL DE ODONTOLOGIA DO RIO DE JANEIRO",
+        "count": 16
+      },
+      {
+        "value": "CONSELHO REGIONAL DE MEDICINA VETERINARIA DO ESTADO DO RIO GRANDE DO SUL",
+        "label": "CONSELHO REGIONAL DE MEDICINA VETERINARIA DO ESTADO DO RIO GRANDE DO SUL",
+        "count": 16
+      },
+      {
+        "value": "CONSELHO REGIONAL DE CONTABILIDADE DE MATO GROSSO",
+        "label": "CONSELHO REGIONAL DE CONTABILIDADE DE MATO GROSSO",
+        "count": 15
+      },
+      {
+        "value": "CONSELHO REG DE CONTABILIDADE DO RIO GRANDE DO SUL",
+        "label": "CONSELHO REG DE CONTABILIDADE DO RIO GRANDE DO SUL",
+        "count": 15
+      },
+      {
+        "value": "CONSELHO DE ARQUITETURA E URBANISMO DO TOCANTINS",
+        "label": "CONSELHO DE ARQUITETURA E URBANISMO DO TOCANTINS",
+        "count": 15
+      },
+      {
+        "value": "CONSELHO FEDERAL DE MEDICINA VETERINARIA",
+        "label": "CONSELHO FEDERAL DE MEDICINA VETERINARIA",
+        "count": 15
+      },
+      {
+        "value": "CONSELHO REGIONAL DE FARMACIA DO ESTADO DO PARA",
+        "label": "CONSELHO REGIONAL DE FARMACIA DO ESTADO DO PARA",
+        "count": 15
+      },
+      {
+        "value": "CONSELHO FEDERAL DOS REPRESENTANTES COMERCIAIS",
+        "label": "CONSELHO FEDERAL DOS REPRESENTANTES COMERCIAIS",
+        "count": 15
+      },
+      {
+        "value": "CONSELHO REGIONAL DOS TECNICOS INDUSTRIAIS DO ESTADO DE SAO PAULO",
+        "label": "CONSELHO REGIONAL DOS TECNICOS INDUSTRIAIS DO ESTADO DE SAO PAULO",
+        "count": 15
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DE MATO GROSSO DO SUL",
+        "label": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DE MATO GROSSO DO SUL",
+        "count": 15
+      },
+      {
+        "value": "MINISTERIO DE MINAS E ENERGIA",
+        "label": "MINISTERIO DE MINAS E ENERGIA",
+        "count": 15
+      },
+      {
+        "value": "CONSELHO NACIONAL DE DESENVOLVIMENTO CIENTIFICO E TECNOLOGICO-CNPQ",
+        "label": "CONSELHO NACIONAL DE DESENVOLVIMENTO CIENTIFICO E TECNOLOGICO-CNPQ",
+        "count": 15
+      },
+      {
+        "value": "CONSELHO REGIONAL DE MEDICINA VETERINARIA 12 REGIAO",
+        "label": "CONSELHO REGIONAL DE MEDICINA VETERINARIA 12 REGIAO",
+        "count": 15
+      },
+      {
+        "value": "CONSELHO REGIONAL DE MEDICINA VETERINARIA DO ESTADO DE RONDONIA",
+        "label": "CONSELHO REGIONAL DE MEDICINA VETERINARIA DO ESTADO DE RONDONIA",
+        "count": 15
+      },
+      {
+        "value": "CONSELHO REGIONAL DE BIOLOGIA - 1A. REGIAO - (SP,MT,MS)",
+        "label": "CONSELHO REGIONAL DE BIOLOGIA - 1A. REGIAO - (SP,MT,MS)",
+        "count": 14
+      },
+      {
+        "value": "CONSELHO REGIONAL DE MEDICINA DO DISTRITO FEDERAL",
+        "label": "CONSELHO REGIONAL DE MEDICINA DO DISTRITO FEDERAL",
+        "count": 14
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ADMINISTRACAO",
+        "label": "CONSELHO REGIONAL DE ADMINISTRACAO",
+        "count": 14
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ADMINISTRACAO DE MINAS GERAIS",
+        "label": "CONSELHO REGIONAL DE ADMINISTRACAO DE MINAS GERAIS",
+        "count": 14
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DE PERNAMBUCO",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DE PERNAMBUCO",
+        "count": 14
+      },
+      {
+        "value": "CONSELHO FEDERAL DE ECONOMIA",
+        "label": "CONSELHO FEDERAL DE ECONOMIA",
+        "count": 14
+      },
+      {
+        "value": "INSTITUTO DE PESQUISA ECONOMICA APLICADA",
+        "label": "INSTITUTO DE PESQUISA ECONOMICA APLICADA",
+        "count": 14
+      },
+      {
+        "value": "CONSELHO REGIONAL DE CONTABILIDADE DE ALAGOAS",
+        "label": "CONSELHO REGIONAL DE CONTABILIDADE DE ALAGOAS",
+        "count": 14
+      },
+      {
+        "value": "FUNDACAO ALEXANDRE DE GUSMAO",
+        "label": "FUNDACAO ALEXANDRE DE GUSMAO",
+        "count": 14
+      },
+      {
+        "value": "CONSELHO REGIONAL DE CONTABILIDADE DO ESTADO DE GOIAS",
+        "label": "CONSELHO REGIONAL DE CONTABILIDADE DO ESTADO DE GOIAS",
+        "count": 14
+      },
+      {
+        "value": "MINISTERIO DAS CIDADES",
+        "label": "MINISTERIO DAS CIDADES",
+        "count": 14
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENFERMAGEM DE MATO GROSSO",
+        "label": "CONSELHO REGIONAL DE ENFERMAGEM DE MATO GROSSO",
+        "count": 13
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENFERMAGEM DE RONDONIA",
+        "label": "CONSELHO REGIONAL DE ENFERMAGEM DE RONDONIA",
+        "count": 13
+      },
+      {
+        "value": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO TOCANTINS",
+        "label": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO TOCANTINS",
+        "count": 13
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENFERMAGEM DO RIO DE JANEIRO",
+        "label": "CONSELHO REGIONAL DE ENFERMAGEM DO RIO DE JANEIRO",
+        "count": 13
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DE MATO GROSSO",
+        "label": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DE MATO GROSSO",
+        "count": 13
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DE SANTA CATARINA",
+        "label": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DE SANTA CATARINA",
+        "count": 13
+      },
+      {
+        "value": "CONSELHO REGIONAL DE EDUCACAO FISICA DA 20 REGIAO - CREF20/SE",
+        "label": "CONSELHO REGIONAL DE EDUCACAO FISICA DA 20 REGIAO - CREF20/SE",
+        "count": 13
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DE JATAI",
+        "label": "UNIVERSIDADE FEDERAL DE JATAI",
+        "count": 13
+      },
+      {
+        "value": "CONSELHO REGIONAL DOS REPRESENTANTES COMERCIAIS NO ESTADO DO CEARA",
+        "label": "CONSELHO REGIONAL DOS REPRESENTANTES COMERCIAIS NO ESTADO DO CEARA",
+        "count": 13
+      },
+      {
+        "value": "CONSELHO REGIONAL DOS CORRETORES DE IMOVEIS 14 REGIAO",
+        "label": "CONSELHO REGIONAL DOS CORRETORES DE IMOVEIS 14 REGIAO",
+        "count": 13
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DE CATALAO",
+        "label": "UNIVERSIDADE FEDERAL DE CATALAO",
+        "count": 13
+      },
+      {
+        "value": "CONSELHO REGIONAL DE FARMACIA DO RIO GRANDE DO SUL",
+        "label": "CONSELHO REGIONAL DE FARMACIA DO RIO GRANDE DO SUL",
+        "count": 13
+      },
+      {
+        "value": "CIA.DE ENTREPOSTOS E ARMAZENS GER.DE S.PAULO",
+        "label": "CIA.DE ENTREPOSTOS E ARMAZENS GER.DE S.PAULO",
+        "count": 13
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENFERMAGEM DE MATO GROSSO DO SUL",
+        "label": "CONSELHO REGIONAL DE ENFERMAGEM DE MATO GROSSO DO SUL",
+        "count": 13
+      },
+      {
+        "value": "FUNDACAO JORGE DUPRAT FIGUEIREDO, DE SEGURANCA E MEDICINA DO TRABALHO",
+        "label": "FUNDACAO JORGE DUPRAT FIGUEIREDO, DE SEGURANCA E MEDICINA DO TRABALHO",
+        "count": 13
+      },
+      {
+        "value": "CONSELHO REGIONAL DE MEDICINA VETERINARIA NO ESTADO DE ALAGOAS",
+        "label": "CONSELHO REGIONAL DE MEDICINA VETERINARIA NO ESTADO DE ALAGOAS",
+        "count": 12
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ODONTOLOGIA DE MATO GROSSO DO SUL",
+        "label": "CONSELHO REGIONAL DE ODONTOLOGIA DE MATO GROSSO DO SUL",
+        "count": 12
+      },
+      {
+        "value": "CONSELHO REGIONAL DOS REPRESENTANTES COMERCIAIS NO ESTADO DE PERNAMBUCO",
+        "label": "CONSELHO REGIONAL DOS REPRESENTANTES COMERCIAIS NO ESTADO DE PERNAMBUCO",
+        "count": 12
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENFERMAGEM DO ACRE",
+        "label": "CONSELHO REGIONAL DE ENFERMAGEM DO ACRE",
+        "count": 12
+      },
+      {
+        "value": "AGENCIA ESPACIAL BRASILEIRA - AEB",
+        "label": "AGENCIA ESPACIAL BRASILEIRA - AEB",
+        "count": 12
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENFERMAGEM COREN MA",
+        "label": "CONSELHO REGIONAL DE ENFERMAGEM COREN MA",
+        "count": 12
+      },
+      {
+        "value": "CONSELHO DE ARQUITETURA E URBANISMO DE RONDONIA - CAU/RO",
+        "label": "CONSELHO DE ARQUITETURA E URBANISMO DE RONDONIA - CAU/RO",
+        "count": 12
+      },
+      {
+        "value": "CONSELHO REGIONAL DE CONTABILIDADE DO MATO GROSSO DO SUL",
+        "label": "CONSELHO REGIONAL DE CONTABILIDADE DO MATO GROSSO DO SUL",
+        "count": 12
+      },
+      {
+        "value": "COMPANHIA DOCAS DO RIO GRANDE DO NORTE-CODERN",
+        "label": "COMPANHIA DOCAS DO RIO GRANDE DO NORTE-CODERN",
+        "count": 12
+      },
+      {
+        "value": "UNIVERSIDADE FEDERAL DO RIO GRANDE - FURG",
+        "label": "UNIVERSIDADE FEDERAL DO RIO GRANDE - FURG",
+        "count": 12
+      },
+      {
+        "value": "CAIXA DE FINANCIAMENTO IMOBILIARIO DA AERONAUTICA",
+        "label": "CAIXA DE FINANCIAMENTO IMOBILIARIO DA AERONAUTICA",
+        "count": 12
+      },
+      {
+        "value": "CONSELHO REGIONAL DE PSICOLOGIA QUINTA REGIAO",
+        "label": "CONSELHO REGIONAL DE PSICOLOGIA QUINTA REGIAO",
+        "count": 12
+      },
+      {
+        "value": "CONSELHO REGIONAL DOS REPRESENTANTES COMERCIAIS NO ESTADO DE RONDONIA",
+        "label": "CONSELHO REGIONAL DOS REPRESENTANTES COMERCIAIS NO ESTADO DE RONDONIA",
+        "count": 12
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ADMINISTRACAO DO AMAZONAS",
+        "label": "CONSELHO REGIONAL DE ADMINISTRACAO DO AMAZONAS",
+        "count": 12
+      },
+      {
+        "value": "CONSELHO REGIONAL DE EDUCACAO FISICA - REGIAO 05",
+        "label": "CONSELHO REGIONAL DE EDUCACAO FISICA - REGIAO 05",
+        "count": 11
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ENFERMAGEM DO PARANA",
+        "label": "CONSELHO REGIONAL DE ENFERMAGEM DO PARANA",
+        "count": 11
+      },
+      {
+        "value": "CONSELHO REGIONAL DE CORRETORES DE IMOVEIS 21 REGIAO",
+        "label": "CONSELHO REGIONAL DE CORRETORES DE IMOVEIS 21 REGIAO",
+        "count": 11
+      },
+      {
+        "value": "CONSELHO REGIONAL DE FARMACIA DO ESTADO DE MATO GROSSO",
+        "label": "CONSELHO REGIONAL DE FARMACIA DO ESTADO DE MATO GROSSO",
+        "count": 11
+      },
+      {
+        "value": "CONSELHO REGIONAL DE NUTRICIONISTAS DA 4 REGIAO",
+        "label": "CONSELHO REGIONAL DE NUTRICIONISTAS DA 4 REGIAO",
+        "count": 11
+      },
+      {
+        "value": "CONSELHO REGIONAL DE NUTRICIONISTAS DA 7 REGIAO",
+        "label": "CONSELHO REGIONAL DE NUTRICIONISTAS DA 7 REGIAO",
+        "count": 11
+      },
+      {
+        "value": "CONSELHO REGIONAL DE NUTRICIONISTAS DA 9A. REGIAO",
+        "label": "CONSELHO REGIONAL DE NUTRICIONISTAS DA 9A. REGIAO",
+        "count": 11
+      },
+      {
+        "value": "CONSELHO REGIONAL DE PSICOLOGIA DO DISTRITO FEDERAL - CRP 01",
+        "label": "CONSELHO REGIONAL DE PSICOLOGIA DO DISTRITO FEDERAL - CRP 01",
+        "count": 11
+      },
+      {
+        "value": "CONSELHO REGIONAL DOS REPRESENTANTES COMERCIAIS NO ESTADO DA BAHIA",
+        "label": "CONSELHO REGIONAL DOS REPRESENTANTES COMERCIAIS NO ESTADO DA BAHIA",
+        "count": 11
+      },
+      {
+        "value": "CONSELHO REGIONAL DOS REPRESENTANTES COMERCIAIS NO ESTADO DO PARA",
+        "label": "CONSELHO REGIONAL DOS REPRESENTANTES COMERCIAIS NO ESTADO DO PARA",
+        "count": 11
+      },
+      {
+        "value": "CONSELHO REGIONAL DOS TECNICOS INDUSTRIAIS DA SEGUNDA REGIAO",
+        "label": "CONSELHO REGIONAL DOS TECNICOS INDUSTRIAIS DA SEGUNDA REGIAO",
+        "count": 11
+      },
+      {
+        "value": "CONSELHO REGIONAL DE CONTABILIDADE DO DISTRITO FEDERAL",
+        "label": "CONSELHO REGIONAL DE CONTABILIDADE DO DISTRITO FEDERAL",
+        "count": 11
+      },
+      {
+        "value": "FUNDACAO NACIONAL DE ARTES FUNARTE",
+        "label": "FUNDACAO NACIONAL DE ARTES FUNARTE",
+        "count": 11
+      },
+      {
+        "value": "FUNDACAO UNIVERSIDADE FEDERAL DE SERGIPE",
+        "label": "FUNDACAO UNIVERSIDADE FEDERAL DE SERGIPE",
+        "count": 11
+      },
+      {
+        "value": "CONSELHO REGIONAL DE BIOMEDICINA - 4A   REGIAO",
+        "label": "CONSELHO REGIONAL DE BIOMEDICINA - 4A   REGIAO",
+        "count": 11
+      },
+      {
+        "value": "CONSELHO REGIONAL DE ADMINISTRACAO DE GOIAS",
+        "label": "CONSELHO REGIONAL DE ADMINISTRACAO DE GOIAS",
+        "count": 11
+      },
+      {
+        "value": "CONSELHO REG DOS REPRESENTANTES COMERCIAIS NO EST DE GO",
+        "label": "CONSELHO REG DOS REPRESENTANTES COMERCIAIS NO EST DE GO",
+        "count": 11
+      },
+      {
+        "value": "CONSELHO FEDERAL DOS TECNICOS INDUSTRIAIS",
+        "label": "CONSELHO FEDERAL DOS TECNICOS INDUSTRIAIS",
+        "count": 11
+      },
+      {
+        "value": "MINISTERIO DA MULHER, DA FAMILIA E DOS DIREITOS HUMANOS",
+        "label": "MINISTERIO DA MULHER, DA FAMILIA E DOS DIREITOS HUMANOS",
+        "count": 11
+      },
+      {
+        "value": "CONSELHO FEDERAL DE EDUCACAO FISICA",
+        "label": "CONSELHO FEDERAL DE EDUCACAO FISICA",
+        "count": 11
+      }
+    ],
+    "itemTypes": [
+      {
+        "value": "Material",
+        "label": "Material",
+        "count": 18277
+      },
+      {
+        "value": "Serviço",
+        "label": "Serviço",
+        "count": 12542
+      }
+    ],
+    "dataSource": "live_postgres"
+  },
+  "overview": {
+    "kpis": {
+      "totalItens": 30819,
+      "totalContratacoes": 10221,
+      "valorEstimado": 16973423280.404099,
+      "valorHomologado": 13657792176.812479,
+      "economiaMediaGlobal": 25.00768027449143,
+      "economiaPonderadaGlobal": 13.717913592180247,
+      "paresValidosEconomia": 26479
+    },
+    "monthlyEvolution": [
+      {
+        "mes": "2025-01",
+        "label": "Jan",
+        "valorEstimado": 711217705.1892002,
+        "valorHomologado": 553954400.3305997,
+        "totalItens": 1591,
+        "totalContratacoes": 488,
+        "isPeak": false
+      },
+      {
+        "mes": "2025-02",
+        "label": "Fev",
+        "valorEstimado": 1825431756.2863998,
+        "valorHomologado": 1560822431.4360015,
+        "totalItens": 2100,
+        "totalContratacoes": 663,
+        "isPeak": false
+      },
+      {
+        "mes": "2025-03",
+        "label": "Mar",
+        "valorEstimado": 388531378.7033001,
+        "valorHomologado": 302922921.35999966,
+        "totalItens": 1947,
+        "totalContratacoes": 609,
+        "isPeak": false
+      },
+      {
+        "mes": "2025-04",
+        "label": "Abr",
+        "valorEstimado": 2050889520.9555001,
+        "valorHomologado": 1761426145.2386038,
+        "totalItens": 2252,
+        "totalContratacoes": 714,
+        "isPeak": false
+      },
+      {
+        "mes": "2025-05",
+        "label": "Mai",
+        "valorEstimado": 1365014134.941106,
+        "valorHomologado": 959440918.916799,
+        "totalItens": 2424,
+        "totalContratacoes": 869,
+        "isPeak": false
+      },
+      {
+        "mes": "2025-06",
+        "label": "Jun",
+        "valorEstimado": 1050156136.0600979,
+        "valorHomologado": 681210434.5429999,
+        "totalItens": 2689,
+        "totalContratacoes": 855,
+        "isPeak": false
+      },
+      {
+        "mes": "2025-07",
+        "label": "Jul",
+        "valorEstimado": 982227821.9071995,
+        "valorHomologado": 711389555.2508998,
+        "totalItens": 3265,
+        "totalContratacoes": 1020,
+        "isPeak": false
+      },
+      {
+        "mes": "2025-08",
+        "label": "Ago",
+        "valorEstimado": 964562371.8389987,
+        "valorHomologado": 704802714.9341006,
+        "totalItens": 3048,
+        "totalContratacoes": 980,
+        "isPeak": false
+      },
+      {
+        "mes": "2025-09",
+        "label": "Set",
+        "valorEstimado": 1226223220.2562003,
+        "valorHomologado": 697650509.3994995,
+        "totalItens": 3124,
+        "totalContratacoes": 1018,
+        "isPeak": false
+      },
+      {
+        "mes": "2025-10",
+        "label": "Out",
+        "valorEstimado": 1170996999.1533995,
+        "valorHomologado": 957479619.3356997,
+        "totalItens": 3026,
+        "totalContratacoes": 1073,
+        "isPeak": false
+      },
+      {
+        "mes": "2025-11",
+        "label": "Nov",
+        "valorEstimado": 4171025299.107304,
+        "valorHomologado": 3942350709.1842074,
+        "totalItens": 3097,
+        "totalContratacoes": 1125,
+        "isPeak": true
+      },
+      {
+        "mes": "2025-12",
+        "label": "Dez",
+        "valorEstimado": 1067146936.0056008,
+        "valorHomologado": 824341816.8833994,
+        "totalItens": 2256,
+        "totalContratacoes": 818,
+        "isPeak": false
+      }
+    ],
+    "mixTipoItem": [
+      {
+        "tipo": "Serviço",
+        "itens": 12542,
+        "valorEstimado": 12832294647.321682,
+        "valorHomologado": 10975150626.714457,
+        "pctValor": 75.60227795730803,
+        "pctItens": 40.695674746098184
+      },
+      {
+        "tipo": "Material",
+        "itens": 18277,
+        "valorEstimado": 4141128633.0826054,
+        "valorHomologado": 2682641550.098307,
+        "pctValor": 24.397722042691957,
+        "pctItens": 59.304325253901816
+      }
+    ]
+  },
+  "enabler1": {
+    "comparison": [
+      {
+        "grupo": "Com Competição",
+        "valorEstimado": 9000837310.769962,
+        "valorHomologado": 6329077601.399207,
+        "qtdContratacoes": 3099,
+        "qtdItens": 18212,
+        "pctValor": 53.02900400275404,
+        "pctContratacoes": 30.319929556794833
+      },
+      {
+        "grupo": "Contratação Direta",
+        "valorEstimado": 7972585969.634301,
+        "valorHomologado": 7328714575.413582,
+        "qtdContratacoes": 7122,
+        "qtdItens": 12607,
+        "pctValor": 46.970995997245964,
+        "pctContratacoes": 69.68007044320517
+      }
+    ],
+    "byModality": [
+      {
+        "modalidade": "Pregão - Eletrônico",
+        "tipoContratacao": "Com Competição",
+        "valorEstimado": 8998400557.869963,
+        "valorHomologado": 6327562848.4992075,
+        "qtdContratacoes": 3097,
+        "qtdItens": 18210,
+        "pctValor": 53.01464771846334,
+        "pctContratacoes": 30.300361999804327
+      },
+      {
+        "modalidade": "Dispensa",
+        "tipoContratacao": "Contratação Direta",
+        "valorEstimado": 6870331359.098706,
+        "valorHomologado": 6568736422.769885,
+        "qtdContratacoes": 5848,
+        "qtdItens": 10748,
+        "pctValor": 40.47699303552084,
+        "pctContratacoes": 57.21553664025046
+      },
+      {
+        "modalidade": "Inexigibilidade",
+        "tipoContratacao": "Contratação Direta",
+        "valorEstimado": 1102254610.5355997,
+        "valorHomologado": 759978152.6437,
+        "qtdContratacoes": 1274,
+        "qtdItens": 1859,
+        "pctValor": 6.494002961725156,
+        "pctContratacoes": 12.464533802954701
+      },
+      {
+        "modalidade": "Concorrência - Eletrônica",
+        "tipoContratacao": "Com Competição",
+        "valorEstimado": 2436752.9,
+        "valorHomologado": 1514752.9,
+        "qtdContratacoes": 2,
+        "qtdItens": 2,
+        "pctValor": 0.014356284290707694,
+        "pctContratacoes": 0.019567556990509733
+      }
+    ],
+    "summary": {
+      "pctDiretaValor": 46.970995997245964,
+      "pctDiretaContratacoes": 69.68007044320517,
+      "pctCompetitivaValor": 53.02900400275404,
+      "pctCompetitivaContratacoes": 30.319929556794833
+    }
+  },
+  "enabler2": {
+    "savingsByModality": [
+      {
+        "modalidade": "Pregão - Eletrônico",
+        "tipoContratacao": "Com Competição",
+        "paresValidos": 14914,
+        "economiaMedia": 31.9007509204316,
+        "economiaPonderada": 25.00219820895891,
+        "valorEstimadoPares": 8262782051.759959,
+        "valorHomologadoPares": 6196904905.604705
+      },
+      {
+        "modalidade": "Dispensa",
+        "tipoContratacao": "Contratação Direta",
+        "paresValidos": 9720,
+        "economiaMedia": 18.954784095845845,
+        "economiaPonderada": 0.4092450855940567,
+        "valorEstimadoPares": 6358271084.239998,
+        "valorHomologadoPares": 6332250172.299001
+      },
+      {
+        "modalidade": "Inexigibilidade",
+        "tipoContratacao": "Contratação Direta",
+        "paresValidos": 1843,
+        "economiaMedia": 1.1564658185447025,
+        "economiaPonderada": 1.6224484070980312,
+        "valorEstimadoPares": 717478407.3856002,
+        "valorHomologadoPares": 705837690.3937004
+      },
+      {
+        "modalidade": "Concorrência - Eletrônica",
+        "tipoContratacao": "Com Competição",
+        "paresValidos": 2,
+        "economiaMedia": 19.349422875131165,
+        "economiaPonderada": 37.837238236178976,
+        "valorEstimadoPares": 2436752.9,
+        "valorHomologadoPares": 1514752.9
+      }
+    ],
+    "itemOutcomes": [
+      {
+        "situacao": "Homologado",
+        "quantidade": 26771,
+        "percentual": 86.86524546545962,
+        "isRetrabalho": false
+      },
+      {
+        "situacao": "Anulado/Revogado/Cancelado",
+        "quantidade": 1462,
+        "percentual": 4.743826860053863,
+        "isRetrabalho": true
+      },
+      {
+        "situacao": "Fracassado",
+        "quantidade": 1415,
+        "percentual": 4.591323534183458,
+        "isRetrabalho": true
+      },
+      {
+        "situacao": "Em andamento",
+        "quantidade": 600,
+        "percentual": 1.9468509685583568,
+        "isRetrabalho": false
+      },
+      {
+        "situacao": "Deserto",
+        "quantidade": 571,
+        "percentual": 1.8527531717447028,
+        "isRetrabalho": true
+      }
+    ],
+    "summary": {
+      "taxaSucessoHomologacao": 86.86524546545962,
+      "taxaRetrabalho": 11.187903565982024,
+      "totalRetrabalho": 3448,
+      "totalItens": 30819,
+      "economiaPregao": 31.9007509204316,
+      "economiaDispensa": 18.954784095845845,
+      "economiaInexigibilidade": 1.1564658185447025
+    }
+  },
+  "enabler3": {
+    "kpis": {
+      "totalContratacoesTO": 105,
+      "totalItensTO": 327,
+      "pctDiretasTO": 73.33333333333333,
+      "qtdDiretasTO": 77,
+      "economiaMediaTO": 25.301402875446367,
+      "economiaPonderadaTO": 21.412018162751675,
+      "valorEstimadoTO": 15498169.970000004,
+      "valorHomologadoTO": 12049555.98529999,
+      "ticketMedioTO": 147601.6187619048,
+      "ticketMedioNacional": 1660642.1368167594
+    },
+    "topOrgaosTO": [
+      {
+        "orgao": "TRIBUNAL SUPERIOR ELEITORAL",
+        "compras": 12,
+        "comprasDiretas": 6,
+        "comprasCompetitivas": 6,
+        "pctDiretas": 50,
+        "valorEstimado": 7907855.899999999,
+        "valorHomologado": 5438116.39
+      },
+      {
+        "orgao": "COMANDO DO EXERCITO",
+        "compras": 10,
+        "comprasDiretas": 8,
+        "comprasCompetitivas": 2,
+        "pctDiretas": 80,
+        "valorEstimado": 822209.4500000003,
+        "valorHomologado": 377157.4499999999
+      },
+      {
+        "orgao": "COMANDO DA MARINHA",
+        "compras": 9,
+        "comprasDiretas": 9,
+        "comprasCompetitivas": 0,
+        "pctDiretas": 100,
+        "valorEstimado": 109181.61,
+        "valorHomologado": 91697.471
+      },
+      {
+        "orgao": "CONSELHO REGIONAL DE ENFERMAGEM DO TOCANTINS",
+        "compras": 8,
+        "comprasDiretas": 4,
+        "comprasCompetitivas": 4,
+        "pctDiretas": 50,
+        "valorEstimado": 582654.95,
+        "valorHomologado": 554956.62
+      },
+      {
+        "orgao": "CONSELHO REGIONAL DE ENGENHARIA E AGRONOMIA DO ESTADO DO TOCANTINS",
+        "compras": 7,
+        "comprasDiretas": 2,
+        "comprasCompetitivas": 5,
+        "pctDiretas": 28.57142857142857,
+        "valorEstimado": 355995.49999999994,
+        "valorHomologado": 163070.28000000003
+      },
+      {
+        "orgao": "CONSELHO DE ARQUITETURA E URBANISMO DO TOCANTINS",
+        "compras": 7,
+        "comprasDiretas": 6,
+        "comprasCompetitivas": 1,
+        "pctDiretas": 85.71428571428571,
+        "valorEstimado": 160347.88999999998,
+        "valorHomologado": 108194.86429999999
+      },
+      {
+        "orgao": "UNIVERSIDADE FEDERAL DO NORTE DO TOCANTINS - UFNT",
+        "compras": 6,
+        "comprasDiretas": 3,
+        "comprasCompetitivas": 3,
+        "pctDiretas": 50,
+        "valorEstimado": 195670.37,
+        "valorHomologado": 179638.92
+      },
+      {
+        "orgao": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO TOCANTINS",
+        "compras": 5,
+        "comprasDiretas": 3,
+        "comprasCompetitivas": 2,
+        "pctDiretas": 60,
+        "valorEstimado": 264720.58,
+        "valorHomologado": 263114.13
+      },
+      {
+        "orgao": "EMPRESA BRASILEIRA DE PESQUISA AGROPECUARIA",
+        "compras": 5,
+        "comprasDiretas": 5,
+        "comprasCompetitivas": 0,
+        "pctDiretas": 100,
+        "valorEstimado": 184002.02,
+        "valorHomologado": 166198.12
+      },
+      {
+        "orgao": "CONSELHO REGIONAL DE CONTABILIDADE DE TOCANTINS",
+        "compras": 4,
+        "comprasDiretas": 4,
+        "comprasCompetitivas": 0,
+        "pctDiretas": 100,
+        "valorEstimado": 92729.73,
+        "valorHomologado": 42954
+      },
+      {
+        "orgao": "CONSELHO REGIONAL DE PSICOLOGIA 23 REGIAO",
+        "compras": 4,
+        "comprasDiretas": 4,
+        "comprasCompetitivas": 0,
+        "pctDiretas": 100,
+        "valorEstimado": 89047.35999999999,
+        "valorHomologado": 88865.79999999999
+      },
+      {
+        "orgao": "CONSELHO REGIONAL DE MEDICINA VETERINARIA DO TOCANTINS",
+        "compras": 3,
+        "comprasDiretas": 2,
+        "comprasCompetitivas": 1,
+        "pctDiretas": 66.66666666666666,
+        "valorEstimado": 82326.22,
+        "valorHomologado": 37014.97
+      }
+    ],
+    "pcaStatus": {
+      "totalRegistros": 0,
+      "disponivel": false,
+      "valorPlanejadoTotal": 0,
+      "orgaosComPca": 0
+    }
+  },
+  "enabler4": {
+    "supplierConcentration": {
+      "totalFornecedoresDistintos": 4451,
+      "valorHomologadoTotal": 13238235305.582815,
+      "top10Valor": 7911625377.864201,
+      "top10Pct": 59.76344426003455,
+      "top3Pct": 40.301204446732854,
+      "empresasPublicasValor": 4402581090.3705,
+      "empresasPublicasPct": 33.256555641625795
+    },
+    "top10Suppliers": [
+      {
+        "nomeFornecedor": "SERVICO FEDERAL DE PROCESSAMENTO DE DADOS (SERPRO)",
+        "itens": 450,
+        "valorHomologado": 3379862110.7264996,
+        "pctTotal": 25.53106235618238,
+        "isPublicTech": true,
+        "isClassificationAnomaly": false
+      },
+      {
+        "nomeFornecedor": "CRISTALIA PRODUTOS QUIMICOS FARMACEUTICOS LTDA",
+        "itens": 20,
+        "valorHomologado": 1339658895.1360004,
+        "pctTotal": 10.119618394840291,
+        "isPublicTech": false,
+        "isClassificationAnomaly": true
+      },
+      {
+        "nomeFornecedor": "TELECOMUNICACOES BRASILEIRAS SA TELEBRAS",
+        "itens": 46,
+        "valorHomologado": 615647269.7800001,
+        "pctTotal": 4.6505236957101825,
+        "isPublicTech": true,
+        "isClassificationAnomaly": false
+      },
+      {
+        "nomeFornecedor": "BRASOFTWARE INFORMATICA LTDA",
+        "itens": 202,
+        "valorHomologado": 483362527.3100002,
+        "pctTotal": 3.651261034060613,
+        "isPublicTech": false,
+        "isClassificationAnomaly": false
+      },
+      {
+        "nomeFornecedor": "GRUPO MULTI S.A",
+        "itens": 6,
+        "valorHomologado": 422451499,
+        "pctTotal": 3.191146623763699,
+        "isPublicTech": false,
+        "isClassificationAnomaly": false
+      },
+      {
+        "nomeFornecedor": "EMPRESA DE TECNOLOGIA E INFORMACOES DA PREVIDENCIA S.A. - DATAPREV",
+        "itens": 39,
+        "valorHomologado": 407071709.86399996,
+        "pctTotal": 3.074969589733233,
+        "isPublicTech": true,
+        "isClassificationAnomaly": false
+      },
+      {
+        "nomeFornecedor": "LANLINK SOLUCOES E COMERCIALIZACAO EM INFORMATICA S/A",
+        "itens": 99,
+        "valorHomologado": 367742589.6352,
+        "pctTotal": 2.777882256558138,
+        "isPublicTech": false,
+        "isClassificationAnomaly": false
+      },
+      {
+        "nomeFornecedor": "LIDER NOTEBOOKS COMERCIO E SERVICOS LTDA",
+        "itens": 15,
+        "valorHomologado": 365616531,
+        "pctTotal": 2.761822271325035,
+        "isPublicTech": false,
+        "isClassificationAnomaly": false
+      },
+      {
+        "nomeFornecedor": "ATECH - NEGOCIOS EM TECNOLOGIAS S.A.",
+        "itens": 18,
+        "valorHomologado": 347318151.06,
+        "pctTotal": 2.6235985616113755,
+        "isPublicTech": false,
+        "isClassificationAnomaly": false
+      },
+      {
+        "nomeFornecedor": "CLARO S.A.",
+        "itens": 261,
+        "valorHomologado": 182894094.3524999,
+        "pctTotal": 1.3815594762496026,
+        "isPublicTech": false,
+        "isClassificationAnomaly": false
+      }
+    ],
+    "dispensaHistogram": [
+      {
+        "faixa": "0–20%",
+        "quantidade": 3483,
+        "pct": 56.150249879090765,
+        "valorEstimado": 15582677.570000056,
+        "isAlertBucket": false
+      },
+      {
+        "faixa": "20–40%",
+        "quantidade": 998,
+        "pct": 16.088989198774787,
+        "valorEstimado": 18110281.770400025,
+        "isAlertBucket": false
+      },
+      {
+        "faixa": "40–60%",
+        "quantidade": 556,
+        "pct": 8.963404804127036,
+        "valorEstimado": 17199101.884200003,
+        "isAlertBucket": false
+      },
+      {
+        "faixa": "60–80%",
+        "quantidade": 381,
+        "pct": 6.142189263259714,
+        "valorEstimado": 16616419.352,
+        "isAlertBucket": false
+      },
+      {
+        "faixa": "80–90%",
+        "quantidade": 173,
+        "pct": 2.7889730775431243,
+        "valorEstimado": 9228838.188,
+        "isAlertBucket": false
+      },
+      {
+        "faixa": "90–100%",
+        "quantidade": 308,
+        "pct": 4.965339351926487,
+        "valorEstimado": 18595443.632500015,
+        "isAlertBucket": true
+      },
+      {
+        "faixa": "Acima do teto",
+        "quantidade": 304,
+        "pct": 4.900854425278092,
+        "valorEstimado": 14124821158.267298,
+        "isAlertBucket": false
+      }
+    ],
+    "dispensaSummary": {
+      "totalDispensasComTeto": 6203,
+      "qtdFaixa80a90": 173,
+      "qtdFaixa90a100": 308,
+      "qtdAcimaTeto": 304,
+      "razaoSalto90vs80": 1.7803468208092486
+    }
+  },
+  "enabler5": {
+    "qualityMatrix": {
+      "integridade": {
+        "outliersItensQtdTotal": 23,
+        "outliersItensQtdFederal": 10,
+        "outliersItensSomaTotal": 13961893890669.117,
+        "outliersItensSomaFederal": 3481121421976.0757,
+        "outliersContratacoesFederalQtd": 4,
+        "semValorEstimadoQtd": 147,
+        "semValorEstimadoPct": 1.3162607449856734,
+        "totalContratacoesBase": 11168
+      },
+      "confiabilidade": {
+        "alteradasPosPubQtd": 1510,
+        "alteradasPosPubPct": 13.52077363896848,
+        "itensAlteradosQtd": 30264,
+        "itensAlteradosPct": 98.19916285408353
+      },
+      "conformidade": {
+        "totalRawItens": 75603,
+        "naoFederaisQtd": 37408,
+        "naoFederaisPct": 49.47951800854463,
+        "naoValidadosTiQtd": 13695,
+        "naoValidadosTiPct": 44.436873357344496
+      },
+      "disponibilidade": {
+        "taxaMediaSucessoApi": 99.69333333333333,
+        "menorTaxaSucessoApi": 99.25,
+        "mesesMonitorados": 9,
+        "totalRequisicoesApi": 77673056
+      },
+      "efetividadeEficiencia": {
+        "itensOrfaosQtd": 7365,
+        "itensOrfaosPct": 9.741676917582636
+      }
+    },
+    "outlierAuditRows": [
+      {
+        "tipoRegistro": "Contratação (> R$ 10 bi)",
+        "idRegistro": "92542507003372025",
+        "orgao": "FUNDACAO DE APOIO UNIVERSITARIO",
+        "esfera": "N/I",
+        "uf": "MG",
+        "modalidade": "Inexigibilidade",
+        "mes": "2025-12",
+        "descricao": "CONTRATAÇÃO DE ASSINATURA DE LICENÇA DE SOFTWARE MATLAB E SIMULINK®, CRADLE® E SEUS MÓDULOS.",
+        "valorEstimado": 9611582776142.4,
+        "valorHomologado": 90038.68
+      },
+      {
+        "tipoRegistro": "Contratação (> R$ 10 bi)",
+        "idRegistro": "92650706001002025",
+        "orgao": "CONSELHO DE ARQUITETURA E URBANISMO DE SAO PAULO (CAU-SP)",
+        "esfera": "Federal",
+        "uf": "SP",
+        "modalidade": "Dispensa",
+        "mes": "2025-07",
+        "descricao": "Trata-se do processo administrativo nº 00179.003251/2025-71, referente à contratação emergencial de serviços de outsourcing de impressão.",
+        "valorEstimado": 3119889876880.84,
+        "valorHomologado": 73360.84
+      },
+      {
+        "tipoRegistro": "Contratação (> R$ 10 bi)",
+        "idRegistro": "98600106002982025",
+        "orgao": "MUNICIPIO DE RIO DE JANEIRO",
+        "esfera": "Municipal",
+        "uf": "RJ",
+        "modalidade": "Dispensa",
+        "mes": "2025-06",
+        "descricao": "Prestação de serviços técnicos especializados em tecnologia da informação (TI) com fornecimento de créditos de serviços em nuvem privada",
+        "valorEstimado": 347037696000,
+        "valorHomologado": 347037696000
+      },
+      {
+        "tipoRegistro": "Contratação (> R$ 10 bi)",
+        "idRegistro": "24000306000562025",
+        "orgao": "MINISTERIO DAS RELACOES EXTERIORES",
+        "esfera": "Federal",
+        "uf": "RJ",
+        "modalidade": "Dispensa",
+        "mes": "2025-04",
+        "descricao": "Serviços de locação de duas copiadoras multifuncional ",
+        "valorEstimado": 282240000000,
+        "valorHomologado": 16800
+      },
+      {
+        "tipoRegistro": "Contratação (> R$ 10 bi)",
+        "idRegistro": "45390206000212025",
+        "orgao": "MINISTERIO PUBLICO DO ESTADO DO PARANA",
+        "esfera": "Estadual",
+        "uf": "PR",
+        "modalidade": "Dispensa",
+        "mes": "2025-01",
+        "descricao": "Contratação de empresa especializada para estimativo de prestação de serviços de reparo e manutenção de linhas telefônicas nas unidades do MPPR em Maringá/PR",
+        "valorEstimado": 151290000000,
+        "valorHomologado": 12300
+      },
+      {
+        "tipoRegistro": "Contratação (> R$ 10 bi)",
+        "idRegistro": "92706307000332025",
+        "orgao": "MUNICIPIO DE SALVADOR",
+        "esfera": "Municipal",
+        "uf": "BA",
+        "modalidade": "Inexigibilidade",
+        "mes": "2025-10",
+        "descricao": "Contratação de empresa para licença de uso do sistema web “Gestão Tributária – GT Fácil”, software de titularidade da empresa Open Treinamentos Empresariais e Editora Ltda, Plano Diamante, para acesso de 12 usuários, consultas ilimitadas ao simulador,\ngeração de relatórios em PDF, simulador de cálculo, consulta de legislação por Município. ",
+        "valorEstimado": 143712144000,
+        "valorHomologado": 11988
+      },
+      {
+        "tipoRegistro": "Contratação (> R$ 10 bi)",
+        "idRegistro": "53240107000842025",
+        "orgao": "DEPARTAMENTO ESTADUAL DE TRANSITO",
+        "esfera": "Estadual",
+        "uf": "SP",
+        "modalidade": "Inexigibilidade",
+        "mes": "2025-01",
+        "descricao": "PLANO DE VOZ NACIONAL ILIMITADO E DADOS 30 GB - ACESSO A INTERNET - COM FORNECIMENTO DE SMARTPHONE (COMODATO)",
+        "valorEstimado": 86752927800,
+        "valorHomologado": 1927800
+      },
+      {
+        "tipoRegistro": "Contratação (> R$ 10 bi)",
+        "idRegistro": "92546607000312025",
+        "orgao": "PIAUI TRIBUNAL DE CONTAS DO ESTADO",
+        "esfera": "Estadual",
+        "uf": "PI",
+        "modalidade": "Inexigibilidade",
+        "mes": "2025-06",
+        "descricao": "Contratação do sistema WEB GESTÃO TRIBUTÁRIA - GT-Fácil (Plano OURO).",
+        "valorEstimado": 70358544000,
+        "valorHomologado": 8388
+      },
+      {
+        "tipoRegistro": "Contratação (> R$ 10 bi)",
+        "idRegistro": "92638106001142025",
+        "orgao": "BELEM SECRETARIA MUNICIPAL DE EDUCACAO E CULTURA",
+        "esfera": "Municipal",
+        "uf": "PA",
+        "modalidade": "Dispensa",
+        "mes": "2025-09",
+        "descricao": "O objeto do presente contrato é a AQUISIÇÃO DE NOTEBOOKS DESTINADOS AOS DOCENTES DAS UNIDADES ESCOLARES DA REDE MUNICIPAL DE EDUCAÇÃO DE BELÉM E AOS SERVIDORES DA SEDE DA SECRETARIA MUNICIPAL DE EDUCAÇÃO, ALÉM DE TABLETS PARA OS ALUNOS DA PRÉ-ESCOLA AO CICLO I E CHROMEBOOKS PARA OS ALUNOS DO CII, CIII E CIV + EJAI, por meio de adesão à Ata de Registro de Preços n° 002/2025-CINDESP, oriunda do Pregão Eletrônico n.° 11/2024-CINDESP, dos itens e suas quantidades especificados.",
+        "valorEstimado": 35362000000,
+        "valorHomologado": 35362000000
+      },
+      {
+        "tipoRegistro": "Contratação (> R$ 10 bi)",
+        "idRegistro": "15829707000112025",
+        "orgao": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO MARANHAO",
+        "esfera": "Federal",
+        "uf": "MA",
+        "modalidade": "Inexigibilidade",
+        "mes": "2025-01",
+        "descricao": "Manutenção e cessão de uso do sistema SOPHIA BIBLIOTECA.",
+        "valorEstimado": 30895810560,
+        "valorHomologado": 5558.4
+      },
+      {
+        "tipoRegistro": "Item (> R$ 1 bi)",
+        "idRegistro": "9254250700337202500001",
+        "orgao": "FUNDACAO DE APOIO UNIVERSITARIO",
+        "esfera": "N/I",
+        "uf": "MG",
+        "modalidade": "Inexigibilidade",
+        "mes": "2025-12",
+        "descricao": "Licenciamento de direitos permanentes  de  uso  de  softwarepara servidor Licenciamento de direitos permanentes  de  uso  de  softwarepara servidor",
+        "valorEstimado": 9611582776142.4,
+        "valorHomologado": 90038.68
+      },
+      {
+        "tipoRegistro": "Item (> R$ 1 bi)",
+        "idRegistro": "9265070600100202500001",
+        "orgao": "CONSELHO DE ARQUITETURA E URBANISMO DE SAO PAULO (CAU-SP)",
+        "esfera": "Federal",
+        "uf": "SP",
+        "modalidade": "Dispensa",
+        "mes": "2025-07",
+        "descricao": "Outsourcing de  Impressão - Páginas A4 - Monocromático - Dentro da Franquia sem Papel \ntem\tEquipamento\tDescrição dos Serviços\tCATSER\tUnidade de Medida\tQuantidade Mensal\tValor Unitário (R$)\tValor Mensal Estimado (R$)\tValor Contrato Estimado (R$) 06 meses\n1\tTIPO I\tOutsourcing de Impressão - Páginas A4 - Monocromático - Dentro da Franquia sem papel\t26573\tPágina\t3556\tR$ 0,23\tR$ 825,35\tR$ 4.952,09\n2\tOutsourcing de Impressão - Páginas A4 - Policromático - Dentro da Franquia sem papel\t26611\tPágina\t9783\tR$ 0,37\tR$ 3.659,17\tR$ 21.955,01\n3\tOutsourcing de Impressão - Páginas A4 - Policromático - Excedente à franquia sem papel\t26697\tPágina\t8893\tR$ 0,23\tR$ 2.034,42\tR$ 12.206,53\n4\tTIPO II\tOutsourcing de Impressão - Páginas A4 - Monocromático - Dentro da Franquia sem papel\t26573\tPágina\t3217\tR$ 0,32\tR$ 1.025,04\tR$ 6.150,26\n5\tOutsourcing de Impressão - Páginas A4 - Policromático - Dentro da Franquia sem papel\t26611\tPágina\t5077\tR$ 0,39\tR$ 1.971,57\tR$ 11.829,41\n6\tOutsourcing de Impressão - Páginas A4 - Policromático - Excedente à franquia sem papel\t26697\tPágina\t5529\tR$ 0,19\tR$ 1.061,20\tR$ 6.267,20\n7\tTIPO III\tOutsourcing de Impressão - Páginas A4 - Monocromático - Dentro da Franquia sem papel\t26573\tPágina\t3884\tR$ 0,18\tR$ 688,50\tR$ 4.131,02\n8\tOutsourcing de Impressão - Páginas A4 - Monocromático - Excedente à franquia sem papel 26654\tP Total Contrato Estimado (R$) 06 meses\nR$ 73.360,84",
+        "valorEstimado": 3119889803520,
+        "valorHomologado": 73360.84
+      },
+      {
+        "tipoRegistro": "Item (> R$ 1 bi)",
+        "idRegistro": "9860010600298202500001",
+        "orgao": "MUNICIPIO DE RIO DE JANEIRO",
+        "esfera": "Municipal",
+        "uf": "RJ",
+        "modalidade": "Dispensa",
+        "mes": "2025-06",
+        "descricao": "Infraestrutura como servico - iaas Infraestrutura como servico - iaas",
+        "valorEstimado": 347037696000,
+        "valorHomologado": 347037696000
+      },
+      {
+        "tipoRegistro": "Item (> R$ 1 bi)",
+        "idRegistro": "2400030600056202500001",
+        "orgao": "MINISTERIO DAS RELACOES EXTERIORES",
+        "esfera": "Federal",
+        "uf": "RJ",
+        "modalidade": "Dispensa",
+        "mes": "2025-04",
+        "descricao": "Aluguel de Impressora / Multifuncional / Plotter /Scanner Aluguel de Impressora / Multifuncional / Plotter /Scanner",
+        "valorEstimado": 282240000000,
+        "valorHomologado": 16800
+      },
+      {
+        "tipoRegistro": "Item (> R$ 1 bi)",
+        "idRegistro": "4539020600021202500001",
+        "orgao": "MINISTERIO PUBLICO DO ESTADO DO PARANA",
+        "esfera": "Estadual",
+        "uf": "PR",
+        "modalidade": "Dispensa",
+        "mes": "2025-01",
+        "descricao": "Assinatura de serviço de pabx ip Assinatura de serviço de pabx ip",
+        "valorEstimado": 151290000000,
+        "valorHomologado": 12300
+      },
+      {
+        "tipoRegistro": "Item (> R$ 1 bi)",
+        "idRegistro": "9270630700033202500001",
+        "orgao": "MUNICIPIO DE SALVADOR",
+        "esfera": "Municipal",
+        "uf": "BA",
+        "modalidade": "Inexigibilidade",
+        "mes": "2025-10",
+        "descricao": "Cessão temporária de direitos sobre programas de computador locação de software Cessão temporária de direitos sobre programas de computador locação de software",
+        "valorEstimado": 143712144000,
+        "valorHomologado": 11988
+      },
+      {
+        "tipoRegistro": "Item (> R$ 1 bi)",
+        "idRegistro": "5324010700084202500002",
+        "orgao": "DEPARTAMENTO ESTADUAL DE TRANSITO",
+        "esfera": "Estadual",
+        "uf": "SP",
+        "modalidade": "Inexigibilidade",
+        "mes": "2025-01",
+        "descricao": "Pacote de Serviços SMP (Voz, Dados, SMS, Etc) Pacote de Serviços SMP (Voz, Dados, SMS, Etc)",
+        "valorEstimado": 86751000000,
+        "valorHomologado": 1927800
+      },
+      {
+        "tipoRegistro": "Item (> R$ 1 bi)",
+        "idRegistro": "9254660700031202500001",
+        "orgao": "PIAUI TRIBUNAL DE CONTAS DO ESTADO",
+        "esfera": "Estadual",
+        "uf": "PI",
+        "modalidade": "Inexigibilidade",
+        "mes": "2025-06",
+        "descricao": "Licenciamento de direitos permanentes  de  uso  de  softwarepara servidor Licenciamento de direitos permanentes  de  uso  de  softwarepara servidor",
+        "valorEstimado": 70358544000,
+        "valorHomologado": 8388
+      },
+      {
+        "tipoRegistro": "Item (> R$ 1 bi)",
+        "idRegistro": "1582970700011202500001",
+        "orgao": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO MARANHAO",
+        "esfera": "Federal",
+        "uf": "MA",
+        "modalidade": "Inexigibilidade",
+        "mes": "2025-01",
+        "descricao": "Cessão Temporária de Direitos Sobre Programas de Computador Locação de Software Cessão Temporária de Direitos Sobre Programas de Computador Locação de Software",
+        "valorEstimado": 30895810560,
+        "valorHomologado": 5558.4
+      },
+      {
+        "tipoRegistro": "Item (> R$ 1 bi)",
+        "idRegistro": "2003740700054202500002",
+        "orgao": "MINISTERIO DA JUSTICA E SEGURANCA PUBLICA",
+        "esfera": "Federal",
+        "uf": "MT",
+        "modalidade": "Inexigibilidade",
+        "mes": "2025-10",
+        "descricao": "Cessão temporária de direitos sobre programas de computador locação de software Cessão temporária de direitos sobre programas de computador locação de software",
+        "valorEstimado": 30195025000,
+        "valorHomologado": 5495
+      },
+      {
+        "tipoRegistro": "Item (> R$ 1 bi)",
+        "idRegistro": "9263810600114202500003",
+        "orgao": "BELEM SECRETARIA MUNICIPAL DE EDUCACAO E CULTURA",
+        "esfera": "Municipal",
+        "uf": "PA",
+        "modalidade": "Dispensa",
+        "mes": "2025-09",
+        "descricao": "Tablet armazenamento externo: superior a 32, armazenamento interno: superior a 32, conectividade: wi-fi / 3g / 4g / bluetooth, câmera frontal: até 8, câmera traseira: até 8, memória ram: mínimo 4 gb, processador: octa core ou superior, sistema operacional: proprietário, tela: superior a 10",
+        "valorEstimado": 18414000000,
+        "valorHomologado": 18414000000
+      },
+      {
+        "tipoRegistro": "Item (> R$ 1 bi)",
+        "idRegistro": "9280430700024202500001",
+        "orgao": "DEPARTAMENTO ESTADUAL DE TRANSITO",
+        "esfera": "Estadual",
+        "uf": "RR",
+        "modalidade": "Inexigibilidade",
+        "mes": "2025-06",
+        "descricao": "Software como Servico - Saas Software como Servico - Saas",
+        "valorEstimado": 15865635500,
+        "valorHomologado": 1877590
+      },
+      {
+        "tipoRegistro": "Item (> R$ 1 bi)",
+        "idRegistro": "4501610601255202500001",
+        "orgao": "UNIVERSIDADE ESTADUAL DE CAMPINAS",
+        "esfera": "Estadual",
+        "uf": "SP",
+        "modalidade": "Dispensa",
+        "mes": "2025-04",
+        "descricao": "Outsourcing de  Impressão - Páginas A4 - Monocromático - Dentro da Franquia sem Papel Outsourcing de  Impressão - Páginas A4 - Monocromático - Dentro da Franquia sem Papel",
+        "valorEstimado": 13376090000,
+        "valorHomologado": 61147.84
+      },
+      {
+        "tipoRegistro": "Item (> R$ 1 bi)",
+        "idRegistro": "9263810600114202500002",
+        "orgao": "BELEM SECRETARIA MUNICIPAL DE EDUCACAO E CULTURA",
+        "esfera": "Municipal",
+        "uf": "PA",
+        "modalidade": "Dispensa",
+        "mes": "2025-09",
+        "descricao": "Notebook alimentação: bivolt automática, armazenamento hdd: 480 a 1.000, armazenamento ssd: 480 a 1.000 gb, bateria: definido pelo fabricante, garantia on site: 12, interatividade da tela: sem interatividade, memória ram: superior a 8, núcleos por processador: 4 a 8, sistema operacional: proprietário, tela: superior a 14 NOTEBOOK EDUCACIONAL CHROMEBOOK TIPO 1, COM SUPORTE E GARANTIA / MARCA ACER, FABRICANTE: ACER MODELO C734TC23A",
+        "valorEstimado": 12528000000,
+        "valorHomologado": 12528000000
+      },
+      {
+        "tipoRegistro": "Item (> R$ 1 bi)",
+        "idRegistro": "1582970700014202500001",
+        "orgao": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO MARANHAO",
+        "esfera": "Federal",
+        "uf": "MA",
+        "modalidade": "Inexigibilidade",
+        "mes": "2025-01",
+        "descricao": "Cessão Temporária de Direitos Sobre Programas de Computador Locação de Software Cessão Temporária de Direitos Sobre Programas de Computador Locação de Software",
+        "valorEstimado": 7452900000,
+        "valorHomologado": 2730
+      },
+      {
+        "tipoRegistro": "Item (> R$ 1 bi)",
+        "idRegistro": "9263810600114202500001",
+        "orgao": "BELEM SECRETARIA MUNICIPAL DE EDUCACAO E CULTURA",
+        "esfera": "Municipal",
+        "uf": "PA",
+        "modalidade": "Dispensa",
+        "mes": "2025-09",
+        "descricao": "Notebook alimentação: bivolt automática, armazenamento hdd: sem disco hdd, armazenamento ssd: minimo de 1 tb, bateria: minimo de 6 celulas, garantia on site: 12, interatividade da tela: sem interatividade, memória ram: minimo de 64, núcleos por processador: minimo de 14, sistema operacional: proprietário, tela: superior a 14 NOTEBOOK – TIPO III, COM SUPORTE E GARANTIA / MARCA ACER. FABRICANTE: ACER MODELO TMP214- 55-54ZZ",
+        "valorEstimado": 4420000000,
+        "valorHomologado": 4420000000
+      },
+      {
+        "tipoRegistro": "Item (> R$ 1 bi)",
+        "idRegistro": "0900310700017202500002",
+        "orgao": "JUSTICA FEDERAL DE PRIMEIRA INSTANCIA",
+        "esfera": "Federal",
+        "uf": "PE",
+        "modalidade": "Inexigibilidade",
+        "mes": "2025-05",
+        "descricao": "Desenvolvimento de Novo Software - Dispositivos Móveis Desenvolvimento de Novo Software - Dispositivos Móveis",
+        "valorEstimado": 3508690922.5,
+        "valorHomologado": 1873.15
+      },
+      {
+        "tipoRegistro": "Item (> R$ 1 bi)",
+        "idRegistro": "9807860590024202500001",
+        "orgao": "MUNICIPIO DE SEROPEDICA",
+        "esfera": "Municipal",
+        "uf": "RJ",
+        "modalidade": "Pregão - Eletrônico",
+        "mes": "2025-04",
+        "descricao": "Serviços de Integração de  Sistemas em Tecnologia da Informação e Comunicação (TIC)",
+        "valorEstimado": 3383233000,
+        "valorHomologado": null
+      },
+      {
+        "tipoRegistro": "Item (> R$ 1 bi)",
+        "idRegistro": "2003260600507202500002",
+        "orgao": "MINISTERIO DA JUSTICA E SEGURANCA PUBLICA",
+        "esfera": "Federal",
+        "uf": "DF",
+        "modalidade": "Dispensa",
+        "mes": "2025-12",
+        "descricao": "Registro de Marca / Patente Registro de Marca / Patente",
+        "valorEstimado": 2488080000,
+        "valorHomologado": 880.6
+      },
+      {
+        "tipoRegistro": "Item (> R$ 1 bi)",
+        "idRegistro": "9251290600201202500003",
+        "orgao": "ESTADO DO MARANHAO - PROCURADORIA GERAL DA JUSTICA",
+        "esfera": "Estadual",
+        "uf": "MA",
+        "modalidade": "Dispensa",
+        "mes": "2025-06",
+        "descricao": "Serviços de Gerenciamento de Infraestrutura de Tecnologia daInformação e Comunicação (TIC) Serviços de Gerenciamento de Infraestrutura de Tecnologia daInformação e Comunicação (TIC)",
+        "valorEstimado": 2053350050.64,
+        "valorHomologado": 386913.52
+      },
+      {
+        "tipoRegistro": "Item (> R$ 1 bi)",
+        "idRegistro": "9251750600005202600001",
+        "orgao": "CONSELHO FEDERAL DE ENGENHARIA E AGRONOMIA",
+        "esfera": "Federal",
+        "uf": "DF",
+        "modalidade": "Dispensa",
+        "mes": "2025-04",
+        "descricao": "Software como servico - saas Software como servico - saas",
+        "valorEstimado": 1680074400,
+        "valorHomologado": 1680074400
+      },
+      {
+        "tipoRegistro": "Item (> R$ 1 bi)",
+        "idRegistro": "1706070600328202500001",
+        "orgao": "MINISTERIO DA GESTAO E DA INOVACAO EM SERVICOS PUBLICOS",
+        "esfera": "Federal",
+        "uf": "DF",
+        "modalidade": "Dispensa",
+        "mes": "2025-11",
+        "descricao": "Serviços de Hospedagem de Sistemas Serviço de Produção de Soluções",
+        "valorEstimado": 1542350449.176,
+        "valorHomologado": 1542350449.176
+      },
+      {
+        "tipoRegistro": "Item (> R$ 1 bi)",
+        "idRegistro": "4000450600084202500001",
+        "orgao": "MINISTERIO DO TRABALHO",
+        "esfera": "Federal",
+        "uf": "DF",
+        "modalidade": "Dispensa",
+        "mes": "2025-11",
+        "descricao": "Serviços de hospedagem de sistemas Serviços de hospedagem de sistemas",
+        "valorEstimado": 1228687124.4,
+        "valorHomologado": 1228687124.4
+      }
+    ],
+    "nonTiExamples": [
+      {
+        "idItem": "1201950600669202500016",
+        "orgao": "COMANDO DA AERONAUTICA",
+        "codigoGrupo": 182,
+        "codigoClasse": null,
+        "descricao": "Outros Contratos de Transferência de Tecnologia Transferência de tecnologia do Darunavir 800 mg comprimidos revestidos: Estimativas de valores por ano: Ano I: R$ 291.276.000,00",
+        "valorEstimado": 291276000
+      },
+      {
+        "idItem": "1201950600669202500017",
+        "orgao": "COMANDO DA AERONAUTICA",
+        "codigoGrupo": 182,
+        "codigoClasse": null,
+        "descricao": "Outros Contratos de Transferência de Tecnologia Transferência de tecnologia do Darunavir 800 mg comprimidos revestidos: Estimativas de valores por ano: Ano II: R$ 276.696.000,00",
+        "valorEstimado": 276696000
+      },
+      {
+        "idItem": "1201950600669202500018",
+        "orgao": "COMANDO DA AERONAUTICA",
+        "codigoGrupo": 182,
+        "codigoClasse": null,
+        "descricao": "Outros Contratos de Transferência de Tecnologia Transferência de tecnologia do Darunavir 800 mg comprimidos revestidos: Estimativas de valores por ano: Ano III: R$ 251.085.600,00",
+        "valorEstimado": 251085600
+      },
+      {
+        "idItem": "1201950600669202500019",
+        "orgao": "COMANDO DA AERONAUTICA",
+        "codigoGrupo": 182,
+        "codigoClasse": null,
+        "descricao": "Outros Contratos de Transferência de Tecnologia Transferência de tecnologia do Darunavir 800 mg comprimidos revestidos: Estimativas de valores por ano: Ano IV: R$ 238.701.600,00",
+        "valorEstimado": 238701600
+      },
+      {
+        "idItem": "1201950600669202500020",
+        "orgao": "COMANDO DA AERONAUTICA",
+        "codigoGrupo": 182,
+        "codigoClasse": null,
+        "descricao": "Outros Contratos de Transferência de Tecnologia Outros Contratos de Transferência de Tecnologia",
+        "valorEstimado": 226627200
+      },
+      {
+        "idItem": "2544520600104202500001",
+        "orgao": "FUNDACAO OSWALDO CRUZ",
+        "codigoGrupo": 182,
+        "codigoClasse": null,
+        "descricao": "Outros contratos de transferência de tecnologia Outros contratos de transferência de tecnologia",
+        "valorEstimado": 40000000
+      }
+    ]
+  },
+  "enabler6": {
+    "apiPerformance": [
+      {
+        "anoMes": "2025-04",
+        "label": "Abr",
+        "totalServicos": 59,
+        "totalRequisicoes": 6803712,
+        "percentualSucesso": 99.85,
+        "mediaTempoRespostaMs": 114.52,
+        "totalDownloadGb": 121.2614
+      },
+      {
+        "anoMes": "2025-05",
+        "label": "Mai",
+        "totalServicos": 61,
+        "totalRequisicoes": 8512399,
+        "percentualSucesso": 99.95,
+        "mediaTempoRespostaMs": 257.76,
+        "totalDownloadGb": 136.7738
+      },
+      {
+        "anoMes": "2025-06",
+        "label": "Jun",
+        "totalServicos": 61,
+        "totalRequisicoes": 8925310,
+        "percentualSucesso": 99.57,
+        "mediaTempoRespostaMs": 410.79,
+        "totalDownloadGb": 115.6517
+      },
+      {
+        "anoMes": "2025-07",
+        "label": "Jul",
+        "totalServicos": 61,
+        "totalRequisicoes": 9770356,
+        "percentualSucesso": 99.82,
+        "mediaTempoRespostaMs": 172.24,
+        "totalDownloadGb": 145.2227
+      },
+      {
+        "anoMes": "2025-08",
+        "label": "Ago",
+        "totalServicos": 61,
+        "totalRequisicoes": 8028227,
+        "percentualSucesso": 99.86,
+        "mediaTempoRespostaMs": 164.21,
+        "totalDownloadGb": 142.9712
+      },
+      {
+        "anoMes": "2025-09",
+        "label": "Set",
+        "totalServicos": 61,
+        "totalRequisicoes": 7729200,
+        "percentualSucesso": 99.85,
+        "mediaTempoRespostaMs": 273.82,
+        "totalDownloadGb": 140.1525
+      },
+      {
+        "anoMes": "2025-10",
+        "label": "Out",
+        "totalServicos": 65,
+        "totalRequisicoes": 11624820,
+        "percentualSucesso": 99.77,
+        "mediaTempoRespostaMs": 527.35,
+        "totalDownloadGb": 196.8538
+      },
+      {
+        "anoMes": "2025-11",
+        "label": "Nov",
+        "totalServicos": 66,
+        "totalRequisicoes": 8103176,
+        "percentualSucesso": 99.25,
+        "mediaTempoRespostaMs": 1088.15,
+        "totalDownloadGb": 177.3989
+      },
+      {
+        "anoMes": "2025-12",
+        "label": "Dez",
+        "totalServicos": 71,
+        "totalRequisicoes": 8175856,
+        "percentualSucesso": 99.32,
+        "mediaTempoRespostaMs": 1480.25,
+        "totalDownloadGb": 167.7195
+      }
+    ],
+    "apiSummary": {
+      "latenciaInicialMs": 114.52,
+      "latenciaFinalMs": 1480.25,
+      "fatorDegradacao": 12.925689835836536,
+      "picoRequisicoes": 11624820,
+      "picoRequisicoesMes": "Out",
+      "totalDownloadGbAno": 1344.0054999999998
+    },
+    "mixTi": [
+      {
+        "tipo": "Serviço",
+        "itens": 12542,
+        "valorEstimado": 12832294647.32169,
+        "valorHomologado": 10975150626.714516,
+        "pctValor": 75.60227795730803,
+        "pctItens": 40.695674746098184
+      },
+      {
+        "tipo": "Material",
+        "itens": 18277,
+        "valorEstimado": 4141128633.0826087,
+        "valorHomologado": 2682641550.098315,
+        "pctValor": 24.397722042691964,
+        "pctItens": 59.304325253901816
+      }
+    ],
+    "topCatalogo": [
+      {
+        "tipo": "Serviço",
+        "codigo": "CATSER 182",
+        "nome": "Serviços de licenciamento e contratos de transferência de tecnologia",
+        "itens": 3031,
+        "valorEstimado": 3356750987.281306,
+        "pctValor": 19.776511383868282
+      },
+      {
+        "tipo": "Material",
+        "codigo": "CATMAT 7010",
+        "nome": "Computadores",
+        "itens": 2040,
+        "valorEstimado": 2812507238.056503,
+        "pctValor": 16.570064810105357
+      },
+      {
+        "tipo": "Serviço",
+        "codigo": "CATSER 131",
+        "nome": "Serviços de computação em nuvem",
+        "itens": 1007,
+        "valorEstimado": 2169032353.979099,
+        "pctValor": 12.77899171043022
+      },
+      {
+        "tipo": "Serviço",
+        "codigo": "CATSER 162",
+        "nome": "Serviços de gerenciamento em tecnologia da informação e comunicação (tic)",
+        "itens": 438,
+        "valorEstimado": 1386158165.2481983,
+        "pctValor": 8.166638764311667
+      },
+      {
+        "tipo": "Serviço",
+        "codigo": "CATSER 142",
+        "nome": "Serviços de comunicação de dados",
+        "itens": 1774,
+        "valorEstimado": 949479520.0449986,
+        "pctValor": 5.59391882450234
+      },
+      {
+        "tipo": "Serviço",
+        "codigo": "CATSER 111",
+        "nome": "Serviços de desenvolvimento e manutenção de software",
+        "itens": 123,
+        "valorEstimado": 920809347.8099998,
+        "pctValor": 5.425006686029376
+      },
+      {
+        "tipo": "Serviço",
+        "codigo": "CATSER 172",
+        "nome": "Serviços de pesquisa,análise e desenvolvimento em tecnologiada informação e comunicação (tic)",
+        "itens": 54,
+        "valorEstimado": 850282730.9456,
+        "pctValor": 5.00949464877392
+      },
+      {
+        "tipo": "Material",
+        "codigo": "CATMAT 7050",
+        "nome": "Equipamentos de rede de tic - local e remota",
+        "itens": 1680,
+        "valorEstimado": 786912690.3547002,
+        "pctValor": 4.636146034625705
+      },
+      {
+        "tipo": "Serviço",
+        "codigo": "CATSER 165",
+        "nome": "Servicos para a infraestrutura de tecnologia da informaçãoe comunicação (tic), nao classificados em outros tópicos",
+        "itens": 260,
+        "valorEstimado": 667661414.2660003,
+        "pctValor": 3.9335695766027987
+      },
+      {
+        "tipo": "Serviço",
+        "codigo": "CATSER 168",
+        "nome": "Serviços auxiliares de tecnologia da informação e comunicação (tic)",
+        "itens": 423,
+        "valorEstimado": 618593160.5800003,
+        "pctValor": 3.644480847267633
+      }
+    ]
+  },
+  "enabler7": {
+    "byItemType": [
+      {
+        "tipo": "Material",
+        "totalItens": 18277,
+        "falhasQtd": 2466,
+        "taxaFalha": 13.492367456365924,
+        "errosCadastroQtd": 289,
+        "taxaErroCadastro": 1.5812223012529407
+      },
+      {
+        "tipo": "Serviço",
+        "totalItens": 12542,
+        "falhasQtd": 982,
+        "taxaFalha": 7.8296922340934465,
+        "errosCadastroQtd": 123,
+        "taxaErroCadastro": 0.9807048317652688
+      }
+    ],
+    "byOrgan": [
+      {
+        "orgao": "UNIVERSIDADE FEDERAL FLUMINENSE",
+        "totalItens": 126,
+        "falhasQtd": 59,
+        "taxaFalha": 46.82539682539682,
+        "errosCadastroQtd": 0,
+        "taxaErroCadastro": 0,
+        "valorEstimado": 35053456.410000004
+      },
+      {
+        "orgao": "CONSELHO FEDERAL DE ENFERMAGEM COFEN",
+        "totalItens": 107,
+        "falhasQtd": 50,
+        "taxaFalha": 46.728971962616825,
+        "errosCadastroQtd": 0,
+        "taxaErroCadastro": 0,
+        "valorEstimado": 36215720.76000002
+      },
+      {
+        "orgao": "INSTITUTO FEDERAL DE EDUCACAO CIENCIA E TECNOLOGIA CATARINENSE",
+        "totalItens": 145,
+        "falhasQtd": 47,
+        "taxaFalha": 32.41379310344827,
+        "errosCadastroQtd": 1,
+        "taxaErroCadastro": 0.6896551724137931,
+        "valorEstimado": 20680038.270000007
+      },
+      {
+        "orgao": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA SUL-RIO-GRANDENSE - RS",
+        "totalItens": 103,
+        "falhasQtd": 24,
+        "taxaFalha": 23.300970873786408,
+        "errosCadastroQtd": 0,
+        "taxaErroCadastro": 0,
+        "valorEstimado": 24194109.53000001
+      },
+      {
+        "orgao": "INSTITUTO FEDERAL DE EDUCACAO,CIENCIA E TECNOLOGIA DE RONDONIA",
+        "totalItens": 102,
+        "falhasQtd": 23,
+        "taxaFalha": 22.54901960784314,
+        "errosCadastroQtd": 10,
+        "taxaErroCadastro": 9.803921568627452,
+        "valorEstimado": 746294.3800000001
+      },
+      {
+        "orgao": "UNIVERSIDADE FEDERAL DE ALFENAS - UNIFAL-MG",
+        "totalItens": 110,
+        "falhasQtd": 23,
+        "taxaFalha": 20.909090909090907,
+        "errosCadastroQtd": 23,
+        "taxaErroCadastro": 20.909090909090907,
+        "valorEstimado": 4269347.360099999
+      },
+      {
+        "orgao": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA FARROUPILHA",
+        "totalItens": 153,
+        "falhasQtd": 30,
+        "taxaFalha": 19.607843137254903,
+        "errosCadastroQtd": 0,
+        "taxaErroCadastro": 0,
+        "valorEstimado": 27755774.340000004
+      },
+      {
+        "orgao": "UNIVERSIDADE FEDERAL DE GOIAS",
+        "totalItens": 151,
+        "falhasQtd": 29,
+        "taxaFalha": 19.205298013245034,
+        "errosCadastroQtd": 0,
+        "taxaErroCadastro": 0,
+        "valorEstimado": 14204589.18000001
+      },
+      {
+        "orgao": "COMANDO DA AERONAUTICA",
+        "totalItens": 1210,
+        "falhasQtd": 221,
+        "taxaFalha": 18.264462809917354,
+        "errosCadastroQtd": 6,
+        "taxaErroCadastro": 0.49586776859504134,
+        "valorEstimado": 2232647231.1560006
+      },
+      {
+        "orgao": "COMANDO DO EXERCITO",
+        "totalItens": 5961,
+        "falhasQtd": 1013,
+        "taxaFalha": 16.993792987753732,
+        "errosCadastroQtd": 19,
+        "taxaErroCadastro": 0.3187384667002181,
+        "valorEstimado": 337239358.0708006
+      },
+      {
+        "orgao": "MINISTERIO DA SAUDE",
+        "totalItens": 309,
+        "falhasQtd": 51,
+        "taxaFalha": 16.50485436893204,
+        "errosCadastroQtd": 19,
+        "taxaErroCadastro": 6.148867313915858,
+        "valorEstimado": 170516665.6415
+      },
+      {
+        "orgao": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO SUL DE MINAS GERAIS",
+        "totalItens": 117,
+        "falhasQtd": 19,
+        "taxaFalha": 16.23931623931624,
+        "errosCadastroQtd": 0,
+        "taxaErroCadastro": 0,
+        "valorEstimado": 27161896.59999999
+      }
+    ],
+    "summary": {
+      "taxaFalhaGlobal": 11.187903565982024,
+      "taxaErroCadastroGlobal": 1.3368376650767384,
+      "totalFalhas": 3448,
+      "totalErrosCadastro": 412,
+      "totalItensAvaliados": 30819
+    }
+  },
+  "okrs": {
+    "baselines": {
+      "pctDiretasFederal": 69.68007044320517,
+      "pctDiretasTO": 73.33333333333333,
+      "economiaPregao": 31.9007509204316,
+      "economiaDispensa": 18.954784095845795,
+      "outliersFederalQtd": 10,
+      "naoFederaisPct": 49.47951800854463,
+      "orfaosPct": 9.741676917582636,
+      "latenciaFinalMs": 1480.25,
+      "taxaFalhaItens": 11.187903565982024
+    },
+    "okrs": [
+      {
+        "codigo": "OKR 1",
+        "titulo": "Competição, Escala e Eficiência Econômica nas Aquisições de TI",
+        "objetivo": "Reduzir a dependência estrutural de contratações diretas e ampliar compras competitivas compartilhadas (SRP/centrais de compra), convertendo a diretriz da Lei nº 14.133/2021 em economia efetiva.",
+        "habilitadores": [
+          "H1 · Princípios e Políticas",
+          "H2 · Processos",
+          "H3 · Estruturas Organizacionais",
+          "H4 · Cultura e Ética"
+        ],
+        "dominiosCobit": [
+          "APO10",
+          "BAI03",
+          "MEA01"
+        ],
+        "prazoGeral": "12 meses (Ciclo PCA 2026–2027)",
+        "justificativa": "Em 2025, 69,7% das contratações federais de TI ocorreram via contratação direta (73,3% no Tocantins), mesmo com o Pregão Eletrônico gerando economia média de 31,9% contra 19,0% na Dispensa. Além disso, 308 dispensas acumularam-se na faixa de 90–100% do teto legal.",
+        "keyResults": [
+          {
+            "id": "KR 1.1",
+            "titulo": "Reduzir a proporção de contratações diretas na esfera federal",
+            "baselineLabel": "69,7% (2025)",
+            "metaLabel": "≤ 45,0%",
+            "baselineNum": 69.68007044320517,
+            "metaNum": 45,
+            "progressoAtualPct": 65,
+            "unidade": "% de contratações diretas",
+            "prazo": "Q4/2026",
+            "evidencia": "Base atual: 69,7% em quantidade e 47,0% em valor estimado."
+          },
+          {
+            "id": "KR 1.2",
+            "titulo": "Reduzir contratações diretas nas unidades federais do Tocantins via compras compartilhadas",
+            "baselineLabel": "73,3% (TO 2025)",
+            "metaLabel": "≤ 50,0%",
+            "baselineNum": 73.33333333333333,
+            "metaNum": 50,
+            "progressoAtualPct": 68,
+            "unidade": "% diretas no recorte TO",
+            "prazo": "Q4/2026",
+            "evidencia": "Atualmente 77 de 105 compras de TI no TO são diretas, com baixa escala individual."
+          },
+          {
+            "id": "KR 1.3",
+            "titulo": "Mitigar o acúmulo de dispensas na faixa crítica de 90–100% do limite do art. 75, II",
+            "baselineLabel": "308 dispensas (1,78× faixa 80–90%)",
+            "metaLabel": "Razão ≤ 1,10× com revisão prévia",
+            "baselineNum": 1.7803468208092486,
+            "metaNum": 1.1,
+            "progressoAtualPct": 62,
+            "unidade": "razão de concentração",
+            "prazo": "Q3/2026",
+            "evidencia": "Salto estatístico de 173 (80–90%) para 308 (90–100%) sinaliza risco de fracionamento."
+          },
+          {
+            "id": "KR 1.4",
+            "titulo": "Reduzir a taxa global de itens desertos, fracassados ou cancelados",
+            "baselineLabel": "11,2% (2025)",
+            "metaLabel": "≤ 6,5%",
+            "baselineNum": 11.187903565982024,
+            "metaNum": 6.5,
+            "progressoAtualPct": 58,
+            "unidade": "% de retrabalho licitatório",
+            "prazo": "Q4/2026",
+            "evidencia": "3.448 itens não concluídos exigiram retrabalho técnico e administrativo."
+          }
+        ]
+      },
+      {
+        "codigo": "OKR 2",
+        "titulo": "Integridade, Conformidade e Desempenho dos Dados Abertos de TI",
+        "objetivo": "Eliminar distorções cadastrais críticas no PNCP/Compras.gov.br, garantir separação federativa e catalográfica confiável e estabilizar a infraestrutura da API aberta.",
+        "habilitadores": [
+          "H5 · Informação",
+          "H6 · Serviços, Infraestrutura e Aplicativos",
+          "H7 · Pessoas, Habilidades e Competências"
+        ],
+        "dominiosCobit": [
+          "APO11",
+          "BAI08",
+          "DSS01",
+          "MEA01"
+        ],
+        "prazoGeral": "12 meses (Saneamento Contínuo 2026)",
+        "justificativa": "Foram detectados 10 itens federais acima de R$ 1 bilhão (e 23 na base total somando trilhões), 49,5% de registros subnacionais misturados na extração federal, 9,7% de itens órfãos e degradação de 12,9× na latência da API até dezembro.",
+        "keyResults": [
+          {
+            "id": "KR 2.1",
+            "titulo": "Zerar registros federais implausíveis (> R$ 1 bi/item) via crítica automática no cadastro",
+            "baselineLabel": "10 itens federais (2025)",
+            "metaLabel": "0 ocorrências sem dupla alçada",
+            "baselineNum": 10,
+            "metaNum": 0,
+            "progressoAtualPct": 12,
+            "unidade": "outliers críticos federais",
+            "prazo": "Q2/2026",
+            "evidencia": "Somente 4 contratações federais distorcidas somavam trilhões no campo estimado antes do saneamento."
+          },
+          {
+            "id": "KR 2.2",
+            "titulo": "Reduzir a taxa de itens órfãos (sem contratação vinculada) na API de dados abertos",
+            "baselineLabel": "9,7% (7.365 itens)",
+            "metaLabel": "≤ 1,0%",
+            "baselineNum": 9.741676917582636,
+            "metaNum": 1,
+            "progressoAtualPct": 10,
+            "unidade": "% de quebra referencial",
+            "prazo": "Q3/2026",
+            "evidencia": "Integridade referencial entre endpoints de itens e contratações é pré-requisito para controle social."
+          },
+          {
+            "id": "KR 2.3",
+            "titulo": "Restaurar a latência média da API Compras.gov.br e sustentar disponibilidade ≥ 99,8%",
+            "baselineLabel": "1.480 ms (Dez/2025)",
+            "metaLabel": "≤ 300 ms em pico mensal",
+            "baselineNum": 1480.25,
+            "metaNum": 300,
+            "progressoAtualPct": 20,
+            "unidade": "tempo médio de resposta (ms)",
+            "prazo": "Q3/2026",
+            "evidencia": "Latência saltou de 115 ms (Abr/25) para 1.480 ms (Dez/25)."
+          },
+          {
+            "id": "KR 2.4",
+            "titulo": "Capacitar agentes de contratação em catalogação CATMAT/CATSER e publicar 100% do PCA no TO",
+            "baselineLabel": "0 registros PCA-TO · 1,3% erro cadastro",
+            "metaLabel": "100% UASGs TO no PCA · ≤ 0,3% erro",
+            "baselineNum": 1.3368376650767384,
+            "metaNum": 0.3,
+            "progressoAtualPct": 22,
+            "unidade": "maturidade cadastral e PCA",
+            "prazo": "Q4/2026",
+            "evidencia": "Tabela fato_pca_to sem registros publicados e classificação incorreta de insumos não-TI (ex.: fármacos em CATSER 182)."
+          }
+        ]
+      }
+    ]
+  }
+}
