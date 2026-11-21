@@ -1,6 +1,8 @@
 import calendar
 import hashlib
+import threading
 import time
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 from typing import Any, Dict, List, Optional, Tuple
 import requests
@@ -8,12 +10,15 @@ import requests
 from config import (
     ANOS_ESCOPO,
     BASE_URL,
+    COLETAR_RESULTADOS_POR_COMPRA,
     DESCRICAO_MAX_CHARS,
+    MODALIDADES_CONSULTA,
     MODALIDADES_PNCP,
     ORGAOS_PCA_TO,
     REGEX_PALAVRAS_TI,
     TETO_DISPENSA_ART75_II,
     USER_AGENT,
+    WORKERS_API,
 )
 import db
 
@@ -22,6 +27,18 @@ session.headers.update({
     "Accept": "application/json",
     "User-Agent": USER_AGENT
 })
+
+# Cada thread da coleta paralela usa a sua própria sessão HTTP
+_local = threading.local()
+
+
+def _sessao() -> requests.Session:
+    s = getattr(_local, "s", None)
+    if s is None:
+        s = requests.Session()
+        s.headers.update({"Accept": "application/json", "User-Agent": USER_AGENT})
+        _local.s = s
+    return s
 
 
 # ============================================================================
@@ -36,13 +53,16 @@ def requisitar_json(path: str, params: dict, tentativas: int = 5) -> Optional[di
     url = f"{BASE_URL}{path}"
     for t in range(1, tentativas + 1):
         try:
-            resp = session.get(url, params=params, timeout=60)
+            resp = _sessao().get(url, params=params, timeout=60)
             if resp.status_code == 200:
                 return resp.json() if resp.content else {}
             elif resp.status_code in (204, 404):
                 return {}
             elif resp.status_code in (429, 500, 502, 503, 504):
                 espera = min(t * 5, 60)
+                ra = resp.headers.get("Retry-After")
+                if ra and ra.isdigit():
+                    espera = max(espera, min(int(ra), 120))
                 print(f"    [!] HTTP {resp.status_code} em {path}. Aguardando {espera:.1f}s...", flush=True)
                 time.sleep(espera)
             else:
@@ -116,6 +136,27 @@ def marcar_checkpoint(chave: str, qtd: int):
         conn.close()
 
 
+def marcar_checkpoints_lote(chaves_qtd: List[Tuple[str, int]]):
+    """Marca vários checkpoints numa única gravação por banco."""
+    if not chaves_qtd:
+        return
+    agora = datetime.now().isoformat(timespec="seconds")
+    rows = [(ch, 1, q, agora) for ch, q in chaves_qtd]
+    for sgbd, conn in db.get_active_connections():
+        db.upsert_records(conn, "etl_checkpoints", ["chave_tarefa"],
+                          ["chave_tarefa", "concluido", "total_registros", "updated_at"],
+                          rows, is_postgres="PostgreSQL" in sgbd)
+        conn.close()
+
+
+def checkpoints_concluidos(prefixo: str) -> set:
+    conn = db.get_sqlite_connection()
+    r = {row[0] for row in conn.execute(
+        "SELECT chave_tarefa FROM etl_checkpoints WHERE concluido = 1 AND chave_tarefa LIKE ?", (prefixo + "%",))}
+    conn.close()
+    return r
+
+
 # ============================================================================
 # FUNCOES DE SUPORTE E FORMATACAO
 # ============================================================================
@@ -146,10 +187,12 @@ def formatar_linhas_contratacoes(lote: list, escopo: str) -> List[Tuple]:
         mes_pub = dt_pub[:7] if len(dt_pub) >= 7 else f"{ano_pub}-01"
 
         cod_mod = c.get("codigoModalidade")
-        mod_nome_api = c.get("modalidadeNome") or MODALIDADES_PNCP.get(cod_mod, ("Outros", "Outros"))[0]
+        mod_nome_api = c.get("modalidadeNome") or "Não informada"
+        # Classificação pelo nome devolvido pela API (os códigos seguem o SIASG, não o PNCP)
+        nome_l = mod_nome_api.lower()
         tipo_contr = (
             "Contratação Direta"
-            if cod_mod in (8, 9) or "Dispensa" in mod_nome_api or "Inexigibilidade" in mod_nome_api
+            if ("dispensa" in nome_l or "inexigib" in nome_l)
             else "Com Competição"
         )
 
@@ -361,6 +404,43 @@ def executar_t1_catalogo() -> Tuple[List[int], List[int]]:
 
 
 # ============================================================================
+# T2.3: CONTRATACOES-PAI EM BLOCO (NACIONAL, MES A MES)
+# ============================================================================
+def coletar_contratacoes_ti_em_bloco(anos: List[int], ids_ti: set, cols_contr: List[str]):
+    """
+    Busca as contratações nacionais por mês e modalidade (500 por página) e grava só
+    as que têm itens de TI. Faz centenas de requisições, em vez de uma por compra.
+    Inclui nov/dez do ano anterior, porque itens incluídos em 2025 podem ser de compras
+    publicadas no fim de 2024.
+    """
+    print("\n>>> [T2.3] Coletando Contratações-pai em bloco (nacional, mês a mês)...", flush=True)
+    janelas = [w for w in gerar_janelas_mensais([min(anos) - 1]) if w[3] >= 11] + gerar_janelas_mensais(anos)
+    total_ti = 0
+    for dt_ini, dt_fim, ano, mes in janelas:
+        for cod_mod in MODALIDADES_CONSULTA:
+            chave_cp = f"contr_BR_{ano}_{mes:02d}_mod_{cod_mod}"
+            if tarefa_concluida(chave_cp):
+                continue
+            lote = coletar_todas_paginas(
+                "/modulo-contratacoes/1_consultarContratacoes_PNCP_14133",
+                {"dataPublicacaoPncpInicial": dt_ini, "dataPublicacaoPncpFinal": dt_fim,
+                 "codigoModalidade": cod_mod, "tamanhoPagina": 500},
+                max_paginas=400)
+            if lote is None:
+                print(f"    [X] BR {ano}-{mes:02d} (Mod {cod_mod}): falha na coleta, será repetida", flush=True)
+                continue
+            sel = [c for c in lote if str(c.get("idCompra") or "").strip() in ids_ti]
+            linhas = formatar_linhas_contratacoes(sel, "BR_TI")
+            if linhas:
+                persistir_em_todos_sgbds("fato_contratacoes", ["id_compra"], cols_contr, linhas)
+            if lote:
+                print(f"    [+] BR {ano}-{mes:02d} (Mod {cod_mod}): {len(lote)} compras, {len(linhas)} com TI", flush=True)
+            total_ti += len(linhas)
+            marcar_checkpoint(chave_cp, len(linhas))
+    print(f"    [*] Contratações-pai de TI gravadas nesta execução: {total_ti}", flush=True)
+
+
+# ============================================================================
 # AUXILIARES DA T2
 # ============================================================================
 def eh_me_epp(porte_nome: Optional[str]) -> bool:
@@ -485,7 +565,7 @@ def executar_t2_coleta(
     ]
 
     for dt_ini, dt_fim, ano, mes in janelas:
-        for cod_mod in MODALIDADES_PNCP.keys():
+        for cod_mod in MODALIDADES_CONSULTA:
             chave_cp = f"contr_TO_{ano}_{mes:02d}_mod_{cod_mod}"
             if tarefa_concluida(chave_cp):
                 continue
@@ -580,7 +660,7 @@ def executar_t2_coleta(
             marcar_checkpoint(chave_cp, len(linhas))
 
     # 3. Compras-pai e Resultados Homologados de TI
-    print("\n>>> [T2.3] Sincronizando Compras-Pai e Resultados Homologados...", flush=True)
+    print("\n>>> Preparando compras com itens de TI...", flush=True)
     conn = db.get_sqlite_connection()
     # Todas as compras que têm itens de TI: a compra-pai só é buscada se faltar,
     # mas os resultados são buscados para todas (inclusive compras do TO já gravadas).
@@ -604,64 +684,100 @@ def executar_t2_coleta(
         "data_atualizacao_pncp"
     ]
 
-    for idx, id_comp in enumerate(ids_faltantes, 1):
-        chave_cp = f"compra_id_{id_comp}"
-        if id_comp not in ids_com_contratacao and not tarefa_concluida(chave_cp):
+    # T2.3: contratações-pai em bloco (rápido)
+    coletar_contratacoes_ti_em_bloco(anos, set(ids_faltantes), cols_contr)
+
+    # T2.4 (opcional): resultados compra por compra. Desligado por padrão por causa do
+    # limite de requisições da API; os fornecedores vêm dos itens (cod/nome do fornecedor
+    # e valor homologado). Ative com COLETAR_RESULTADOS=1 no .env.
+    conn = db.get_sqlite_connection()
+    ids_com_contratacao = {r[0] for r in conn.execute("SELECT id_compra FROM fato_contratacoes").fetchall()}
+    conn.close()
+    feitos_c = checkpoints_concluidos("compra_id_")
+    feitos_r = checkpoints_concluidos("res_id_")
+    if COLETAR_RESULTADOS_POR_COMPRA:
+        print("\n>>> [T2.4] Resultados compra por compra (COLETAR_RESULTADOS=1)...", flush=True)
+        pendentes = [i for i in ids_faltantes
+                     if f"res_id_{i}" not in feitos_r
+                     or (i not in ids_com_contratacao and f"compra_id_{i}" not in feitos_c)]
+    else:
+        pendentes = []
+        print("\n    [*] Resultados por compra desligados (fornecedores calculados a partir dos itens). "
+              "Para ativar: COLETAR_RESULTADOS=1 no .env.", flush=True)
+    if pendentes:
+        print(f"    [*] {len(pendentes)} de {len(ids_faltantes)} compras de TI pendentes "
+              f"({WORKERS_API} consultas simultâneas).", flush=True)
+
+    def buscar(id_comp):
+        dados_c = "pular"
+        if id_comp not in ids_com_contratacao and f"compra_id_{id_comp}" not in feitos_c:
             dados_c = requisitar_json(
                 "/modulo-contratacoes/1.1_consultarContratacoes_PNCP_14133_Id",
-                {"tipo": "idCompra", "codigo": id_comp}
-            )
-            if dados_c is not None:
-                lote_c = dados_c.get("resultado") or []
-                linhas_c = formatar_linhas_contratacoes(lote_c, "BR_TI")
-                if linhas_c:
-                    persistir_em_todos_sgbds("fato_contratacoes", ["id_compra"], cols_contr, linhas_c)
-                marcar_checkpoint(chave_cp, len(linhas_c))
-
-        chave_res = f"res_id_{id_comp}"
-        if not tarefa_concluida(chave_res):
+                {"tipo": "idCompra", "codigo": id_comp})
+        dados_r = "pular"
+        if f"res_id_{id_comp}" not in feitos_r:
             dados_r = requisitar_json(
                 "/modulo-contratacoes/3.1_consultarResultadoItensContratacoes_PNCP_14133_Id",
-                {"tipo": "idCompra", "codigo": id_comp}
-            )
-            if dados_r is None:
-                continue  # falhou: tenta de novo na próxima execução
-            linhas_r = []
-            for r in (dados_r.get("resultado") or []):
-                id_it = str(r.get("idCompraItem") or "").strip()
-                seq = r.get("sequencialResultado") or 1
-                if not id_it or id_it not in itens_ti:
-                    continue  # guarda só resultados de itens de TI
-                flag_me = 1 if eh_me_epp(r.get("porteFornecedorNome")) else 0
-                sit_res = r.get("situacaoCompraItemResultadoNome") or ""
-                motivo_canc = r.get("motivoCancelamento")
-                flag_canc_sem_motivo = 1 if ("cancelado" in sit_res.lower() and not motivo_canc) else 0
+                {"tipo": "idCompra", "codigo": id_comp})
+        return id_comp, dados_c, dados_r
 
-                linhas_r.append((
-                    id_it, seq, str(r.get("idCompra") or "").strip(),
-                    str(r.get("unidadeOrgaoCodigoUnidade") or "").strip().zfill(6),
-                    r.get("unidadeOrgaoUfSigla"), r.get("orgaoEntidadeCnpj"),
-                    r.get("niFornecedor"), r.get("tipoPessoa"),
-                    r.get("nomeRazaoSocialFornecedor"), r.get("porteFornecedorId"),
-                    r.get("porteFornecedorNome"), flag_me,
-                    str(r.get("naturezaJuridicaId") or ""), r.get("naturezaJuridicaNome"),
-                    r.get("quantidadeHomologada"), r.get("valorUnitarioHomologado"),
-                    r.get("valorTotalHomologado"), r.get("percentualDesconto"),
-                    sit_res, motivo_canc, flag_canc_sem_motivo,
-                    1 if r.get("aplicacaoBeneficioMeepp") else 0,
-                    1 if r.get("aplicacaoMargemPreferencia") else 0,
-                    r.get("dataResultadoPncp"), r.get("dataInclusaoPncp"),
-                    r.get("dataAtualizacaoPncp")
-                ))
+    LOTE = 400
+    falhas = 0
+    inicio = time.time()
+    with ThreadPoolExecutor(max_workers=WORKERS_API) as pool:
+        for ini in range(0, len(pendentes), LOTE):
+            lote_ids = pendentes[ini:ini + LOTE]
+            linhas_c, linhas_r, cps = [], [], []
+            for id_comp, dados_c, dados_r in pool.map(buscar, lote_ids):
+                if dados_c is None or dados_r is None:
+                    falhas += 1
+                if dados_c not in ("pular", None):
+                    lc = formatar_linhas_contratacoes(dados_c.get("resultado") or [], "BR_TI")
+                    linhas_c.extend(lc)
+                    cps.append((f"compra_id_{id_comp}", len(lc)))
+                if dados_r not in ("pular", None):
+                    n_antes = len(linhas_r)
+                    for r in (dados_r.get("resultado") or []):
+                        id_it = str(r.get("idCompraItem") or "").strip()
+                        seq = r.get("sequencialResultado") or 1
+                        if not id_it or id_it not in itens_ti:
+                            continue  # guarda só resultados de itens de TI
+                        flag_me = 1 if eh_me_epp(r.get("porteFornecedorNome")) else 0
+                        sit_res = r.get("situacaoCompraItemResultadoNome") or ""
+                        motivo_canc = r.get("motivoCancelamento")
+                        flag_canc_sem_motivo = 1 if ("cancelado" in sit_res.lower() and not motivo_canc) else 0
+                        linhas_r.append((
+                            id_it, seq, str(r.get("idCompra") or "").strip(),
+                            str(r.get("unidadeOrgaoCodigoUnidade") or "").strip().zfill(6),
+                            r.get("unidadeOrgaoUfSigla"), r.get("orgaoEntidadeCnpj"),
+                            r.get("niFornecedor"), r.get("tipoPessoa"),
+                            r.get("nomeRazaoSocialFornecedor"), r.get("porteFornecedorId"),
+                            r.get("porteFornecedorNome"), flag_me,
+                            str(r.get("naturezaJuridicaId") or ""), r.get("naturezaJuridicaNome"),
+                            r.get("quantidadeHomologada"), r.get("valorUnitarioHomologado"),
+                            r.get("valorTotalHomologado"), r.get("percentualDesconto"),
+                            sit_res, motivo_canc, flag_canc_sem_motivo,
+                            1 if r.get("aplicacaoBeneficioMeepp") else 0,
+                            1 if r.get("aplicacaoMargemPreferencia") else 0,
+                            r.get("dataResultadoPncp"), r.get("dataInclusaoPncp"),
+                            r.get("dataAtualizacaoPncp")
+                        ))
+                    cps.append((f"res_id_{id_comp}", len(linhas_r) - n_antes))
+            if linhas_c:
+                persistir_em_todos_sgbds("fato_contratacoes", ["id_compra"], cols_contr, linhas_c)
             if linhas_r:
                 persistir_em_todos_sgbds("fato_resultados_ti", ["id_compra_item", "sequencial_resultado"], cols_res, linhas_r)
-            marcar_checkpoint(chave_res, len(linhas_r))
-
-        if idx % 50 == 0:
-            print(f"    -> Processadas {idx}/{len(ids_faltantes)} compras de TI...", flush=True)
+            marcar_checkpoints_lote(cps)
+            feito = min(ini + LOTE, len(pendentes))
+            dec = time.time() - inicio
+            resta = dec / feito * (len(pendentes) - feito) if feito else 0
+            print(f"    -> {feito}/{len(pendentes)} compras · {len(linhas_c)} contratações e "
+                  f"{len(linhas_r)} resultados gravados · faltam ~{resta/60:.0f} min", flush=True)
+    if falhas:
+        print(f"    [!] {falhas} compras com falha de rede: rode o sync de novo para completá-las.", flush=True)
 
     # 4. Indicadores de Desempenho da API (2025-2026)
-    print("\n>>> [T2.4] Coletando Indicadores de Desempenho da API...", flush=True)
+    print("\n>>> [T2.5] Coletando Indicadores de Desempenho da API...", flush=True)
     cols_ind = [
         "ano_mes", "ano", "mes", "total_servicos", "total_requisicoes",
         "percentual_sucesso", "media_tempo_resposta_ms", "total_download_gb"

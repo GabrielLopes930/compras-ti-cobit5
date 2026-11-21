@@ -2,6 +2,21 @@ import json
 from datetime import datetime
 from typing import Any, Dict, List
 from config import ANOS_ESCOPO, PUBLIC_DATA_DIR, TETO_DISPENSA_ART75_II
+import os
+
+# Mesmos filtros da apresentação e do resumo expandido:
+# só a esfera federal e sem valores implausíveis (erros de cadastro).
+LIMITE_ITEM = float(os.getenv("LIMITE_ITEM", "1e9"))        # R$ 1 bilhão por item
+LIMITE_COMPRA = float(os.getenv("LIMITE_COMPRA", "1e10"))   # R$ 10 bilhões por compra
+FILTRO_CONTR = (
+    "UPPER(SUBSTR(COALESCE(c.orgao_esfera,''),1,1)) = 'F' "
+    f"AND COALESCE(c.valor_total_estimado,0) <= {LIMITE_COMPRA:.0f} "
+    f"AND COALESCE(c.valor_total_homologado,0) <= {LIMITE_COMPRA:.0f}"
+)
+FILTRO_ITEM = (
+    f"COALESCE(i.valor_total,0) <= {LIMITE_ITEM:.0f} "
+    f"AND COALESCE(i.valor_total_resultado,0) <= {LIMITE_ITEM:.0f}"
+)
 import db
 
 
@@ -59,8 +74,8 @@ def exportar_dashboard_json(prefer_neon: bool = True) -> str:
                 SUM(c.flag_valor_nulo_ou_zerado) AS qtd_nulos_zerados,
                 SUM(COALESCE(i.flag_fracasso_deserto_cancelado, 0)) AS qtd_itens_fracassados
             FROM fato_contratacoes c
-            LEFT JOIN fato_itens_ti i ON c.id_compra = i.id_compra
-            WHERE c.contratacao_excluida = 0
+            LEFT JOIN fato_itens_ti i ON c.id_compra = i.id_compra AND """ + FILTRO_ITEM + """
+            WHERE c.contratacao_excluida = 0 AND """ + FILTRO_CONTR + """
             GROUP BY 1, 2, 3, 4, 5, 6, 7, 8
         """ if is_pg else """
             SELECT
@@ -82,45 +97,32 @@ def exportar_dashboard_json(prefer_neon: bool = True) -> str:
                 SUM(c.flag_valor_nulo_ou_zerado) AS qtd_nulos_zerados,
                 SUM(COALESCE(i.flag_fracasso_deserto_cancelado, 0)) AS qtd_itens_fracassados
             FROM fato_contratacoes c
-            LEFT JOIN fato_itens_ti i ON c.id_compra = i.id_compra
-            WHERE c.contratacao_excluida = 0
+            LEFT JOIN fato_itens_ti i ON c.id_compra = i.id_compra AND """ + FILTRO_ITEM + """
+            WHERE c.contratacao_excluida = 0 AND """ + FILTRO_CONTR + """
             GROUP BY 1, 2, 3, 4, 5, 6, 7, 8
         """
         serie_cubo = query_fn(conn, sql_cubo)
 
         # 2. Curva de Fornecedores e ME/EPP
+        # Fornecedor vencedor informado no próprio item (a busca de resultados por compra
+        # fica desligada por padrão, por causa do limite de requisições da API)
         sql_forn = """
             SELECT
-                r.ni_fornecedor,
-                r.nome_razao_social_fornecedor AS fornecedor,
-                COALESCE(r.porte_fornecedor_nome, 'Não Informado') AS porte,
-                r.flag_me_epp,
+                i.cod_fornecedor AS ni_fornecedor,
+                MAX(i.nome_fornecedor) AS fornecedor,
                 COALESCE(c.modalidade_nome, 'Outros') AS modalidade,
+                c.tipo_contratacao,
                 COALESCE(c.ano_compra, 2025) AS ano,
-                COUNT(DISTINCT r.id_compra_item) AS itens_vencidos,
-                ROUND(CAST(SUM(COALESCE(r.valor_total_homologado, 0)) AS NUMERIC), 2) AS valor_homologado,
-                ROUND(CAST(AVG(COALESCE(r.percentual_desconto, 0)) AS NUMERIC), 2) AS desconto_medio
-            FROM fato_resultados_ti r
-            LEFT JOIN fato_contratacoes c ON r.id_compra = c.id_compra
-            GROUP BY 1, 2, 3, 4, 5, 6
+                COUNT(*) AS itens_vencidos,
+                ROUND(CAST(SUM(COALESCE(i.valor_total_resultado, 0)) AS NUMERIC), 2) AS valor_homologado,
+                ROUND(CAST(SUM(COALESCE(i.valor_total, 0)) AS NUMERIC), 2) AS valor_estimado
+            FROM fato_itens_ti i
+            JOIN fato_contratacoes c ON c.id_compra = i.id_compra
+            WHERE i.tem_resultado = 1 AND COALESCE(i.cod_fornecedor, '') <> ''
+              AND """ + FILTRO_ITEM + """ AND """ + FILTRO_CONTR + """
+            GROUP BY 1, 3, 4, 5
             ORDER BY valor_homologado DESC
-            LIMIT 200
-        """ if is_pg else """
-            SELECT
-                r.ni_fornecedor,
-                r.nome_razao_social_fornecedor AS fornecedor,
-                COALESCE(r.porte_fornecedor_nome, 'Não Informado') AS porte,
-                r.flag_me_epp,
-                COALESCE(c.modalidade_nome, 'Outros') AS modalidade,
-                COALESCE(c.ano_compra, 2025) AS ano,
-                COUNT(DISTINCT r.id_compra_item) AS itens_vencidos,
-                ROUND(SUM(COALESCE(r.valor_total_homologado, 0)), 2) AS valor_homologado,
-                ROUND(AVG(COALESCE(r.percentual_desconto, 0)), 2) AS desconto_medio
-            FROM fato_resultados_ti r
-            LEFT JOIN fato_contratacoes c ON r.id_compra = c.id_compra
-            GROUP BY 1, 2, 3, 4, 5, 6
-            ORDER BY valor_homologado DESC
-            LIMIT 200
+            LIMIT 300
         """
         top_fornecedores = query_fn(conn, sql_forn)
 
@@ -140,9 +142,9 @@ def exportar_dashboard_json(prefer_neon: bool = True) -> str:
                 END AS faixa_teto,
                 COUNT(*) AS qtd_dispensas,
                 ROUND(CAST(SUM(valor_total_estimado) AS NUMERIC), 2) AS valor_total
-            FROM fato_contratacoes
-            WHERE codigo_modalidade = 8
-              AND valor_total_estimado > 0
+            FROM fato_contratacoes c
+            WHERE LOWER(c.modalidade_nome) LIKE '%dispensa%' AND """ + FILTRO_CONTR + """
+              AND c.valor_total_estimado > 0
               AND pct_limite_dispensa IS NOT NULL
             GROUP BY 1, 2, 3
         """ if is_pg else """
@@ -160,9 +162,9 @@ def exportar_dashboard_json(prefer_neon: bool = True) -> str:
                 END AS faixa_teto,
                 COUNT(*) AS qtd_dispensas,
                 ROUND(SUM(valor_total_estimado), 2) AS valor_total
-            FROM fato_contratacoes
-            WHERE codigo_modalidade = 8
-              AND valor_total_estimado > 0
+            FROM fato_contratacoes c
+            WHERE LOWER(c.modalidade_nome) LIKE '%dispensa%' AND """ + FILTRO_CONTR + """
+              AND c.valor_total_estimado > 0
               AND pct_limite_dispensa IS NOT NULL
             GROUP BY 1, 2, 3
         """
@@ -205,6 +207,9 @@ def exportar_dashboard_json(prefer_neon: bool = True) -> str:
         pacote = {
             "gerado_em": datetime.now().isoformat(timespec="seconds"),
             "fonte": "Neon PostgreSQL" if is_pg else "SQLite Local",
+            "filtros": {"esfera": "federal (orgao_esfera = 'F')", "limite_item": LIMITE_ITEM,
+                        "limite_compra": LIMITE_COMPRA,
+                        "observacao": "Valores acima dos limites são erros de cadastro e ficam fora."},
             "escopo_anos": ANOS_ESCOPO,
             "tetos_dispensa": TETO_DISPENSA_ART75_II,
             "catalogo_ti": catalogo_ti,

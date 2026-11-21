@@ -57,6 +57,19 @@ MODALIDADES_PNCP = {
     9: ("Inexigibilidade", "Contratação Direta"),
 }
 
+# Códigos de modalidade enviados à API (parâmetro obrigatório codigoModalidade).
+# A API usa a numeração do SIASG (ex.: 5 = Pregão, 6 = Dispensa, 7 = Inexigibilidade),
+# não a do PNCP. Consultamos uma faixa ampla; a classificação usa o nome devolvido pela API.
+MODALIDADES_CONSULTA = list(range(1, 15)) + [20, 22, 33, 44, 99]
+
+# Consultas simultâneas na busca por compra (T2.4, opcional)
+WORKERS_API = int(os.getenv("WORKERS_API", "2"))
+
+# A busca de resultados compra por compra faz ~2 requisições por compra e esbarra no
+# limite da API (HTTP 429). Por padrão ela fica desligada: as contratações-pai vêm em
+# bloco (T2.3) e os fornecedores vêm dos próprios itens. Para ativar: COLETAR_RESULTADOS=1
+COLETAR_RESULTADOS_POR_COMPRA = os.getenv("COLETAR_RESULTADOS", "0") == "1"
+
 # Órgãos federais do Tocantins para análise de PCA (UFT e IFTO)
 ORGAOS_PCA_TO = {
     "26251": "UFT",   # Fundação Universidade Federal do Tocantins

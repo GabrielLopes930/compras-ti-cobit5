@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compras de TI e COBIT 5</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Serif:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f5f4;--card:#fff;--ink:#0f2236;--mute:#5a6878;--acc:#0f8b8d;--acc-d:#0b6a6c;--acc2:#22a7a0;--warm:#e8913a;--warm-d:#9a5a17;--soft:#e3efee;--line:rgba(15,34,54,.12);
+--serif:"IBM Plex Serif",Georgia,serif;--sans:"IBM Plex Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#0b1a2b;overflow:hidden;font-family:var(--sans);color:var(--ink);-webkit-font-smoothing:antialiased}
+#stage{position:absolute;left:50%;top:50%;width:1600px;height:900px}
+.slide{position:absolute;inset:0;padding:64px max(104px,calc((100% - 1392px)/2)) 84px;display:flex;flex-direction:column;justify-content:center;opacity:0;visibility:hidden;transition:opacity .45s;isolation:isolate;
+ background:radial-gradient(1100px 620px at 100% 0%,rgba(15,139,141,.13),transparent 62%),radial-gradient(900px 520px at 0% 100%,rgba(232,145,58,.10),transparent 60%),linear-gradient(180deg,#f7f9f8,#edf2f1)}
+.slide::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(rgba(15,34,54,.09) 1.2px,transparent 1.4px);background-size:30px 30px;-webkit-mask-image:linear-gradient(160deg,rgba(0,0,0,.75),transparent 55%);mask-image:linear-gradient(160deg,rgba(0,0,0,.75),transparent 55%)}
+.slide::after{content:"";position:absolute;left:0;top:0;bottom:0;width:8px;z-index:-1;background:linear-gradient(180deg,#0f8b8d,#2bb3a8 55%,#e8913a)}
+.slide.on{opacity:1;visibility:visible}
+.slide>.r{opacity:0;transform:translateY(18px);transition:opacity .55s,transform .55s}
+.slide.on>.r{opacity:1;transform:none}
+.slide.on>.r:nth-child(2){transition-delay:.06s}.slide.on>.r:nth-child(3){transition-delay:.12s}.slide.on>.r:nth-child(4){transition-delay:.18s}.slide.on>.r:nth-child(5){transition-delay:.24s}
+.tag{font-family:var(--mono);font-weight:600;font-size:17px;letter-spacing:.08em;text-transform:uppercase;color:var(--acc);margin-bottom:18px;display:flex;gap:12px;align-items:center}
+.tag b{background:linear-gradient(90deg,#0f8b8d,#22a7a0);color:#fff;border-radius:6px;padding:2px 9px;font-weight:600}
+.tag .hb{background:var(--ink);color:#fff;border-radius:6px;padding:2px 9px;text-transform:none;letter-spacing:0;font-weight:600}
+h1{font-family:var(--serif);font-weight:700;font-size:78px;line-height:1.03;letter-spacing:-.02em;max-width:900px}
+h2{font-family:var(--serif);font-weight:700;font-size:50px;line-height:1.08;letter-spacing:-.015em;max-width:1340px}
+h1 em,h2 em{font-style:italic;font-weight:400;background:linear-gradient(90deg,#0f8b8d,#3fb8ae);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.08em}
+.lead{font-size:25px;line-height:1.45;color:#2b3a4b;max-width:1200px;margin-top:16px}
+.foot{position:absolute;left:max(104px,calc((100% - 1392px)/2));right:max(104px,calc((100% - 1392px)/2));bottom:30px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:14px;color:var(--mute)}
+code{font-family:var(--mono);font-size:.86em;background:var(--soft);color:var(--acc-d);border-radius:5px;padding:1px 6px}
+.card{background:linear-gradient(180deg,#fff,#f6faf9);border:1px solid var(--line);border-radius:18px;box-shadow:inset 0 1px 0 #fff,0 22px 44px -30px rgba(15,34,54,.4)}
+.dark{background:linear-gradient(135deg,#0f2236,#17405a);color:#eef3f2;border-radius:18px;box-shadow:0 22px 44px -30px rgba(15,34,54,.6)}
+/* capa e fim */
+.cover,.end{color:#eef3f2;background:radial-gradient(900px 620px at 88% 18%,rgba(15,139,141,.5),transparent 62%),radial-gradient(760px 520px at 6% 112%,rgba(232,145,58,.3),transparent 60%),linear-gradient(135deg,#0a1726,#10263d 55%,#0c2f39)}
+.cover::before,.end::before{background-image:linear-gradient(rgba(127,208,209,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(127,208,209,.07) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse at 70% 40%,#000 10%,transparent 70%);mask-image:radial-gradient(ellipse at 70% 40%,#000 10%,transparent 70%)}
+.cover::after,.end::after{display:none}
+.cover .tag,.end .tag{color:#7fd0d1}.cover .tag b{background:#7fd0d1;color:var(--ink)}
+.cover h1 em,.end h2 em{background:linear-gradient(90deg,#7fd0d1,#f4c08a);-webkit-background-clip:text;background-clip:text}
+.cover .sub{font-size:27px;color:#b8c6d2;margin-top:26px;max-width:820px;line-height:1.4}
+.cover .foot,.end .foot{color:#6f8496}
+.end .box h3{color:#7fd0d1}.end .box p{color:#dfe9ee;font-size:19px}
+.cover-art{position:absolute;right:0;top:0;bottom:0;width:560px}
+.banner{max-width:820px;line-height:1.5;margin-top:34px;display:inline-flex;gap:12px;align-items:center;font-family:var(--mono);font-size:16px;color:#cfe9e8;border:1px solid rgba(127,208,209,.35);border-radius:10px;padding:10px 16px;align-self:flex-start;background:rgba(127,208,209,.08)}
+.banner.warn{color:#f6d3ad;border-color:rgba(232,145,58,.5);background:rgba(232,145,58,.1)}
+/* grids */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:26px}.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.g5{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.mt{margin-top:34px}.mt2{margin-top:22px}
+.box{padding:24px 26px}
+.box h3{font-family:var(--mono);font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--acc);margin-bottom:12px}
+.box p,.box li{font-size:20px;line-height:1.45;color:#2f3d4d}
+.dark h3{color:#7fd0d1}.dark p,.dark li{color:#dfe9ee}
+ul.cl{list-style:none}ul.cl li{padding:7px 0 7px 26px;position:relative}ul.cl li::before{content:"";position:absolute;left:2px;top:17px;width:11px;height:11px;border-radius:3px;background:var(--acc)}
+.dark ul.cl li::before{background:#7fd0d1}
+/* kpi */
+.kpi{padding:22px 24px}
+.kpi .l{font-family:var(--mono);font-size:14px;color:var(--mute);text-transform:uppercase;letter-spacing:.06em}
+.kpi .v{font-family:var(--serif);font-weight:700;font-size:46px;letter-spacing:-.02em;margin:8px 0 4px;line-height:1.05}
+.kpi .s{font-size:16px;color:#4a5868;line-height:1.35}
+.kpi.hl{background:linear-gradient(135deg,#0f8b8d,#20a9a3);color:#fff;border:0}.kpi.hl .l,.kpi.hl .s{color:#d9f3f2}
+.kpi.wa .v{color:var(--warm-d)}
+/* barras */
+.bars{display:flex;flex-direction:column;gap:12px}
+.bar{display:grid;grid-template-columns:300px 1fr 120px;gap:14px;align-items:center;font-size:18px}
+.bar .t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .tr{height:22px;background:rgba(15,34,54,.07);border-radius:6px;overflow:hidden}
+.bar .fl{height:100%;border-radius:6px;background:linear-gradient(90deg,#0f8b8d,#2bb3a8);transition:width 1s ease}
+.bar .fl.w{background:linear-gradient(90deg,#e8913a,#f0a456)}
+.bar .n{font-family:var(--mono);font-size:16px;text-align:right}
+.vbars{display:flex;align-items:flex-end;gap:10px;height:260px;padding-top:10px}
+.vb{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end}
+.vb .c{width:100%;border-radius:6px 6px 0 0;background:linear-gradient(180deg,#2bb3a8,#0f8b8d);min-height:2px;transition:height 1s ease}
+.vb.w .c{background:linear-gradient(180deg,#f0a456,#e8913a)}
+.vb .x{font-family:var(--mono);font-size:13px;color:var(--mute);white-space:nowrap}
+.vb .y{font-family:var(--mono);font-size:13px;color:var(--ink)}
+.note{font-size:16px;color:var(--mute);margin-top:14px;font-family:var(--mono)}
+.callout{margin-top:22px;padding:16px 24px;border-radius:14px;font-size:20px;line-height:1.45;background:linear-gradient(120deg,#0f2236,#123b50 70%,#0f5d63);color:#eef3f2}
+.callout b{color:#7fd0d1}
+/* pipeline */
+.pipe{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.pipe .card{padding:20px;position:relative}
+.pipe .card::after{content:"";position:absolute;right:-13px;top:50%;width:10px;height:10px;border-top:3px solid var(--acc);border-right:3px solid var(--acc);transform:translateY(-50%) rotate(45deg)}
+.pipe .card:last-child::after{display:none}
+.pipe i{font-style:normal;font-family:var(--mono);font-size:13px;color:var(--acc);font-weight:600}
+.pipe b{display:block;font-size:22px;margin:6px 0}
+.pipe span{font-size:17px;line-height:1.4;color:#3a4859;display:block}
+/* habilitadores tabela */
+.hab{border-top:3px solid var(--ink)}
+.hab .row{display:grid;grid-template-columns:40px 330px 1fr;gap:18px;padding:12px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.hab i{font-style:normal;font-family:var(--serif);font-weight:700;font-size:24px;color:var(--acc)}
+.hab b{font-size:20px}.hab span{font-size:18.5px;color:#334252;line-height:1.4}
+/* okr */
+.okr{display:grid;grid-template-columns:1fr 1.25fr;gap:26px;margin-top:26px}
+.krs{display:flex;flex-direction:column;gap:12px}
+.kr{padding:16px 20px;display:grid;grid-template-columns:70px 1fr 230px;gap:14px;align-items:center}
+.kr .id{font-family:var(--mono);font-weight:600;color:var(--acc);font-size:18px}
+.kr .tx{font-size:18.5px;line-height:1.35}
+.kr .mv{text-align:right;font-family:var(--mono);font-size:15px;color:var(--mute);line-height:1.5}
+.kr .mv b{font-family:var(--serif);font-size:26px;color:var(--ink)}
+.kr .mv b.to{color:var(--acc-d)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.chip{font-family:var(--mono);font-size:13.5px;border-radius:999px;padding:4px 12px;background:rgba(127,208,209,.16);color:#bfe9e8;border:1px solid rgba(127,208,209,.35)}
+.card .chip{background:var(--soft);color:var(--acc-d);border-color:rgba(15,139,141,.25)}
+/* chrome */
+#prog{position:fixed;left:0;bottom:0;height:4px;background:linear-gradient(90deg,#0f8b8d,#2bb3a8,#e8913a);transition:width .4s;z-index:5}
+#notes{position:fixed;left:0;right:0;bottom:0;background:rgba(8,19,31,.95);color:#e6eef0;font-size:16px;line-height:1.5;padding:16px 26px 22px;display:none;z-index:6;max-height:32vh;overflow:auto}
+#nav{position:fixed;right:16px;top:14px;display:flex;gap:8px;z-index:7;opacity:.15;transition:opacity .3s}#nav:hover{opacity:1}
+#nav button{background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:8px;width:40px;height:36px;font-size:18px;cursor:pointer}#nav button:hover{background:var(--acc)}
+@media print{html,body{overflow:visible;background:#fff}#stage{position:static;transform:none!important;width:1600px!important;height:auto!important}.slide{position:relative;opacity:1;visibility:visible;page-break-after:always;height:900px;padding-left:104px;padding-right:104px}.foot{left:104px;right:104px}.slide>.r{opacity:1;transform:none}#nav,#prog,#notes{display:none}}
+</style>
+</head>
+<body>
+<div id="stage">
+
+<!-- 1 CAPA -->
+<section class="slide cover" data-notes="Apresentar o grupo e a pergunta: como o Governo Federal contrata TI, lido pela lente dos habilitadores do COBIT 5, com dados abertos reais.">
+  <svg class="cover-art" viewBox="0 0 560 900" aria-hidden="true"><g fill="#7fd0d1"><rect x="120" y="610" width="34" height="150" rx="4" opacity=".35"/><rect x="170" y="540" width="34" height="220" rx="4" opacity=".5"/><rect x="220" y="470" width="34" height="290" rx="4" opacity=".65"/><rect x="270" y="560" width="34" height="200" rx="4" opacity=".45"/><rect x="320" y="380" width="34" height="380" rx="4" opacity=".85"/><rect x="370" y="440" width="34" height="320" rx="4" opacity=".6"/><rect x="420" y="300" width="34" height="460" rx="4"/></g><polyline points="137,590 187,520 237,450 287,540 337,360 387,420 437,280" fill="none" stroke="#e8913a" stroke-width="4"/><g fill="#e8913a"><circle cx="137" cy="590" r="7"/><circle cx="237" cy="450" r="7"/><circle cx="337" cy="360" r="7"/><circle cx="437" cy="280" r="7"/></g></svg>
+  <p class="tag r"><b>Trabalho Final</b>Governança de TI · COBIT 5</p>
+  <h1 class="r">Como o Governo Federal <em>contrata TI</em>?</h1>
+  <p class="sub r">Análise dos dados abertos do Compras.gov.br à luz dos sete habilitadores do COBIT 5.</p>
+  <p class="banner r" id="cov-banner">Carregando dados…</p>
+  <div class="foot"><span>Ciência da Computação · ULBRA Palmas</span><span>2026/2</span></div>
+</section>
+
+<!-- 2 CONTEXTO -->
+<section class="slide" data-notes="Por que o tema: o dado é público, a lei é nova e o COBIT é um framework de governança de TI. Recortamos as compras de TI porque são o objeto direto da governança de TI.">
+  <p class="tag r">01 · Contexto e pergunta</p>
+  <h2 class="r">Dados públicos de compras + COBIT: um encaixe <em>natural</em>.</h2>
+  <div class="g3 mt r">
+    <div class="card box"><h3>A lei</h3><p><b>Lei nº 14.133/2021</b>. Desde 2024, é a única lei aplicável a novas contratações públicas.</p></div>
+    <div class="card box"><h3>O dado</h3><p><b>PNCP e Compras.gov.br</b>. Toda contratação federal é publicada e fica disponível em API de dados abertos.</p></div>
+    <div class="card box"><h3>O framework</h3><p><b>COBIT 5</b>. Modelo da ISACA para governar a TI: gerar valor com riscos e recursos sob controle.</p></div>
+  </div>
+  <p class="callout r"><b>Pergunta de pesquisa:</b> como o Governo Federal contrata TI sob a Lei 14.133 e o que esses dados revelam sobre a governança dessas contratações, à luz dos sete habilitadores do COBIT 5?</p>
+  <div class="foot"><span>Compras de TI e COBIT 5</span><span>2</span></div>
+</section>
+
+<!-- 3 OBJETIVOS + COBIT -->
+<section class="slide" data-notes="Objetivos específicos e a lente da análise: os sete habilitadores. Cada objetivo vira uma parte dos resultados.">
+  <p class="tag r">02 · Objetivos e referencial</p>
+  <h2 class="r">Quatro objetivos, sete <em>habilitadores</em></h2>
+  <div class="g2 mt r">
+    <div class="card box"><h3>Objetivos específicos</h3><ul class="cl">
+      <li>Medir competição × contratação direta nas compras de TI.</li>
+      <li>Calcular a economia obtida e a concentração de fornecedores.</li>
+      <li>Comparar o planejado no PCA com o contratado no Tocantins.</li>
+      <li>Avaliar a qualidade dos dados e a infraestrutura que os publica.</li></ul></div>
+    <div class="dark box"><h3>Habilitadores do COBIT 5</h3><ul class="cl">
+      <li>Princípios, Políticas e Frameworks</li><li>Processos</li><li>Estruturas Organizacionais</li><li>Cultura, Ética e Comportamento</li><li>Informação</li><li>Serviços, Infraestrutura e Aplicações</li><li>Pessoas, Habilidades e Competências</li></ul></div>
+  </div>
+  <div class="foot"><span>ISACA, 2012</span><span>3</span></div>
+</section>
+
+<!-- 4 BASE -->
+<section class="slide" data-notes="A base: conjunto do dados.gov.br acessado pela API. Recorte de 2025, itens de TI do Brasil pelo catálogo, contratações e PCA do Tocantins.">
+  <p class="tag r">03 · Base de dados</p>
+  <h2 class="r">Compras Públicas do Governo Federal</h2>
+  <div class="g2 mt r">
+    <div class="card box"><h3>Fonte</h3><ul class="cl">
+      <li>dados.gov.br · publicado pela SEGES/MGI</li>
+      <li>API REST <code>dadosabertos.compras.gov.br</code></li>
+      <li>Origem PNCP e Compras.gov.br · Lei 14.133/2021</li>
+      <li>Módulos: contratações, itens, resultados, PCA, indicadores e catálogo</li></ul></div>
+    <div class="card box"><h3>Recorte</h3><ul class="cl">
+      <li><b>2025</b>: último ano completo, só com a nova lei</li>
+      <li><b>Itens de TI do Brasil</b>: <span id="cat-n">classes e grupos</span> do CATMAT/CATSER</li>
+      <li><b>Contratações do Tocantins</b>: comparação local</li>
+      <li><b>PCA da UFT e do IFTO</b>: planejado × executado</li></ul></div>
+  </div>
+  <div class="foot"><span>Brasil, 2026</span><span>4</span></div>
+</section>
+
+<!-- 5 PIPELINE -->
+<section class="slide" data-notes="O caminho do dado. Coleta em Python com retomada segura, banco Neon na nuvem com espelho SQLite, e os indicadores calculados direto do banco.">
+  <p class="tag r">04 · Método</p>
+  <h2 class="r">Da API à análise, com dados <em>reprodutíveis</em></h2>
+  <div class="pipe mt r">
+    <div class="card"><i>01</i><b>Coleta</b><span>Python consome a API mês a mês, 500 registros por página, com retomada se falhar.</span></div>
+    <div class="card"><i>02</i><b>Filtro TI</b><span>Classes do grupo 70 (CATMAT) e grupos de TIC (CATSER), validados por palavra-chave.</span></div>
+    <div class="card"><i>03</i><b>Banco</b><span>Neon PostgreSQL na nuvem, com espelho SQLite local; sem duplicar registros.</span></div>
+    <div class="card"><i>04</i><b>Indicadores</b><span>Competição, economia, fornecedores, PCA e qualidade calculados em SQL.</span></div>
+    <div class="card"><i>05</i><b>Análise</b><span>Cada achado lido por um habilitador do COBIT 5.</span></div>
+  </div>
+  <p class="note r" id="counts-line"></p>
+  <div class="foot"><span>Repositório compras-ti-cobit5</span><span>5</span></div>
+</section>
+
+<!-- 6 VISÃO GERAL -->
+<section class="slide" data-notes="Visão geral das contratações de TI no recorte. Ler os cinco números e a série mensal.">
+  <p class="tag r">05 · Resultados <span class="hb">Processos</span></p>
+  <h2 class="r">Visão geral das contratações de TI</h2>
+  <div class="g5 mt r" id="kpis-geral"></div>
+  <div class="card box mt2 r"><h3>Valor estimado dos itens de TI por mês de inclusão</h3><div class="vbars" id="serie"></div></div>
+  <div class="foot"><span id="foot-cov">Compras de TI e COBIT 5</span><span>6</span></div>
+</section>
+
+<!-- 7 COMPETIÇÃO -->
+<section class="slide" data-notes="Princípios, políticas e frameworks: a lei define a licitação como regra e a contratação direta como exceção. A proporção de contratação direta mede o uso da exceção. Lembrar que inexigibilidade em TI pode ser licença de fornecedor exclusivo.">
+  <p class="tag r">06 · Resultados <span class="hb">Princípios, Políticas e Frameworks</span></p>
+  <h2 class="r">Quanto da TI é contratado <em>sem competição</em>?</h2>
+  <div class="g2 mt r" style="grid-template-columns:1fr 2fr">
+    <div style="display:flex;flex-direction:column;gap:18px" id="kpis-dir"></div>
+    <div class="card box"><h3>Valor estimado por modalidade</h3><div class="bars" id="bars-mod"></div></div>
+  </div>
+  <div class="foot"><span>Lei 14.133/2021: licitação é a regra</span><span>7</span></div>
+</section>
+
+<!-- 8 PROCESSOS -->
+<section class="slide" data-notes="Processos: economia como indicador de resultado; itens fracassados, desertos ou cancelados como indicador de execução. Relacionar com APO10, BAI03 e MEA01.">
+  <p class="tag r">07 · Resultados <span class="hb">Processos</span> <span class="hb">Pessoas</span></p>
+  <h2 class="r">Economia obtida e desfecho dos itens</h2>
+  <div class="g2 mt r" style="grid-template-columns:2fr 1fr">
+    <div class="card box"><h3>Economia por modalidade (estimado → homologado)</h3><div class="bars" id="bars-econ"></div></div>
+    <div style="display:flex;flex-direction:column;gap:18px" id="kpis-proc"></div>
+  </div>
+  <div class="foot"><span>COBIT 5: APO10 · BAI03 · MEA01</span><span>8</span></div>
+</section>
+
+<!-- 9 FORNECEDORES -->
+<section class="slide" data-notes="Cultura, ética e comportamento: concentração do valor em poucos fornecedores e participação de ME/EPP.">
+  <p class="tag r">08 · Resultados <span class="hb">Cultura, Ética e Comportamento</span></p>
+  <h2 class="r">Para quem vai o dinheiro da TI?</h2>
+  <div class="g2 mt r" style="grid-template-columns:1fr 2fr">
+    <div style="display:flex;flex-direction:column;gap:18px" id="kpis-forn"></div>
+    <div class="card box"><h3>Dez maiores fornecedores (valor homologado)</h3><div class="bars" id="bars-forn"></div></div>
+  </div>
+  <div class="foot"><span>Resultados homologados de itens de TI</span><span>9</span></div>
+</section>
+
+<!-- 10 FRACIONAMENTO -->
+<section class="slide" data-notes="Dispensas por valor em relação ao teto do art. 75, II. Acúmulo logo abaixo do teto é só indício de fracionamento, que exigiria verificação caso a caso.">
+  <p class="tag r">09 · Resultados <span class="hb">Cultura, Ética e Comportamento</span></p>
+  <h2 class="r">Dispensas perto do teto: um <em>indício</em> a observar</h2>
+  <div class="card box mt r"><h3>Dispensas por faixa do teto legal (art. 75, II)</h3><div class="vbars" id="hist" style="height:300px"></div></div>
+  <p class="callout r" id="hist-txt"></p>
+  <div class="foot"><span>Indício não é prova: exige verificação caso a caso</span><span>10</span></div>
+</section>
+
+<!-- 11 TOCANTINS + PCA -->
+<section class="slide" data-notes="Estruturas organizacionais: órgãos e UASGs do Tocantins e o PCA da UFT e do IFTO. Comparar planejado em TI com o total planejado.">
+  <p class="tag r">10 · Resultados <span class="hb">Estruturas Organizacionais</span></p>
+  <h2 class="r">Tocantins: quem compra e o que foi <em>planejado</em></h2>
+  <div class="g2 mt r">
+    <div class="card box"><h3>Órgãos do TO com mais contratações</h3><div class="bars" id="bars-to"></div><p class="note" id="to-txt"></p></div>
+    <div class="card box"><h3>PCA: valor planejado total × TI</h3><div class="bars" id="bars-pca"></div><p class="note" id="pca-txt"></p></div>
+  </div>
+  <div class="foot"><span>PCA: Lei 14.133, art. 12, VII</span><span>11</span></div>
+</section>
+
+<!-- 12 INFORMAÇÃO + SERVIÇOS -->
+<section class="slide" data-notes="Informação: critérios de integridade, confiabilidade, confidencialidade. Serviços, infraestrutura e aplicações: disponibilidade da API que publica os dados.">
+  <p class="tag r">11 · Resultados <span class="hb">Informação</span> <span class="hb">Serviços, Infraestrutura e Aplicações</span></p>
+  <h2 class="r">Dá para confiar nos dados abertos?</h2>
+  <div class="g4 mt r" id="kpis-qual"></div>
+  <div class="card box mt2 r"><h3>Taxa de sucesso mensal da API de dados abertos</h3><div class="vbars" id="api" style="height:180px"></div></div>
+  <div class="foot"><span>Critérios de informação do COBIT 5</span><span>12</span></div>
+</section>
+
+<!-- 13 SÍNTESE HABILITADORES -->
+<section class="slide" data-notes="Síntese: um achado por habilitador. É a ponte para os OKRs.">
+  <p class="tag r">12 · Análise crítica</p>
+  <h2 class="r">Os sete habilitadores em <em>uma tela</em></h2>
+  <div class="hab mt r" id="sintese"></div>
+  <div class="foot"><span>Roteiro: dado → COBIT → recomendação</span><span>13</span></div>
+</section>
+
+<!-- 14 CONCLUSÃO -->
+<section class="slide" data-notes="Conclusão e limitações. Depois, passar para os OKRs.">
+  <p class="tag r">13 · Conclusão</p>
+  <h2 class="r">O que os dados dizem sobre a <em>governança</em></h2>
+  <div class="g2 mt r">
+    <div class="card box"><h3>Principais achados</h3><ul class="cl" id="achados"></ul></div>
+    <div class="dark box"><h3>Limitações</h3><ul class="cl">
+      <li>O filtro de TI depende dos grupos do catálogo.</li>
+      <li>Só a Lei 14.133/2021; sem execução contratual.</li>
+      <li>Pessoas e parte da cultura medidas por indicadores indiretos.</li>
+      <li>Os dados mudam no PNCP após a coleta.</li></ul></div>
+  </div>
+  <div class="foot"><span>Compras de TI e COBIT 5</span><span>14</span></div>
+</section>
+
+<!-- 15 OKRs ABERTURA -->
+<section class="slide" data-notes="Ponte para a atividade de OKRs: duas fragilidades da análise crítica viram dois objetivos com resultados-chave mensuráveis.">
+  <p class="tag r">14 · Da análise à melhoria</p>
+  <h2 class="r">Duas fragilidades, dois <em>OKRs</em></h2>
+  <div class="g2 mt r">
+    <div class="card box"><h3>Fragilidade 1 · Competição</h3><p id="frag1"></p><div class="chips"><span class="chip">Princípios, Políticas e Frameworks</span><span class="chip">Cultura, Ética e Comportamento</span></div></div>
+    <div class="card box"><h3>Fragilidade 2 · Informação</h3><p id="frag2"></p><div class="chips"><span class="chip">Informação</span><span class="chip">Serviços, Infraestrutura e Aplicações</span><span class="chip">Processos</span></div></div>
+  </div>
+  <p class="callout r"><b>Formato:</b> objetivo qualitativo + resultados-chave quantitativos, com situação atual (linha de base dos dados), meta e prazo.</p>
+  <div class="foot"><span>Atividade da Aula 14: OKRs</span><span>15</span></div>
+</section>
+
+<!-- 16 OKR 1 -->
+<section class="slide" data-notes="OKR 1. A linha de base vem dos dados coletados. As metas são propostas do grupo para o contexto estudado.">
+  <p class="tag r">15 · OKR 1 <span class="hb">Prazo: até dez/2027</span></p>
+  <h2 class="r">O1 · Ampliar a <em>competição</em> nas contratações de TI</h2>
+  <div class="okr r">
+    <div class="dark box"><h3>Justificativa</h3><p id="just1"></p><div class="chips"><span class="chip">Princípios, Políticas e Frameworks</span><span class="chip">Cultura, Ética e Comportamento</span></div></div>
+    <div class="krs" id="krs1"></div>
+  </div>
+  <div class="foot"><span>Atual → meta · medição trimestral</span><span>16</span></div>
+</section>
+
+<!-- 17 OKR 2 -->
+<section class="slide" data-notes="OKR 2. Qualidade e disponibilidade dos dados abertos, base do controle social.">
+  <p class="tag r">16 · OKR 2 <span class="hb">Prazo: até dez/2027</span></p>
+  <h2 class="r">O2 · Tornar os dados de compras <em>confiáveis</em> para o controle social</h2>
+  <div class="okr r">
+    <div class="dark box"><h3>Justificativa</h3><p id="just2"></p><div class="chips"><span class="chip">Informação</span><span class="chip">Serviços, Infraestrutura e Aplicações</span><span class="chip">Processos</span></div></div>
+    <div class="krs" id="krs2"></div>
+  </div>
+  <div class="foot"><span>Atual → meta · medição trimestral</span><span>17</span></div>
+</section>
+
+<!-- 18 FIM -->
+<section class="slide end" data-notes="Encerrar e abrir para perguntas.">
+  <p class="tag r">Encerramento</p>
+  <h2 class="r" style="font-size:64px;max-width:1200px">Dado público, lido com a lente da <em>governança de TI</em>.</h2>
+  <div class="g3 mt r" style="max-width:1250px">
+    <div class="box" style="border:2px solid rgba(127,208,209,.35);border-radius:16px"><h3>Dados abertos reais</h3><p>Compras.gov.br · Lei 14.133 · 2025</p></div>
+    <div class="box" style="border:2px solid rgba(127,208,209,.35);border-radius:16px"><h3>7 habilitadores</h3><p>cada um sustentado por evidência</p></div>
+    <div class="box" style="border:2px solid rgba(127,208,209,.35);border-radius:16px"><h3>2 OKRs</h3><p>da análise crítica à melhoria</p></div>
+  </div>
+  <div class="foot"><span>Obrigado · perguntas?</span><span>18</span></div>
+</section>
+
+</div>
+<div id="prog"></div><div id="notes"></div>
+<div id="nav"><button id="pv" aria-label="Anterior">‹</button><button id="nx" aria-label="Próximo">›</button><button id="fs" aria-label="Tela cheia">⤢</button></div>
+<script src="dados.js"></script>
+<script>
+/* ===================== metas dos OKRs (o grupo pode ajustar aqui) ===================== */
+const METAS = {
+  direta_pp: 10,        // KR1.1: reduzir a % do valor contratado sem competição em X pontos percentuais
+  top10_pp: 5,          // KR1.2: reduzir a concentração nos 10 maiores fornecedores em X p.p.
+  meepp_pp: 5,          // KR1.3: aumentar a participação de ME/EPP em X p.p.
+  fornecedores_pct: 10, // KR1.3 (sem dado de porte): ampliar em X% o número de fornecedores distintos
+  nulo_max: 1,          // KR2.1: no máximo X% de contratações com valor nulo ou zerado
+  alterado_fator: 0.5,  // KR2.2: reduzir pela metade os registros alterados após a publicação
+  api_min: 99.5         // KR2.3: taxa de sucesso mínima da API
+};
+/* ===================================================================================== */
+const D = window.DADOS || null;
+const $ = id => document.getElementById(id);
+const nf = (v, d=0) => v==null||isNaN(v) ? "—" : Number(v).toLocaleString("pt-BR",{minimumFractionDigits:d,maximumFractionDigits:d});
+const pc = (v, d=1) => v==null||isNaN(v) ? "—" : nf(v,d)+"%";
+function brl(v){ if(v==null||isNaN(v)) return "—"; const a=Math.abs(v);
+  if(a>=1e12) return "R$ "+nf(v/1e12,1)+" tri"; if(a>=1e9) return "R$ "+nf(v/1e9,1)+" bi"; if(a>=1e6) return "R$ "+nf(v/1e6,1)+" mi"; if(a>=1e3) return "R$ "+nf(v/1e3,1)+" mil"; return "R$ "+nf(v,0); }
+const kpi = (l,v,s,c="") => `<div class="card kpi ${c}"><div class="l">${l}</div><div class="v">${v}</div><div class="s">${s}</div></div>`;
+function hbars(el, rows, fmt, warnFn){ const mx=Math.max(1,...rows.map(r=>r.v||0));
+  $(el).innerHTML = rows.length ? rows.map(r=>`<div class="bar"><span class="t" title="${r.t}">${r.t}</span><div class="tr"><div class="fl ${warnFn&&warnFn(r)?'w':''}" style="width:${Math.max(1,(r.v||0)/mx*100)}%"></div></div><span class="n">${fmt(r)}</span></div>`).join("")
+   : `<p class="note">Sem dados ainda: rode a coleta e gere o dados.js.</p>`; }
+function vbars(el, rows, fmt, warnFn){ const mx=Math.max(1,...rows.map(r=>r.v||0));
+  $(el).innerHTML = rows.length ? rows.map(r=>`<div class="vb ${warnFn&&warnFn(r)?'w':''}"><span class="y">${fmt(r)}</span><div class="c" style="height:${Math.max(1,(r.v||0)/mx*100)*.82}%"></div><span class="x">${r.t}</span></div>`).join("")
+   : `<p class="note">Sem dados ainda.</p>`; }
+const short = s => (s||"").replace(/ - /g," ").replace("Eletrônic","Eletr.").replace("Presencial","Pres.");
+const cap = s => (s||"").length>34 ? s.slice(0,33)+"…" : s;
+
+function render(){
+  const ok = D && D.contagens && D.contagens.fato_itens_ti>0;
+  const b=$("cov-banner");
+  if(!D){ b.textContent="Dados ainda não gerados: rode  python apresentacao/gerar_dados.py"; b.classList.add("warn"); }
+  else { const c=D.cobertura||{}, fl=D.filtros||{}; b.textContent=`Base: ${nf(fl.itens_analisados ?? c.itens)} itens de TI ${fl.filtro_federal?"da esfera federal ":""}analisados · ${c.meses||0} mês(es) de 2025 (${c.de||"—"} a ${c.ate||"—"}) · gerado em ${D.gerado_em}`;
+    if((c.meses||0)<12) b.classList.add("warn"); }
+  if(!D) { okrs(null); return; }
+  const g=D.geral||{}, dir=D.direta||{}, f=D.fornecedores||{}, q=D.qualidade||{}, api=D.api||{}, to=D.tocantins||{};
+  $("cat-n").textContent = `${nf(D.contagens.dim_catalogo_ti)} classes e grupos`;
+  const fl=D.filtros||{};
+  $("counts-line").innerHTML = `Coletados: ${nf(D.contagens.fato_contratacoes)} contratações e ${nf(D.contagens.fato_itens_ti)} itens de TI. ` +
+    (fl.itens_total ? `Analisados: <b>${nf(fl.itens_analisados)}</b> itens ${fl.filtro_federal?"da esfera federal":""} · fora da análise: ${nf(fl.itens_outras_esferas)} de estados e municípios, ${nf(fl.itens_sem_compra)} sem compra-pai e ${nf(fl.itens_implausiveis)} com valor implausível (acima de ${brl(fl.limite_item)} por item).` : "");
+  if((D.cobertura||{}).meses<12) $("foot-cov").textContent = `Cobertura parcial: ${D.cobertura.meses} de 12 meses de 2025`;
+  // 6
+  $("kpis-geral").innerHTML = kpi("Contratações de TI",nf(g.contratacoes),"com ao menos um item de TI") + kpi("Itens de TI",nf(g.itens),"materiais e serviços") +
+    kpi("Valor estimado",brl(g.valor_estimado),"soma dos itens de TI") + kpi("Valor homologado",brl(g.valor_homologado),"itens com resultado") +
+    kpi("Economia",pc(g.economia_pct),"estimado → homologado, itens com resultado","hl");
+  vbars("serie",(D.serie_mensal||[]).map(r=>({t:r.mes.slice(5)+"/"+r.mes.slice(2,4),v:r.valor})),r=>brl(r.v).replace("R$ ",""));
+  // 7
+  $("kpis-dir").innerHTML = kpi("Valor sem competição",pc(dir.pct_valor),"dispensa + inexigibilidade, em valor","hl") + kpi("Contratações diretas",pc(dir.pct_qtd),"em quantidade de contratações","wa");
+  hbars("bars-mod",(D.modalidades_ti||[]).slice(0,7).map(m=>({t:short(m.modalidade),v:m.valor,dir:m.tipo==="Contratação Direta"})),r=>brl(r.v),r=>r.dir);
+  // 8
+  hbars("bars-econ",(D.modalidades_ti||[]).filter(m=>m.economia_pct!=null).slice(0,7).map(m=>({t:short(m.modalidade),v:Math.max(0,m.economia_pct)})),r=>pc(r.v));
+  $("kpis-proc").innerHTML = kpi("Itens fracassados",pc(g.pct_fracasso),"desertos, fracassados ou cancelados","wa") + kpi("Erros de cadastro",pc(g.pct_erro_cadastro),"valor/quantidade inválidos ou sem descrição") + kpi("Desconto médio",pc(f.desconto_medio),"informado nos resultados");
+  // 9
+  $("kpis-forn").innerHTML = kpi("Top 10 fornecedores",pc(f.pct_top10),"do valor homologado de TI","hl") +
+    (f.pct_me_epp_valor!=null ? kpi("ME/EPP",pc(f.pct_me_epp_valor),"do valor homologado") : kpi("Valor homologado",brl(f.valor_total),"com fornecedor identificado")) +
+    kpi("Fornecedores",nf(f.distintos),"distintos com resultado");
+  hbars("bars-forn",(f.top10||[]).map(x=>({t:cap(x.fornecedor||"Não informado"),v:x.valor})),r=>brl(r.v));
+  // 10
+  const ord=["0–20%","20–40%","40–60%","60–80%","80–90%","90–100%","Acima do teto"];
+  const hm=Object.fromEntries((D.dispensa||[]).map(r=>[r.faixa,r.qtd]));
+  const hist=ord.filter(k=>hm[k]!=null).map(k=>({t:k,v:hm[k]}));
+  vbars("hist",hist,r=>nf(r.v),r=>r.t==="90–100%");
+  const totD=hist.reduce((a,r)=>a+r.v,0), zona=(hm["90–100%"]||0), zona2=(hm["80–90%"]||0);
+  $("hist-txt").innerHTML = totD ? `<b>${pc(zona/totD*100)}</b> das ${nf(totD)} dispensas analisadas estão entre 90% e 100% do teto (contra ${pc(zona2/totD*100)} na faixa de 80% a 90%). Um acúmulo logo abaixo do teto é <b>indício</b> de fracionamento, não prova.` : "Sem dispensas no banco ainda.";
+  // 11
+  hbars("bars-to",(to.orgaos||[]).map(o=>({t:cap(o.orgao),v:o.contratacoes})),r=>nf(r.v));
+  $("to-txt").textContent = to.contratacoes ? `${nf(to.contratacoes)} contratações no TO · ${pc(to.pct_direta_qtd)} diretas · ${nf(to.com_ti)} com itens de TI · economia ${pc(to.economia_pct)}` : "";
+  const pcaRows=[]; (D.pca||[]).forEach(p=>{pcaRows.push({t:`${p.instituicao} ${p.ano} · total`,v:p.valor});pcaRows.push({t:`${p.instituicao} ${p.ano} · TI`,v:p.valor_ti,ti:1});});
+  hbars("bars-pca",pcaRows,r=>brl(r.v),r=>r.ti);
+  const pt=(D.pca||[]).reduce((a,p)=>[a[0]+(p.valor||0),a[1]+(p.valor_ti||0)],[0,0]);
+  $("pca-txt").textContent = pt[0] ? `TI representa ${pc(pt[1]/pt[0]*100)} do valor planejado no PCA da UFT e do IFTO.` : "";
+  // 12
+  $("kpis-qual").innerHTML = kpi("Valor nulo ou zerado",pc(q.pct_valor_nulo),"das contratações (integridade)","wa") + kpi("Alteradas após publicar",pc(q.pct_alterado),"das contratações (confiabilidade)") +
+    kpi("Valores implausíveis",nf(fl.itens_implausiveis),`itens somando ${brl(fl.valor_implausivel)} (integridade)`,"wa") + kpi("Sucesso da API",pc(api.sucesso_medio,2),`média de ${nf(api.meses)} meses · ${nf(api.tempo_medio_ms)} ms`,"hl");
+  vbars("api",(D.api_mensal||[]).map(r=>({t:(r.ano_mes||"").slice(5),v:r.percentual_sucesso})),r=>nf(r.v,1));
+  // 13
+  const S=[
+    ["Princípios, Políticas e Frameworks",`${pc(dir.pct_valor)} do valor de TI foi contratado sem competição: a exceção prevista na lei precisa ser monitorada.`],
+    ["Processos",`Economia de ${pc(g.economia_pct)} nos itens com resultado; ${pc(g.pct_fracasso)} dos itens terminaram desertos, fracassados ou cancelados.`],
+    ["Estruturas Organizacionais",`No TO, ${nf(to.contratacoes)} contratações, ${pc(to.pct_direta_qtd)} diretas; o PCA mostra quanto da TI foi planejada.`],
+    ["Cultura, Ética e Comportamento",`Os 10 maiores fornecedores concentram ${pc(f.pct_top10)} do valor; dispensas perto do teto exigem atenção.`],
+    ["Informação",`${nf(fl.itens_implausiveis)} itens com valores implausíveis somam ${brl(fl.valor_implausivel)}; ${pc(q.pct_valor_nulo)} das contratações sem valor e ${pc(q.pct_alterado)} alteradas após publicar.`],
+    ["Serviços, Infraestrutura e Aplicações",`API com ${pc(api.sucesso_medio,2)} de sucesso médio; coleta exige percorrer modalidades e páginas.`],
+    ["Pessoas, Habilidades e Competências",`${pc(g.pct_erro_cadastro)} dos itens com erro de cadastro: sinal indireto da capacidade de especificar o objeto.`]];
+  $("sintese").innerHTML = S.map((s,i)=>`<div class="row"><i>${i+1}</i><b>${s[0]}</b><span>${s[1]}</span></div>`).join("");
+  // 14
+  $("achados").innerHTML = [
+    `${pc(dir.pct_valor)} do valor de TI sem competição.`,
+    `Economia de ${pc(g.economia_pct)} onde houve resultado.`,
+    `${pc(f.pct_top10)} do valor com os 10 maiores fornecedores.`,
+    `Erros de cadastro graves: ${nf(fl.itens_implausiveis)} itens somam ${brl(fl.valor_implausivel)} em valores implausíveis.`].map(t=>`<li>${t}</li>`).join("");
+  okrs(D);
+}
+
+function kr(id,txt,de,para){ return `<div class="card kr"><span class="id">${id}</span><span class="tx">${txt}</span><span class="mv">atual <b>${de}</b><br>meta <b class="to">${para}</b></span></div>`; }
+function okrs(D){
+  const dir=D?.direta||{}, f=D?.fornecedores||{}, q=D?.qualidade||{}, api=D?.api||{}, fl=D?.filtros||{};
+  const clamp=v=>Math.max(0,Math.min(100,v));
+  const dv=dir.pct_valor, t10=f.pct_top10, me=f.pct_me_epp_valor, nu=q.pct_valor_nulo, al=q.pct_alterado, su=api.sucesso_medio;
+  const metaDir = dv==null?null:(dv>METAS.direta_pp*1.5? dv-METAS.direta_pp : dv*0.6);
+  $("frag1").innerHTML = `${pc(dv)} do valor de TI foi contratado por dispensa ou inexigibilidade, e os 10 maiores fornecedores concentram ${pc(t10)} do valor homologado.`;
+  $("frag2").innerHTML = `${nf(fl.itens_implausiveis)} itens de TI têm valores implausíveis que somam ${brl(fl.valor_implausivel)}, ${pc(nu)} das contratações não informam valor estimado e ${pc(al)} foram alteradas após a publicação.`;
+  $("just1").innerHTML = `A Lei 14.133 define a licitação como regra (Princípios, Políticas e Frameworks). Os dados mostram ${pc(dv)} do valor de TI fora dessa regra e ${pc(t10)} concentrado em 10 fornecedores, um comportamento que reduz a competição e aumenta a dependência (Cultura, Ética e Comportamento).`;
+  $("krs1").innerHTML =
+    kr("KR 1.1","Reduzir a parcela do valor de TI contratada sem competição",pc(dv),dv==null?"—":pc(metaDir)) +
+    kr("KR 1.2","Reduzir a concentração do valor nos 10 maiores fornecedores",pc(t10),t10==null?"—":pc(clamp(t10-METAS.top10_pp))) +
+    (me!=null ? kr("KR 1.3","Aumentar a participação de ME/EPP no valor homologado",pc(me),pc(clamp(me+METAS.meepp_pp)))
+              : kr("KR 1.3","Ampliar o número de fornecedores distintos que vencem itens de TI",nf(f.distintos),f.distintos==null?"—":nf(Math.round(f.distintos*(1+METAS.fornecedores_pct/100)))));
+  $("just2").innerHTML = `No COBIT 5, a informação vale pelo uso que gera e é avaliada por critérios como integridade e confiabilidade (Informação). Itens com valores impossíveis distorcem qualquer indicador agregado: sem filtrá-los, o valor de TI de 2025 passaria de R$ 14 trilhões. A correção exige validação no sistema de entrada (Serviços, Infraestrutura e Aplicações) e no processo de publicação (Processos).`;
+  $("krs2").innerHTML =
+    kr("KR 2.1","Reduzir os itens publicados com valor implausível (validação na entrada)",nf(fl.itens_implausiveis),fl.itens_implausiveis==null?"—":"0") +
+    kr("KR 2.2","Reduzir as contratações publicadas sem valor estimado",pc(nu),nu==null?"—":(nu<=METAS.nulo_max?"manter ≤ "+pc(METAS.nulo_max,0):"≤ "+pc(METAS.nulo_max,0))) +
+    kr("KR 2.3","Reduzir os registros alterados após a publicação",pc(al),al==null?"—":pc(al*METAS.alterado_fator));
+}
+
+/* ===================== navegação ===================== */
+const SL=[...document.querySelectorAll('.slide')],st=$('stage'),nt=$('notes');let i=0,showN=false;
+function fit(){const W=innerWidth,H=innerHeight,k=Math.min(W/1600,H/900);st.style.width=(W/k)+'px';st.style.height=(H/k)+'px';st.style.transform=`translate(-50%,-50%) scale(${k})`}
+function go(n){i=Math.max(0,Math.min(SL.length-1,n));SL.forEach((s,j)=>s.classList.toggle('on',j===i));$('prog').style.width=((i+1)/SL.length*100)+'%';nt.textContent=SL[i].dataset.notes||'';try{history.replaceState(null,'','#'+(i+1))}catch(e){}}
+const fsT=()=>{document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen().catch(()=>{})};
+addEventListener('resize',fit);fit();
+addEventListener('keydown',e=>{const k=e.key;
+ if(['ArrowRight','PageDown',' ','Enter'].includes(k)){e.preventDefault();go(i+1)}
+ else if(['ArrowLeft','PageUp','Backspace'].includes(k)){e.preventDefault();go(i-1)}
+ else if(k==='Home')go(0);else if(k==='End')go(SL.length-1);
+ else if(k==='n'||k==='N'){showN=!showN;nt.style.display=showN?'block':'none'}
+ else if(k==='f'||k==='F')fsT()});
+$('pv').onclick=()=>go(i-1);$('nx').onclick=()=>go(i+1);$('fs').onclick=fsT;
+let tx=null;addEventListener('touchstart',e=>tx=e.touches[0].clientX);addEventListener('touchend',e=>{if(tx===null)return;const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50)go(i+(d<0?1:-1));tx=null});
+render();
+go((parseInt(location.hash.slice(1))||1)-1);
+</script>
+</body>
+</html>
